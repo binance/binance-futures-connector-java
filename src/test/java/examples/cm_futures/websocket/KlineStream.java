@@ -8,7 +8,7 @@ public final class KlineStream {
 
     public static void main(String[] args) {
         CMWebsocketClientImpl client = new CMWebsocketClientImpl();
-        client.klineStream("btcusdt", "1h", ((event) -> {
+        client.klineStream("btcusd_perp", "1h", ((event) -> {
             System.out.println(event);
             client.closeAllConnections();
         }));

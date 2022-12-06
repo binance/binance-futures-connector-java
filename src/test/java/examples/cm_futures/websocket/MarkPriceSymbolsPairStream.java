@@ -2,18 +2,18 @@ package examples.cm_futures.websocket;
 
 import com.binance.connector.client.impl.CMWebsocketClientImpl;
 
-public final class MarkPriceAllSymbolsOfPairStream {
-    private MarkPriceAllSymbolsOfPairStream() {
+public final class MarkPriceSymbolsPairStream {
+    private MarkPriceSymbolsPairStream() {
     }
 
-    private static final int speed = 3;
-
+    private static final int defaultSpeed = 3;
+    private static final int speed = 1;
     public static void main(String[] args) {
         CMWebsocketClientImpl client = new CMWebsocketClientImpl();
-        int streamId1 = client.markPriceAllSymbolsOfPairStream("btcusdt", speed, ((event) -> {
+        int streamId1 = client.markPriceSymbolsPairStream("btcusd", defaultSpeed, ((event) -> {
             System.out.println(event);
         }));
-        int streamId2 = client.markPriceAllSymbolsOfPairStream("ethusdt", speed, ((event) -> {
+        int streamId2 = client.markPriceSymbolsPairStream("ethusd", speed, ((event) -> {
             System.out.println(event);
         }));
         client.closeConnection(streamId1);

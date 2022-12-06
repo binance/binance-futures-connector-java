@@ -18,6 +18,10 @@ public class CMFuturesClientImpl extends FuturesClientImpl {
         super(baseUrl, cmProduct);
     }
 
+    public CMFuturesClientImpl(String apiKey, String secretKey) {
+        super(apiKey, secretKey, defaultBaseUrl, cmProduct);
+    }
+
     public CMFuturesClientImpl(String baseUrl, boolean showLimitUsage) {
         super(baseUrl, cmProduct, showLimitUsage);
     }

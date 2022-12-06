@@ -9,7 +9,7 @@ public final class DiffDepthStream {
 
     public static void main(String[] args) {
         CMWebsocketClientImpl client = new CMWebsocketClientImpl();
-        client.diffDepthStream("btcusdt", speed, ((event) -> {
+        client.diffDepthStream("btcusd_perp", speed, ((event) -> {
             System.out.println(event);
             client.closeAllConnections();
         }));

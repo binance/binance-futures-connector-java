@@ -6,17 +6,18 @@ public final class AllMarkPriceStream {
     private AllMarkPriceStream() {
     }
 
-    private static final int speed = 3;
-
     public static void main(String[] args) {
         UMWebsocketClientImpl client = new UMWebsocketClientImpl();
-        int streamId1 = client.allMarkPriceStream(speed, ((event) -> {
-            System.out.println(event);
-        }));
-        int streamId2 = client.allMarkPriceStream(speed, ((event) -> {
+        final int defaultSpeed = 3;
+        int streamId1 = client.allMarkPriceStream(defaultSpeed, ((event) -> {
             System.out.println(event);
         }));
         client.closeConnection(streamId1);
+
+        final int acceptedSpeed = 1;
+        int streamId2 = client.allMarkPriceStream(acceptedSpeed, ((event) -> {
+            System.out.println(event);
+        }));
         client.closeConnection(streamId2);
     }
 }

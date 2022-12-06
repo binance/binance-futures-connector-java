@@ -8,7 +8,7 @@ public final class BookTicker {
 
     public static void main(String[] args) {
         CMWebsocketClientImpl client = new CMWebsocketClientImpl();
-        client.bookTicker("btcusdt", ((event) -> {
+        client.bookTicker("btcusd_perp", ((event) -> {
             System.out.println(event);
             client.closeAllConnections();
         }));

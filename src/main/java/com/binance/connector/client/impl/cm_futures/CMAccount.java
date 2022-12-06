@@ -3,7 +3,7 @@ package com.binance.connector.client.impl.cm_futures;
 import com.binance.connector.client.enums.HttpMethod;
 import com.binance.connector.client.utils.ParameterChecker;
 import java.util.LinkedHashMap;
-import com.binance.connector.client.impl.futures.Account; 
+import com.binance.connector.client.impl.futures.Account;
 
 /**
  * <h2>Coin-Margined Trade Endpoints</h2>
@@ -71,7 +71,7 @@ public class CMAccount extends Account {
         return getRequestHandler().sendSignedRequest(getProductUrl(), ORDER_AMENDMENT, parameters, HttpMethod.GET, getShowLimitUsage());
     }
 
-    
+
     /**
      * Get all open orders on a symbol. Careful when accessing this with no symbol.
      * <br><br>
@@ -150,7 +150,7 @@ public class CMAccount extends Account {
      * recvWindow -- optional/long <br>
      * @return String
      * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#account-information-user_data">
-     *    https://binance-docs.github.io/apidocs/delivery/en/#account-information-user_data/a>
+     *    https://binance-docs.github.io/apidocs/delivery/en/#account-information-user_data</a>
      */
     public String accountInformation(LinkedHashMap<String, Object> parameters) {
         return getRequestHandler().sendSignedRequest(getProductUrl(), ACCOUNT_INFORMATION, parameters, HttpMethod.GET, getShowLimitUsage());

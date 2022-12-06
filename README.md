@@ -8,8 +8,10 @@ This is a lightweight library that works as a connector to the [Binance Futures 
   - `/fapi/*`
   - `/dapi/*`
   - `/futures/*`
-  - Futures Websocket Market Stream
-  - Futures User Data Stream
+  - USD-M Futures Websocket Market Stream
+  - COIN-M Futures Websocket Market Stream
+  - USD-M Futures User Data Stream
+  - COIN-M Futures User Data Stream
 - Test cases and examples
 
 ## Installation
@@ -151,7 +153,7 @@ try {
 ### Websocket
 
 ```java
-WebsocketClientImpl client = new WebsocketClientImpl(); // defaults to production environment unless stated
+UMWebsocketClientImpl client = new UMWebsocketClientImpl(); // defaults to production websocket URL unless stated
 int streamID1 = client.aggTradeStream("btcusdt",((event) -> {
     System.out.println(event);
 }));

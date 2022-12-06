@@ -8,10 +8,10 @@ public final class MarkKlineCandlestick {
 
     public static void main(String[] args) {
         CMWebsocketClientImpl client = new CMWebsocketClientImpl();
-        int streamId1 = client.markKlineCandlestick("btcusdt", "1m", ((event) -> {
+        int streamId1 = client.markKlineCandlestick("btcusd_perp", "1m", ((event) -> {
             System.out.println(event);
         }));
-        int streamId2 = client.markKlineCandlestick("ethusdt", "1m", ((event) -> {
+        int streamId2 = client.markKlineCandlestick("ethusd_perp", "3m", ((event) -> {
             System.out.println(event);
         }));
         client.closeConnection(streamId1);

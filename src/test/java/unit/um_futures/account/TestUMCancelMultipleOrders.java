@@ -16,7 +16,7 @@ import static org.junit.Assert.assertThrows;
 public class TestUMCancelMultipleOrders {
     private MockWebServer mockWebServer;
     private String baseUrl;
-    
+
     //private final String orderIdList = "[1234567,2345678]";
 
     @Before
@@ -50,20 +50,4 @@ public class TestUMCancelMultipleOrders {
         UMFuturesClientImpl client = new UMFuturesClientImpl(MockData.API_KEY, MockData.SECRET_KEY, baseUrl);
         assertThrows(BinanceClientException.class, () -> client.account().cancelMultipleOrders(parameters));
     }
-/* To fix, something to do with list
-    @Test
-    public void testCancelMultipleOrders() {
-        String path = "fapi/v1/batchOrders?orderIdList=[1234567,2345678]";
-        LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
-        parameters.put("symbol", "BNBUSDT");
-        parameters.put("orderIdList", orderIdList);
-
-        Dispatcher dispatcher = MockWebServerDispatcher.getDispatcher(MockData.PREFIX, path, MockData.MOCK_RESPONSE, HttpMethod.DELETE, MockData.HTTP_STATUS_OK);
-        mockWebServer.setDispatcher(dispatcher);
-
-        UMFuturesClientImpl client = new UMFuturesClientImpl(MockData.API_KEY, MockData.SECRET_KEY, baseUrl);
-        String result = client.account().cancelMultipleOrders(parameters);
-        assertEquals(MockData.MOCK_RESPONSE, result);
-    }
- */
 }

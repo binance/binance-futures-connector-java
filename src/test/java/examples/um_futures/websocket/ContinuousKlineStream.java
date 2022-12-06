@@ -1,16 +1,18 @@
-package examples.cm_futures.websocket;
+package examples.um_futures.websocket;
 
 import com.binance.connector.client.impl.UMWebsocketClientImpl;
 
-public final class ForceOrderStream {
-    private ForceOrderStream() {
+public final class ContinuousKlineStream {
+    private ContinuousKlineStream() {
     }
 
     public static void main(String[] args) {
         UMWebsocketClientImpl client = new UMWebsocketClientImpl();
-        client.forceOrderStream("btcusd_perp", ((event) -> {
+
+        client.continuousKlineStream("btcusdt", "perpetual", "1m", ((event) -> {
             System.out.println(event);
-            client.closeAllConnections();
         }));
+
+        client.closeAllConnections();
     }
 }

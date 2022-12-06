@@ -2,13 +2,13 @@ package examples.cm_futures.websocket;
 
 import com.binance.connector.client.impl.CMWebsocketClientImpl;
 
-public final class MiniTickerStream {
-    private MiniTickerStream() {
+public final class ListenUserStream {
+    private ListenUserStream() {
     }
 
     public static void main(String[] args) {
         CMWebsocketClientImpl client = new CMWebsocketClientImpl();
-        client.miniTickerStream("btcusd_perp", ((event) -> {
+        client.listenUserStream("abc123", ((event) -> {
             System.out.println(event);
             client.closeAllConnections();
         }));

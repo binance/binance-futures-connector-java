@@ -8,10 +8,10 @@ public final class AggTradeStream {
 
     public static void main(String[] args) {
         CMWebsocketClientImpl client = new CMWebsocketClientImpl();
-        int streamId1 = client.aggTradeStream("btcusdt", ((event) -> {
+        int streamId1 = client.aggTradeStream("btcusd_perp", ((event) -> {
             System.out.println(event);
         }));
-        int streamId2 = client.aggTradeStream("ethusdt", ((event) -> {
+        int streamId2 = client.aggTradeStream("ethusd_perp", ((event) -> {
             System.out.println(event);
         }));
         client.closeConnection(streamId1);

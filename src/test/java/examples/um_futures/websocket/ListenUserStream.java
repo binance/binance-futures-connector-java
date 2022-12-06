@@ -1,14 +1,14 @@
-package examples.cm_futures.websocket;
+package examples.um_futures.websocket;
 
 import com.binance.connector.client.impl.UMWebsocketClientImpl;
 
-public final class ForceOrderStream {
-    private ForceOrderStream() {
+public final class ListenUserStream {
+    private ListenUserStream() {
     }
 
     public static void main(String[] args) {
         UMWebsocketClientImpl client = new UMWebsocketClientImpl();
-        client.forceOrderStream("btcusd_perp", ((event) -> {
+        client.listenUserStream("abc123", ((event) -> {
             System.out.println(event);
             client.closeAllConnections();
         }));

@@ -10,8 +10,8 @@ public final class CombineStreams {
     public static void main(String[] args) {
         CMWebsocketClientImpl client = new CMWebsocketClientImpl();
         ArrayList<String> streams = new ArrayList<>();
-        streams.add("btcusdt@trade");
-        streams.add("bnbusdt@trade");
+        streams.add("btcusd_perp@aggTrade");
+        streams.add("ethusd_perp@aggTrade");
 
         client.combineStreams(streams, ((event) -> {
             System.out.println(event);

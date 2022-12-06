@@ -25,12 +25,12 @@ public class RequestHandler {
 
     /**
      * Build request based on request type and send the requests to server.
-     * @param baseUrl
-     * @param urlPath
-     * @param signature
-     * @param parameters
-     * @param httpMethod
-     * @param requestType
+     * @param baseUrl base url
+     * @param urlPath url path
+     * @param signature the signature
+     * @param parameters parameters
+     * @param httpMethod https method
+     * @param requestType request type
      * @return String - response from server
      */
 

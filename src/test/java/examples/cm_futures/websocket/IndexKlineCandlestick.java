@@ -8,10 +8,10 @@ public final class IndexKlineCandlestick {
 
     public static void main(String[] args) {
         CMWebsocketClientImpl client = new CMWebsocketClientImpl();
-        int streamId1 = client.indexKlineCandlestick("btcusdt", "1m", ((event) -> {
+        int streamId1 = client.indexKlineCandlestick("btcusd", "1m", ((event) -> {
             System.out.println(event);
         }));
-        int streamId2 = client.indexKlineCandlestick("ethusdt", "1m", ((event) -> {
+        int streamId2 = client.indexKlineCandlestick("ethusd", "1m", ((event) -> {
             System.out.println(event);
         }));
         client.closeConnection(streamId1);

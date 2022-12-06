@@ -8,7 +8,7 @@ public final class SymbolTicker {
 
     public static void main(String[] args) {
         CMWebsocketClientImpl client = new CMWebsocketClientImpl();
-        client.symbolTicker("btcusdt", ((event) -> {
+        client.symbolTicker("btcusd_perp", ((event) -> {
             System.out.println(event);
             client.closeAllConnections();
         }));

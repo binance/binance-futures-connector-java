@@ -18,6 +18,10 @@ public class UMFuturesClientImpl extends FuturesClientImpl {
         super(baseUrl, umProduct);
     }
 
+    public UMFuturesClientImpl(String apiKey, String secretKey) {
+        super(apiKey, secretKey, defaultBaseUrl, umProduct);
+    }
+
     public UMFuturesClientImpl(String baseUrl, boolean showLimitUsage) {
         super(baseUrl, umProduct, showLimitUsage);
     }

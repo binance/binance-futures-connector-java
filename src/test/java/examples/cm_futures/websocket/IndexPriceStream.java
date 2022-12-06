@@ -10,10 +10,10 @@ public final class IndexPriceStream {
 
     public static void main(String[] args) {
         CMWebsocketClientImpl client = new CMWebsocketClientImpl();
-        int streamId1 = client.indexPriceStream("btcusdt", speed, ((event) -> {
+        int streamId1 = client.indexPriceStream("btcusd", speed, ((event) -> {
             System.out.println(event);
         }));
-        int streamId2 = client.indexPriceStream("btcusdt", speed, ((event) -> {
+        int streamId2 = client.indexPriceStream("ethusd", speed, ((event) -> {
             System.out.println(event);
         }));
         client.closeConnection(streamId1);
