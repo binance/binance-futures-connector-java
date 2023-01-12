@@ -1,7 +1,7 @@
 package unit.cm_futures.market;
 
-import com.binance.connector.client.enums.HttpMethod;
-import com.binance.connector.client.impl.CMFuturesClientImpl;
+import com.binance.connector.futures.client.enums.HttpMethod;
+import com.binance.connector.futures.client.impl.CMFuturesClientImpl;
 import okhttp3.mockwebserver.Dispatcher;
 import okhttp3.mockwebserver.MockWebServer;
 import org.junit.Before;
@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 public class TestCMMarkPrice {
     private MockWebServer mockWebServer;
     private String baseUrl;
-    
+
 
     @Before
     public void init() {

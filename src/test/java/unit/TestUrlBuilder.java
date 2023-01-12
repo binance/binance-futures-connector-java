@@ -1,6 +1,6 @@
 package unit;
 
-import com.binance.connector.client.utils.UrlBuilder;
+import com.binance.connector.futures.client.utils.UrlBuilder;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import static org.junit.Assert.assertEquals;

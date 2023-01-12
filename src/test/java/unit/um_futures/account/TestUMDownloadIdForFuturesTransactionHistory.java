@@ -1,7 +1,7 @@
 package unit.um_futures.account;
 
-import com.binance.connector.client.enums.HttpMethod;
-import com.binance.connector.client.impl.UMFuturesClientImpl;
+import com.binance.connector.futures.client.enums.HttpMethod;
+import com.binance.connector.futures.client.impl.UMFuturesClientImpl;
 import okhttp3.mockwebserver.Dispatcher;
 import okhttp3.mockwebserver.MockWebServer;
 import org.junit.Before;
@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 public class TestUMDownloadIdForFuturesTransactionHistory {
     private MockWebServer mockWebServer;
     private String baseUrl;
-    
+
     private final long startTime = System.currentTimeMillis();
     private final long endTime = startTime + 1000;
 

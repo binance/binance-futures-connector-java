@@ -1,7 +1,7 @@
 package unit;
 
-import com.binance.connector.client.exceptions.BinanceConnectorException;
-import com.binance.connector.client.utils.ParameterChecker;
+import com.binance.connector.futures.client.exceptions.BinanceConnectorException;
+import com.binance.connector.futures.client.utils.ParameterChecker;
 import org.junit.Test;
 import static org.junit.Assert.assertThrows;
 

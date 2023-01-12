@@ -1,6 +1,6 @@
 package examples.um_futures.websocket;
 
-import com.binance.connector.client.impl.UMWebsocketClientImpl;
+import com.binance.connector.futures.client.impl.UMWebsocketClientImpl;
 import java.util.ArrayList;
 
 public final class CombineStreams {

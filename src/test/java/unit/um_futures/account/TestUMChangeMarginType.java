@@ -1,8 +1,8 @@
 package unit.um_futures.account;
 
-import com.binance.connector.client.enums.HttpMethod;
-import com.binance.connector.client.exceptions.BinanceConnectorException;
-import com.binance.connector.client.impl.UMFuturesClientImpl;
+import com.binance.connector.futures.client.enums.HttpMethod;
+import com.binance.connector.futures.client.exceptions.BinanceConnectorException;
+import com.binance.connector.futures.client.impl.UMFuturesClientImpl;
 import okhttp3.mockwebserver.Dispatcher;
 import okhttp3.mockwebserver.MockWebServer;
 import org.junit.Before;
@@ -16,8 +16,6 @@ import static org.junit.Assert.assertThrows;
 public class TestUMChangeMarginType {
     private MockWebServer mockWebServer;
     private String baseUrl;
-    
-    private final int marginType = 1;
 
     @Before
     public void init() {
@@ -39,10 +37,10 @@ public class TestUMChangeMarginType {
 
     @Test
     public void testChangeMarginType() {
-        String path = "fapi/v1/marginType?symbol=BNBUSDT&marginType=1";
+        String path = "fapi/v1/marginType?symbol=BNBUSDT&marginType=CROSSED";
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
         parameters.put("symbol", "BNBUSDT");
-        parameters.put("marginType", marginType);
+        parameters.put("marginType", "CROSSED");
 
         Dispatcher dispatcher = MockWebServerDispatcher.getDispatcher(MockData.PREFIX, path, MockData.MOCK_RESPONSE, HttpMethod.POST, MockData.HTTP_STATUS_OK);
         mockWebServer.setDispatcher(dispatcher);

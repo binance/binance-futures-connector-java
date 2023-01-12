@@ -1,8 +1,8 @@
 package examples.um_futures.account;
 
-import com.binance.connector.client.exceptions.BinanceClientException;
-import com.binance.connector.client.exceptions.BinanceConnectorException;
-import com.binance.connector.client.impl.UMFuturesClientImpl;
+import com.binance.connector.futures.client.exceptions.BinanceClientException;
+import com.binance.connector.futures.client.exceptions.BinanceConnectorException;
+import com.binance.connector.futures.client.impl.UMFuturesClientImpl;
 import examples.PrivateConfig;
 import java.util.LinkedHashMap;
 import org.slf4j.Logger;

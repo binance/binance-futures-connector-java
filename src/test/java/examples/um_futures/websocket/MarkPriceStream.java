@@ -1,6 +1,6 @@
 package examples.um_futures.websocket;
 
-import com.binance.connector.client.impl.UMWebsocketClientImpl;
+import com.binance.connector.futures.client.impl.UMWebsocketClientImpl;
 
 public final class MarkPriceStream {
     private MarkPriceStream() {
@@ -13,7 +13,7 @@ public final class MarkPriceStream {
             System.out.println(event);
         }));
         client.closeConnection(streamId1);
-        
+
         final int acceptedSpeed = 1;
         int streamId2 = client.markPriceStream("BTCUSDT", acceptedSpeed, ((event) -> {
             System.out.println(event);

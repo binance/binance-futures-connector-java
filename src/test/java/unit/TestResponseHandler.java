@@ -1,8 +1,8 @@
 package unit;
 
-import com.binance.connector.client.exceptions.BinanceClientException;
-import com.binance.connector.client.exceptions.BinanceServerException;
-import com.binance.connector.client.utils.ResponseHandler;
+import com.binance.connector.futures.client.exceptions.BinanceClientException;
+import com.binance.connector.futures.client.exceptions.BinanceServerException;
+import com.binance.connector.futures.client.utils.ResponseHandler;
 import okhttp3.Request;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;

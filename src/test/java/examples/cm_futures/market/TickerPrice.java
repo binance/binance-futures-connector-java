@@ -1,8 +1,8 @@
 package examples.cm_futures.market;
 
-import com.binance.connector.client.exceptions.BinanceClientException;
-import com.binance.connector.client.exceptions.BinanceConnectorException;
-import com.binance.connector.client.impl.CMFuturesClientImpl;
+import com.binance.connector.futures.client.exceptions.BinanceClientException;
+import com.binance.connector.futures.client.exceptions.BinanceConnectorException;
+import com.binance.connector.futures.client.impl.CMFuturesClientImpl;
 import java.util.LinkedHashMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
