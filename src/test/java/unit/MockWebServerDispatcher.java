@@ -1,6 +1,6 @@
 package unit;
 
-import com.binance.connector.client.enums.HttpMethod;
+import com.binance.connector.futures.client.enums.HttpMethod;
 import okhttp3.mockwebserver.Dispatcher;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.RecordedRequest;

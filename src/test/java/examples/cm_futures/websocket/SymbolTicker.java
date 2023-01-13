@@ -1,6 +1,6 @@
 package examples.cm_futures.websocket;
 
-import com.binance.connector.client.impl.CMWebsocketClientImpl;
+import com.binance.connector.futures.client.impl.CMWebsocketClientImpl;
 
 public final class SymbolTicker {
     private SymbolTicker() {

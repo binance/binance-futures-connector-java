@@ -1,6 +1,6 @@
 package unit;
 
-import com.binance.connector.client.utils.JSONParser;
+import com.binance.connector.futures.client.utils.JSONParser;
 import org.json.JSONException;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;

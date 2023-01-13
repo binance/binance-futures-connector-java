@@ -1,8 +1,8 @@
 package unit.cm_futures.portfoliomargin;
 
-import com.binance.connector.client.enums.HttpMethod;
-import com.binance.connector.client.exceptions.BinanceConnectorException;
-import com.binance.connector.client.impl.CMFuturesClientImpl;
+import com.binance.connector.futures.client.enums.HttpMethod;
+import com.binance.connector.futures.client.exceptions.BinanceConnectorException;
+import com.binance.connector.futures.client.impl.CMFuturesClientImpl;
 import okhttp3.mockwebserver.Dispatcher;
 import okhttp3.mockwebserver.MockWebServer;
 import org.junit.Before;
@@ -16,7 +16,7 @@ import static org.junit.Assert.assertThrows;
 public class TestCMPortfolioMarginAccountInfo {
     private MockWebServer mockWebServer;
     private String baseUrl;
-    
+
 
     @Before
     public void init() {

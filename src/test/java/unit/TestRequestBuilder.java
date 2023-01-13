@@ -1,8 +1,8 @@
 package unit;
 
-import com.binance.connector.client.enums.HttpMethod;
-import com.binance.connector.client.exceptions.BinanceConnectorException;
-import com.binance.connector.client.utils.RequestBuilder;
+import com.binance.connector.futures.client.enums.HttpMethod;
+import com.binance.connector.futures.client.exceptions.BinanceConnectorException;
+import com.binance.connector.futures.client.utils.RequestBuilder;
 import okhttp3.Request;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;

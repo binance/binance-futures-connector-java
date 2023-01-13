@@ -1,7 +1,7 @@
 package unit.um_futures.market;
 
-import com.binance.connector.client.enums.HttpMethod;
-import com.binance.connector.client.impl.UMFuturesClientImpl;
+import com.binance.connector.futures.client.enums.HttpMethod;
+import com.binance.connector.futures.client.impl.UMFuturesClientImpl;
 import java.util.LinkedHashMap;
 import okhttp3.mockwebserver.Dispatcher;
 import okhttp3.mockwebserver.MockWebServer;
@@ -14,7 +14,7 @@ import unit.MockWebServerDispatcher;
 public class TestUMMultiAssetsModeIndex {
     private MockWebServer mockWebServer;
     private String baseUrl;
-    
+
 
     @Before
     public void init() {

@@ -1,8 +1,8 @@
 package examples.um_futures.market;
 
-import com.binance.connector.client.exceptions.BinanceClientException;
-import com.binance.connector.client.exceptions.BinanceConnectorException;
-import com.binance.connector.client.impl.UMFuturesClientImpl;
+import com.binance.connector.futures.client.exceptions.BinanceClientException;
+import com.binance.connector.futures.client.exceptions.BinanceConnectorException;
+import com.binance.connector.futures.client.impl.UMFuturesClientImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
