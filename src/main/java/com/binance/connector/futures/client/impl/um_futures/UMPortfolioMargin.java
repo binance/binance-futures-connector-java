@@ -2,6 +2,7 @@ package com.binance.connector.futures.client.impl.um_futures;
 
 import java.util.LinkedHashMap;
 import com.binance.connector.futures.client.impl.futures.PortfolioMargin;
+import com.binance.connector.futures.client.utils.ProxyAuth;
 
 /**
  * <h2>USDⓈ-Margined Portfolio Margin Endpoints</h2>
@@ -12,8 +13,8 @@ import com.binance.connector.futures.client.impl.futures.PortfolioMargin;
  * Response will be returned in <i>String format</i>.
  */
 public class UMPortfolioMargin extends PortfolioMargin {
-    public UMPortfolioMargin(String productUrl, String apiKey, String secretKey, boolean showLimitUsage) {
-        super(productUrl, apiKey, secretKey, showLimitUsage);
+    public UMPortfolioMargin(String productUrl, String apiKey, String secretKey, boolean showLimitUsage, ProxyAuth proxy) {
+        super(productUrl, apiKey, secretKey, showLimitUsage, proxy);
     }
 
     /**

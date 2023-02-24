@@ -4,6 +4,7 @@ import com.binance.connector.futures.client.enums.HttpMethod;
 import com.binance.connector.futures.client.utils.ParameterChecker;
 import java.util.LinkedHashMap;
 import com.binance.connector.futures.client.impl.futures.Market;
+import com.binance.connector.futures.client.utils.ProxyAuth;
 
 /**
  * <h2>USDⓈ-Margined Market Endpoints</h2>
@@ -14,8 +15,8 @@ import com.binance.connector.futures.client.impl.futures.Market;
  * Response will be returned in <i>String format</i>.
  */
 public class UMMarket extends Market {
-    public UMMarket(String productUrl, String baseUrl, String apiKey, boolean showLimitUsage) {
-        super(productUrl, baseUrl, apiKey, showLimitUsage);
+    public UMMarket(String productUrl, String baseUrl, String apiKey, boolean showLimitUsage, ProxyAuth proxy) {
+        super(productUrl, baseUrl, apiKey, showLimitUsage, proxy);
     }
 
     /**
