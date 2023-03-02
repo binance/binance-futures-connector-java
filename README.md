@@ -163,7 +163,9 @@ client.unsetProxy();
 logger.info(client.market().time());
 ```
 
-Complete examples are available at `test/examples/proxy` folder.
+Complete examples are available to the following folders:
+- `test/java/examples/cm_futures/proxy`
+- `test/java/examples/um_futures/proxy`
 
 ### Logging
 
