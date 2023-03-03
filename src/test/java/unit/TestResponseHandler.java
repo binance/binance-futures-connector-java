@@ -33,7 +33,7 @@ public class TestResponseHandler {
                 .setResponseCode(MockData.HTTP_STATUS_OK)
                 .setBody(VALID_RESPONSE));
 
-        String result = ResponseHandler.handleResponse(request, false);
+        String result = ResponseHandler.handleResponse(request, false, null);
         assertEquals(VALID_RESPONSE, result);
     }
 
@@ -45,7 +45,7 @@ public class TestResponseHandler {
                 .setResponseCode(MockData.HTTP_STATUS_CLIENT_ERROR)
                 .setBody(mockErrorMsg));
 
-        BinanceClientException thrown = assertThrows(BinanceClientException.class, () -> ResponseHandler.handleResponse(request, false));
+        BinanceClientException thrown = assertThrows(BinanceClientException.class, () -> ResponseHandler.handleResponse(request, false, null));
         assertTrue(thrown.getMessage().contains(mockErrorMsg));
     }
 
@@ -57,7 +57,7 @@ public class TestResponseHandler {
                 .setResponseCode(MockData.HTTP_STATUS_CLIENT_ERROR)
                 .setBody(mockErrorMsg));
 
-        BinanceClientException thrown = assertThrows(BinanceClientException.class, () -> ResponseHandler.handleResponse(request, false));
+        BinanceClientException thrown = assertThrows(BinanceClientException.class, () -> ResponseHandler.handleResponse(request, false, null));
         assertTrue(thrown.getMessage().contains(mockErrorMsg));
     }
 
@@ -69,7 +69,7 @@ public class TestResponseHandler {
                 .setResponseCode(MockData.HTTP_STATUS_SERVER_ERROR)
                 .setBody(mockErrorMsg));
 
-        BinanceServerException thrown = assertThrows(BinanceServerException.class, () -> ResponseHandler.handleResponse(request, false));
+        BinanceServerException thrown = assertThrows(BinanceServerException.class, () -> ResponseHandler.handleResponse(request, false, null));
         assertTrue(thrown.getMessage().contains(mockErrorMsg));
     }
 }

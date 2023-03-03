@@ -2,6 +2,7 @@ package com.binance.connector.futures.client.impl.futures;
 
 import com.binance.connector.futures.client.enums.HttpMethod;
 import com.binance.connector.futures.client.utils.ParameterChecker;
+import com.binance.connector.futures.client.utils.ProxyAuth;
 import com.binance.connector.futures.client.utils.RequestHandler;
 import java.util.LinkedHashMap;
 
@@ -15,10 +16,10 @@ public abstract class Market {
     private RequestHandler requestHandler;
     private boolean showLimitUsage;
 
-    public Market(String productUrl, String baseUrl, String apiKey, boolean showLimitUsage) {
+    public Market(String productUrl, String baseUrl, String apiKey, boolean showLimitUsage, ProxyAuth proxy) {
         this.baseUrl = baseUrl;
         this.productUrl = productUrl;
-        this.requestHandler = new RequestHandler(apiKey);
+        this.requestHandler = new RequestHandler(apiKey, proxy);
         this.showLimitUsage = showLimitUsage;
     }
 
@@ -46,8 +47,8 @@ public abstract class Market {
         this.productUrl = productUrl;
     }
 
-    public void setRequestHandler(String apiKey, String secretKey) {
-        new RequestHandler(apiKey, secretKey);
+    public void setRequestHandler(String apiKey, String secretKey, ProxyAuth proxy) {
+        new RequestHandler(apiKey, secretKey, proxy);
     }
 
     public void setShowLimitUsage(boolean showLimitUsage) {

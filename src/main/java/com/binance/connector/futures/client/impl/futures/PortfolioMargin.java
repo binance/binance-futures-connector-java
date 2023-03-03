@@ -1,6 +1,7 @@
 package com.binance.connector.futures.client.impl.futures;
 
 import com.binance.connector.futures.client.enums.HttpMethod;
+import com.binance.connector.futures.client.utils.ProxyAuth;
 import com.binance.connector.futures.client.utils.RequestHandler;
 import com.binance.connector.futures.client.utils.ParameterChecker;
 import java.util.LinkedHashMap;
@@ -14,9 +15,9 @@ public abstract class PortfolioMargin {
     private RequestHandler requestHandler;
     private boolean showLimitUsage;
 
-    public PortfolioMargin(String productUrl, String apiKey, String secretKey, boolean showLimitUsage) {
+    public PortfolioMargin(String productUrl, String apiKey, String secretKey, boolean showLimitUsage, ProxyAuth proxy) {
         this.productUrl = productUrl;
-        this.requestHandler = new RequestHandler(apiKey, secretKey);
+        this.requestHandler = new RequestHandler(apiKey, secretKey, proxy);
         this.showLimitUsage = showLimitUsage;
     }
 
@@ -36,8 +37,8 @@ public abstract class PortfolioMargin {
         this.productUrl = productUrl;
     }
 
-    public void setRequestHandler(String apiKey, String secretKey) {
-        this.requestHandler = new RequestHandler(apiKey, secretKey);
+    public void setRequestHandler(String apiKey, String secretKey, ProxyAuth proxy) {
+        this.requestHandler = new RequestHandler(apiKey, secretKey, proxy);
     }
 
     public void setShowLimitUsage(boolean showLimitUsage) {
