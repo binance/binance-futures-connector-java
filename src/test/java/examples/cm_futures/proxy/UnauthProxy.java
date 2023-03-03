@@ -2,7 +2,6 @@ package examples.cm_futures.proxy;
 
 import com.binance.connector.futures.client.impl.CMFuturesClientImpl;
 import com.binance.connector.futures.client.utils.ProxyAuth;
-
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 
