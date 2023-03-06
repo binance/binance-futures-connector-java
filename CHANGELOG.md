@@ -1,3 +1,11 @@
+## 3.0.0 - 2023-03-06
+
+### Added
+- HTTP Proxy Support
+
+### Updated
+- Removed unnecessary `secretKey` parameter from `UserData` classes
+
 ## 2.0.0 - 2023-01-12
 
 ### Fixed

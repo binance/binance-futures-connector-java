@@ -13,7 +13,7 @@ public abstract class UserData {
     private RequestHandler requestHandler;
     private boolean showLimitUsage;
 
-    public UserData(String productUrl, String apiKey, String secretKey, boolean showLimitUsage, ProxyAuth proxy) {
+    public UserData(String productUrl, String apiKey, boolean showLimitUsage, ProxyAuth proxy) {
         this.productUrl = productUrl;
         this.requestHandler = new RequestHandler(apiKey, proxy);
         this.showLimitUsage = showLimitUsage;

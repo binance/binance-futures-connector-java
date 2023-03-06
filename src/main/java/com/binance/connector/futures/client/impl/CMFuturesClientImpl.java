@@ -46,7 +46,7 @@ public class CMFuturesClientImpl extends FuturesClientImpl {
 
     @Override
     public CMUserData userData() {
-        return new CMUserData(getProductUrl(), getApiKey(), getSecretKey(), getShowLimitUsage(), getProxy());
+        return new CMUserData(getProductUrl(), getApiKey(), getShowLimitUsage(), getProxy());
     }
 
     @Override

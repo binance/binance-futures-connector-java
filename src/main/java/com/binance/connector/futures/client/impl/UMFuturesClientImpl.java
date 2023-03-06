@@ -46,7 +46,7 @@ public class UMFuturesClientImpl extends FuturesClientImpl {
 
     @Override
     public UMUserData userData() {
-        return new UMUserData(getProductUrl(), getApiKey(), getSecretKey(), getShowLimitUsage(), getProxy());
+        return new UMUserData(getProductUrl(), getApiKey(), getShowLimitUsage(), getProxy());
     }
 
     @Override

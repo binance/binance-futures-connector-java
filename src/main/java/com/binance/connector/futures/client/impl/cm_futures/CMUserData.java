@@ -12,7 +12,7 @@ import com.binance.connector.futures.client.utils.ProxyAuth;
  * Response will be returned in <i>String format</i>.
  */
 public class CMUserData extends UserData {
-    public CMUserData(String productUrl, String apiKey, String secretKey, boolean showLimitUsage, ProxyAuth proxy) {
-        super(productUrl, apiKey, secretKey, showLimitUsage, proxy);
+    public CMUserData(String productUrl, String apiKey, boolean showLimitUsage, ProxyAuth proxy) {
+        super(productUrl, apiKey, showLimitUsage, proxy);
     }
 }
