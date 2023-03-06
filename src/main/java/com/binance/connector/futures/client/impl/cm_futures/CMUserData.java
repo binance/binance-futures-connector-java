@@ -1,6 +1,7 @@
 package com.binance.connector.futures.client.impl.cm_futures;
 
 import com.binance.connector.futures.client.impl.futures.UserData;
+import com.binance.connector.futures.client.utils.ProxyAuth;
 
 /**
  * <h2>Coin-Margined User Data Streams Endpoints</h2>
@@ -11,7 +12,7 @@ import com.binance.connector.futures.client.impl.futures.UserData;
  * Response will be returned in <i>String format</i>.
  */
 public class CMUserData extends UserData {
-    public CMUserData(String productUrl, String apiKey, String secretKey, boolean showLimitUsage) {
-        super(productUrl, apiKey, secretKey, showLimitUsage);
+    public CMUserData(String productUrl, String apiKey, boolean showLimitUsage, ProxyAuth proxy) {
+        super(productUrl, apiKey, showLimitUsage, proxy);
     }
 }

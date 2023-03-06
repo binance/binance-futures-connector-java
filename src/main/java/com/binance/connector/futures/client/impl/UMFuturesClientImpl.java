@@ -1,10 +1,10 @@
 package com.binance.connector.futures.client.impl;
 
 import com.binance.connector.futures.client.enums.DefaultUrls;
-import com.binance.connector.futures.client.impl.um_futures.UMMarket;
 import com.binance.connector.futures.client.impl.um_futures.UMAccount;
-import com.binance.connector.futures.client.impl.um_futures.UMUserData;
+import com.binance.connector.futures.client.impl.um_futures.UMMarket;
 import com.binance.connector.futures.client.impl.um_futures.UMPortfolioMargin;
+import com.binance.connector.futures.client.impl.um_futures.UMUserData;
 
 public class UMFuturesClientImpl extends FuturesClientImpl {
     private static String defaultBaseUrl = DefaultUrls.USDM_PROD_URL;
@@ -36,21 +36,21 @@ public class UMFuturesClientImpl extends FuturesClientImpl {
 
     @Override
     public UMMarket market() {
-        return new UMMarket(getProductUrl(), getBaseUrl(), getApiKey(), getShowLimitUsage());
+        return new UMMarket(getProductUrl(), getBaseUrl(), getApiKey(), getShowLimitUsage(), getProxy());
     }
 
     @Override
     public UMAccount account() {
-        return new UMAccount(getProductUrl(), getApiKey(), getSecretKey(), getShowLimitUsage());
+        return new UMAccount(getProductUrl(), getApiKey(), getSecretKey(), getShowLimitUsage(), getProxy());
     }
 
     @Override
     public UMUserData userData() {
-        return new UMUserData(getProductUrl(), getApiKey(), getSecretKey(), getShowLimitUsage());
+        return new UMUserData(getProductUrl(), getApiKey(), getShowLimitUsage(), getProxy());
     }
 
     @Override
     public UMPortfolioMargin portfolioMargin() {
-        return new UMPortfolioMargin(getProductUrl(), getApiKey(), getSecretKey(), getShowLimitUsage());
+        return new UMPortfolioMargin(getProductUrl(), getApiKey(), getSecretKey(), getShowLimitUsage(), getProxy());
     }
 }

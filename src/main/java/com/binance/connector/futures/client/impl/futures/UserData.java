@@ -1,6 +1,7 @@
 package com.binance.connector.futures.client.impl.futures;
 
 import com.binance.connector.futures.client.enums.HttpMethod;
+import com.binance.connector.futures.client.utils.ProxyAuth;
 import com.binance.connector.futures.client.utils.RequestHandler;
 
 /**
@@ -12,9 +13,9 @@ public abstract class UserData {
     private RequestHandler requestHandler;
     private boolean showLimitUsage;
 
-    public UserData(String productUrl, String apiKey, String secretKey, boolean showLimitUsage) {
+    public UserData(String productUrl, String apiKey, boolean showLimitUsage, ProxyAuth proxy) {
         this.productUrl = productUrl;
-        this.requestHandler = new RequestHandler(apiKey);
+        this.requestHandler = new RequestHandler(apiKey, proxy);
         this.showLimitUsage = showLimitUsage;
     }
 
@@ -34,8 +35,8 @@ public abstract class UserData {
         this.productUrl = productUrl;
     }
 
-    public void setRequestHandler(String apiKey) {
-        this.requestHandler = new RequestHandler(apiKey);
+    public void setRequestHandler(String apiKey, ProxyAuth proxy) {
+        this.requestHandler = new RequestHandler(apiKey, proxy);
     }
 
     public void setShowLimitUsage(boolean showLimitUsage) {

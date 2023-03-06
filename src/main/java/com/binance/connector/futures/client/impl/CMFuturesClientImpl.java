@@ -36,21 +36,21 @@ public class CMFuturesClientImpl extends FuturesClientImpl {
 
     @Override
     public CMMarket market() {
-        return new CMMarket(getProductUrl(), getBaseUrl(), getApiKey(), getShowLimitUsage());
+        return new CMMarket(getProductUrl(), getBaseUrl(), getApiKey(), getShowLimitUsage(), getProxy());
     }
 
     @Override
     public CMAccount account() {
-        return new CMAccount(getProductUrl(), getApiKey(), getSecretKey(), getShowLimitUsage());
+        return new CMAccount(getProductUrl(), getApiKey(), getSecretKey(), getShowLimitUsage(), getProxy());
     }
 
     @Override
     public CMUserData userData() {
-        return new CMUserData(getProductUrl(), getApiKey(), getSecretKey(), getShowLimitUsage());
+        return new CMUserData(getProductUrl(), getApiKey(), getShowLimitUsage(), getProxy());
     }
 
     @Override
     public CMPortfolioMargin portfolioMargin() {
-        return new CMPortfolioMargin(getProductUrl(), getApiKey(), getSecretKey(), getShowLimitUsage());
+        return new CMPortfolioMargin(getProductUrl(), getApiKey(), getSecretKey(), getShowLimitUsage(), getProxy());
     }
 }

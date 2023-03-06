@@ -4,6 +4,7 @@ import com.binance.connector.futures.client.enums.HttpMethod;
 import com.binance.connector.futures.client.utils.ParameterChecker;
 import java.util.LinkedHashMap;
 import com.binance.connector.futures.client.impl.futures.Account;
+import com.binance.connector.futures.client.utils.ProxyAuth;
 
 /**
  * <h2>Coin-Margined Trade Endpoints</h2>
@@ -14,8 +15,8 @@ import com.binance.connector.futures.client.impl.futures.Account;
  * Response will be returned in <i>String format</i>.
  */
 public class CMAccount extends Account {
-    public CMAccount(String productUrl, String apiKey, String secretKey, boolean showLimitUsage) {
-        super(productUrl, apiKey, secretKey, showLimitUsage);
+    public CMAccount(String productUrl, String apiKey, String secretKey, boolean showLimitUsage, ProxyAuth proxy) {
+        super(productUrl, apiKey, secretKey, showLimitUsage, proxy);
     }
 
     private final String ORDER = "/v1/order";

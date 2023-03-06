@@ -1,6 +1,7 @@
 package com.binance.connector.futures.client.impl.um_futures;
 
 import com.binance.connector.futures.client.impl.futures.UserData;
+import com.binance.connector.futures.client.utils.ProxyAuth;
 
 /**
  * <h2>USDⓈ-Margined User Data Streams Endpoints</h2>
@@ -11,7 +12,7 @@ import com.binance.connector.futures.client.impl.futures.UserData;
  * Response will be returned in <i>String format</i>.
  */
 public class UMUserData extends UserData {
-    public UMUserData(String productUrl, String apiKey, String secretKey, boolean showLimitUsage) {
-        super(productUrl, apiKey, secretKey, showLimitUsage);
+    public UMUserData(String productUrl, String apiKey, boolean showLimitUsage, ProxyAuth proxy) {
+        super(productUrl, apiKey, showLimitUsage, proxy);
     }
 }
