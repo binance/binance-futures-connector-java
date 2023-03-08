@@ -1,7 +1,6 @@
 package unit.um_futures.account;
 
 import com.binance.connector.futures.client.enums.HttpMethod;
-import com.binance.connector.futures.client.exceptions.BinanceConnectorException;
 import com.binance.connector.futures.client.impl.UMFuturesClientImpl;
 import okhttp3.mockwebserver.Dispatcher;
 import okhttp3.mockwebserver.MockWebServer;
@@ -11,7 +10,6 @@ import unit.MockData;
 import unit.MockWebServerDispatcher;
 import java.util.LinkedHashMap;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
 
 public class TestUMCurrentAllOpenOrders {
     private MockWebServer mockWebServer;
@@ -33,7 +31,8 @@ public class TestUMCurrentAllOpenOrders {
         mockWebServer.setDispatcher(dispatcher);
 
         UMFuturesClientImpl client = new UMFuturesClientImpl(MockData.API_KEY, MockData.SECRET_KEY, baseUrl);
-        assertThrows(BinanceConnectorException.class, () -> client.account().currentAllOpenOrders(parameters));
+        String result = client.account().currentAllOpenOrders(parameters);
+        assertEquals(MockData.MOCK_RESPONSE, result);
     }
 
     @Test
