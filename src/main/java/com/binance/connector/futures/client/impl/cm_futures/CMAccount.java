@@ -90,14 +90,13 @@ public class CMAccount extends Account {
      *    https://binance-docs.github.io/apidocs/delivery/en/#current-all-open-orders-user_data</a>
      */
     public String currentAllOpenOrders(LinkedHashMap<String, Object> parameters) {
-        ParameterChecker.checkOrParameters(parameters, "symbol", "pair");
         return super.currentAllOpenOrders(parameters);
     }
 
     /**
      * Get all open orders on a symbol. Careful when accessing this with no symbol.
      * <br><br>
-     * GET /v1/openOrders
+     * GET /v1/allOrders
      * <br>
      * @param
      * parameters LinkedHashedMap of String,Object pair

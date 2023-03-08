@@ -1,3 +1,11 @@
+## 3.0.1 - 2023-03-08
+
+## Fixed
+- Removed `symbol` as mandatory parameter in `currentAllOpenOrders()` within `UMAccount.java` and `CMAccount.java` classes
+
+## Updated
+- Bumped `org.json` package version to `20230227`
+
 ## 3.0.0 - 2023-03-06
 
 ### Added
