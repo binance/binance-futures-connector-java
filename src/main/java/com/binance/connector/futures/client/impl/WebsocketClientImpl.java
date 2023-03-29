@@ -1,16 +1,19 @@
 package com.binance.connector.futures.client.impl;
 
 import com.binance.connector.futures.client.WebsocketClient;
-import com.binance.connector.futures.client.utils.*;
-import okhttp3.Request;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.time.Duration;
+import com.binance.connector.futures.client.utils.HttpClientSingleton;
+import com.binance.connector.futures.client.utils.RequestBuilder;
+import com.binance.connector.futures.client.utils.UrlBuilder;
+import com.binance.connector.futures.client.utils.WebSocketCallback;
+import com.binance.connector.futures.client.utils.WebSocketConnection;
+import com.binance.connector.futures.client.utils.ParameterChecker;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import okhttp3.Request;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <h2>Futures Websocket Streams</h2>
@@ -25,15 +28,13 @@ import java.util.Map;
  */
 public abstract class WebsocketClientImpl implements WebsocketClient {
     private final String baseUrl;
-    private final Duration pingInterval;
     private final Map<Integer, WebSocketConnection> connections = new HashMap<>();
     private final WebSocketCallback noopCallback = msg -> {
     };
     private static final Logger logger = LoggerFactory.getLogger(WebsocketClientImpl.class);
 
-    public WebsocketClientImpl(String baseUrl, Duration pingInterval) {
+    public WebsocketClientImpl(String baseUrl) {
         this.baseUrl = baseUrl;
-        this.pingInterval = pingInterval;
     }
 
     public WebSocketCallback getNoopCallback() {
@@ -714,7 +715,7 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
             WebSocketCallback onFailureCallback,
             Request request
     ) {
-        WebSocketConnection connection = new WebSocketConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request, this.pingInterval);
+        WebSocketConnection connection = new WebSocketConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);
         connection.connect();
         int connectionId = connection.getConnectionId();
         connections.put(connectionId, connection);
