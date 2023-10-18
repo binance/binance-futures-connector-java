@@ -1,3 +1,8 @@
+## 3.0.3 - 2023-10-18
+
+### Updated
+- Bumped `org.json` package version to `20231013`.
+
 ## 3.0.2 - 2023-06-27
 
 ### Added
