@@ -50,6 +50,8 @@ public final class UrlBuilder {
         boolean isFirst = true;
         for (Map.Entry<String, Object> mapElement : parameters.entrySet()) {
 
+            if (mapElement.getValue() == null) continue;
+
             if (mapElement.getValue() instanceof Double) {
                 parameters.replace(mapElement.getKey(), getFormatter().format(mapElement.getValue()));
             } else if (mapElement.getValue() instanceof ArrayList) {
