@@ -1,4 +1,4 @@
-## 3.0.4 - 2024-01-09
+## 3.0.4 - 2024-01-10
 
 ### Fixed
 - `DecimalFormat` with `Locale.ENGLISH` for requests with `Double` to have `.` as decimal separator.
