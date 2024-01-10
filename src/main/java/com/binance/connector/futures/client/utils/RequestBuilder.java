@@ -8,7 +8,7 @@ import okhttp3.RequestBody;
 
 public final class RequestBuilder {
     private static final MediaType JSON_TYPE = MediaType.parse("application/json; charset=utf-8");
-    private static final String USER_AGENT = "binance-futures-connector-java/3.0.3";
+    private static final String USER_AGENT = "binance-futures-connector-java/3.0.4";
     private static final String CONTENT_TYPE = "application/x-www-form-urlencoded";
 
     private RequestBuilder() {
