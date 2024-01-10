@@ -1,3 +1,11 @@
+## 3.0.4 - 2024-01-10
+
+### Fixed
+- `DecimalFormat` with `Locale.ENGLISH` for requests with `Double` to have `.` as decimal separator.
+
+### Updated
+- Bumped `logback-classic` dependency to `1.2.13`.
+
 ## 3.0.3 - 2023-10-18
 
 ### Updated

@@ -12,13 +12,16 @@ public final class QueryOrder {
     private QueryOrder() {
     }
 
+    private static final Integer orderId = 123;
     private static final Logger logger = LoggerFactory.getLogger(QueryOrder.class);
+    
     public static void main(String[] args) {
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
 
         CMFuturesClientImpl client = new CMFuturesClientImpl(PrivateConfig.TESTNET_API_KEY, PrivateConfig.TESTNET_SECRET_KEY, PrivateConfig.TESTNET_BASE_URL);
 
         parameters.put("symbol", "BNBUSD_PERP");
+        parameters.put("orderId", orderId);
 
         try {
             String result = client.account().queryOrder(parameters);
