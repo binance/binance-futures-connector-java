@@ -7,6 +7,7 @@ import com.binance.connector.futures.client.utils.UrlBuilder;
 import com.binance.connector.futures.client.utils.WebSocketCallback;
 import com.binance.connector.futures.client.utils.WebSocketConnection;
 import com.binance.connector.futures.client.utils.ParameterChecker;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -28,13 +29,15 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class WebsocketClientImpl implements WebsocketClient {
     private final String baseUrl;
+    private final Duration pingInterval;
     private final Map<Integer, WebSocketConnection> connections = new HashMap<>();
     private final WebSocketCallback noopCallback = msg -> {
     };
     private static final Logger logger = LoggerFactory.getLogger(WebsocketClientImpl.class);
 
-    public WebsocketClientImpl(String baseUrl) {
+    public WebsocketClientImpl(String baseUrl, Duration pingInterval) {
         this.baseUrl = baseUrl;
+        this.pingInterval = pingInterval;
     }
 
     public WebSocketCallback getNoopCallback() {
@@ -715,7 +718,7 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
             WebSocketCallback onFailureCallback,
             Request request
     ) {
-        WebSocketConnection connection = new WebSocketConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);
+        WebSocketConnection connection = new WebSocketConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request, this.pingInterval);
         connection.connect();
         int connectionId = connection.getConnectionId();
         connections.put(connectionId, connection);

@@ -5,6 +5,7 @@ import com.binance.connector.futures.client.utils.RequestBuilder;
 import com.binance.connector.futures.client.utils.WebSocketCallback;
 import com.binance.connector.futures.client.utils.ParameterChecker;
 import okhttp3.Request;
+import java.time.Duration;
 
 /**
  * <h2>USDⓈ-M  Websocket Streams</h2>
@@ -18,11 +19,15 @@ import okhttp3.Request;
 public class UMWebsocketClientImpl extends WebsocketClientImpl {
 
     public UMWebsocketClientImpl() {
-        super(DefaultUrls.USDM_WS_URL);
+        super(DefaultUrls.USDM_WS_URL, Duration.ZERO);
     }
 
     public UMWebsocketClientImpl(String baseUrl) {
-        super(baseUrl);
+        super(baseUrl, Duration.ZERO);
+    }
+
+    public UMWebsocketClientImpl(String baseUrl, Duration pingInterval) {
+        super(baseUrl, pingInterval);
     }
 
     /**

@@ -1,5 +1,6 @@
 package com.binance.connector.futures.client.utils;
 
+import java.time.Duration;
 import java.util.concurrent.atomic.AtomicInteger;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -12,7 +13,6 @@ import org.slf4j.LoggerFactory;
 public class WebSocketConnection extends WebSocketListener {
     private static final AtomicInteger connectionCounter = new AtomicInteger(0);
     private static final int NORMAL_CLOSURE_STATUS = 1000;
-    private static final OkHttpClient client = HttpClientSingleton.getHttpClient();
     private static final Logger logger = LoggerFactory.getLogger(WebSocketConnection.class);
 
     private final WebSocketCallback onOpenCallback;
@@ -23,6 +23,7 @@ public class WebSocketConnection extends WebSocketListener {
     private final Request request;
     private final String streamName;
 
+    private final OkHttpClient client;
     private WebSocket webSocket;
 
     private final Object mutex;
@@ -32,7 +33,8 @@ public class WebSocketConnection extends WebSocketListener {
             WebSocketCallback onMessageCallback,
             WebSocketCallback onClosingCallback,
             WebSocketCallback onFailureCallback,
-            Request request
+            Request request,
+            Duration pingInterval
     ) {
         this.onOpenCallback = onOpenCallback;
         this.onMessageCallback = onMessageCallback;
@@ -43,6 +45,10 @@ public class WebSocketConnection extends WebSocketListener {
         this.streamName = request.url().host() + request.url().encodedPath();
         this.webSocket = null;
         this.mutex = new Object();
+
+        OkHttpClient.Builder builder = HttpClientSingleton.getHttpClient().newBuilder();
+        builder.pingInterval(pingInterval);
+        this.client = builder.build();
     }
 
     public void connect() {
