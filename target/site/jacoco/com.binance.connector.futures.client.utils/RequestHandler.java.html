@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RequestHandler.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">io.github.binance:binance-futures-connector-java</a> &gt; <a href="index.source.html" class="el_package">com.binance.connector.futures.client.utils</a> &gt; <span class="el_source">RequestHandler.java</span></div><h1>RequestHandler.java</h1><pre class="source lang-java linenums">package com.binance.connector.futures.client.utils;
+
+import com.binance.connector.futures.client.enums.HttpMethod;
+import com.binance.connector.futures.client.enums.RequestType;
+import com.binance.connector.futures.client.exceptions.BinanceConnectorException;
+import java.util.LinkedHashMap;
+import okhttp3.Request;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class RequestHandler {
+    private final String apiKey;
+    private final String secretKey;
+<span class="fc" id="L14">    private static final Logger logger = LoggerFactory.getLogger(RequestHandler.class);</span>
+    private final ProxyAuth proxy;
+
+<span class="fc" id="L17">    public RequestHandler(String apiKey, ProxyAuth proxy) {</span>
+<span class="fc" id="L18">        this.apiKey = apiKey;</span>
+<span class="fc" id="L19">        this.secretKey = null;</span>
+<span class="fc" id="L20">        this.proxy = proxy;</span>
+<span class="fc" id="L21">    }</span>
+
+<span class="fc" id="L23">    public RequestHandler(String apiKey, String secretKey, ProxyAuth proxy) {</span>
+<span class="fc" id="L24">        this.apiKey = apiKey;</span>
+<span class="fc" id="L25">        this.secretKey = secretKey;</span>
+<span class="fc" id="L26">        this.proxy = proxy;</span>
+<span class="fc" id="L27">    }</span>
+
+    /**
+     * Build request based on request type and send the requests to server.
+     * @param baseUrl base url
+     * @param urlPath url path
+     * @param signature the signature
+     * @param parameters parameters
+     * @param httpMethod https method
+     * @param requestType request type
+     * @return String - response from server
+     */
+
+    private String sendApiRequest(String baseUrl, String urlPath, String signature, LinkedHashMap&lt;String, Object&gt; parameters,
+                                  HttpMethod httpMethod, RequestType requestType, boolean showLimitUsage) {
+<span class="fc" id="L42">        String fullUrl = UrlBuilder.buildFullUrl(baseUrl, urlPath, parameters, signature);</span>
+<span class="fc" id="L43">        logger.info(&quot;{} {}&quot;, httpMethod, fullUrl);</span>
+        Request request;
+<span class="pc bpc" id="L45" title="1 of 3 branches missed.">        switch (requestType) {</span>
+            case PUBLIC:
+<span class="fc" id="L47">                request = RequestBuilder.buildPublicRequest(fullUrl, httpMethod);</span>
+<span class="fc" id="L48">                break;</span>
+            case WITH_API_KEY:
+            case SIGNED:
+<span class="fc" id="L51">                request = RequestBuilder.buildApiKeyRequest(fullUrl, httpMethod, apiKey);</span>
+<span class="fc" id="L52">                break;</span>
+            default:
+<span class="nc" id="L54">                throw new BinanceConnectorException(&quot;[RequestHandler] Invalid request type: &quot; + requestType);</span>
+        }
+<span class="fc" id="L56">        return ResponseHandler.handleResponse(request, showLimitUsage, proxy);</span>
+    }
+
+    public String sendPublicRequest(String baseUrl, String urlPath, LinkedHashMap&lt;String, Object&gt; parameters,
+                                    HttpMethod httpMethod, boolean showLimitUsage) {
+<span class="fc" id="L61">        return sendApiRequest(baseUrl, urlPath, null, parameters, httpMethod, RequestType.PUBLIC, showLimitUsage);</span>
+    }
+
+    public String sendWithApiKeyRequest(String baseUrl, String urlPath, LinkedHashMap&lt;String, Object&gt; parameters,
+                                        HttpMethod httpMethod, boolean showLimitUsage) {
+<span class="pc bpc" id="L66" title="2 of 4 branches missed.">        if (null == apiKey || apiKey.isEmpty()) {</span>
+<span class="nc" id="L67">            throw new BinanceConnectorException(&quot;[RequestHandler] API key cannot be null or empty!&quot;);</span>
+        }
+<span class="fc" id="L69">        return sendApiRequest(baseUrl, urlPath, null, parameters, httpMethod, RequestType.WITH_API_KEY, showLimitUsage);</span>
+    }
+
+    public String sendSignedRequest(String baseUrl, String urlPath, LinkedHashMap&lt;String, Object&gt; parameters,
+                                    HttpMethod httpMethod, boolean showLimitUsage) {
+<span class="pc bpc" id="L74" title="4 of 8 branches missed.">        if (null == secretKey || secretKey.isEmpty() || null == apiKey || apiKey.isEmpty()) {</span>
+<span class="nc" id="L75">            throw new BinanceConnectorException(&quot;[RequestHandler] Secret key/API key cannot be null or empty!&quot;);</span>
+        }
+<span class="fc" id="L77">        parameters.put(&quot;timestamp&quot;, UrlBuilder.buildTimestamp());</span>
+<span class="fc" id="L78">        String queryString = UrlBuilder.joinQueryParameters(parameters);</span>
+<span class="fc" id="L79">        String signature = SignatureGenerator.getSignature(queryString, secretKey);</span>
+<span class="fc" id="L80">        return sendApiRequest(baseUrl, urlPath, signature, parameters, httpMethod, RequestType.SIGNED, showLimitUsage);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

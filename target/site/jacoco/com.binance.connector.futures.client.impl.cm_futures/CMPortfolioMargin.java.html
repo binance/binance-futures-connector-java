@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CMPortfolioMargin.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">io.github.binance:binance-futures-connector-java</a> &gt; <a href="index.source.html" class="el_package">com.binance.connector.futures.client.impl.cm_futures</a> &gt; <span class="el_source">CMPortfolioMargin.java</span></div><h1>CMPortfolioMargin.java</h1><pre class="source lang-java linenums">package com.binance.connector.futures.client.impl.cm_futures;
+
+import java.util.LinkedHashMap;
+import com.binance.connector.futures.client.impl.futures.PortfolioMargin;
+import com.binance.connector.futures.client.utils.ProxyAuth;
+
+/**
+ * &lt;h2&gt;Coin-Margined Portfolio Margin Endpoints&lt;/h2&gt;
+ * All endpoints under the
+ * &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#portfolio-margin-endpoints&quot;&gt;PortfolioMargin Endpoint&lt;/a&gt;
+ * section of the API documentation will be implemented in this class.
+ * &lt;br&gt;
+ * Response will be returned in &lt;i&gt;String format&lt;/i&gt;.
+ */
+public class CMPortfolioMargin extends PortfolioMargin {
+    public CMPortfolioMargin(String productUrl, String apiKey, String secretKey, boolean showLimitUsage, ProxyAuth proxy) {
+<span class="fc" id="L17">        super(productUrl, apiKey, secretKey, showLimitUsage, proxy);</span>
+<span class="fc" id="L18">    }</span>
+
+    /**
+     * Current Portfolio Margin exchange trading rules.
+     * GET /v1/pmExchangeInfo
+     * &lt;br&gt;
+     * @param
+     * parameters LinkedHashedMap of String,Object pair
+     *            where String is the name of the parameter and Object is the value of the parameter
+     * &lt;br&gt;&lt;br&gt;
+     * symbol -- optional/string &lt;br&gt;
+     * pair -- optional/string &lt;br&gt;
+     * @return String
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#portfolio-margin-exchange-information&quot;&gt;
+     *     https://binance-docs.github.io/apidocs/delivery/en/#portfolio-margin-exchange-information&lt;/a&gt;
+     */
+    public String portfolioMarginExchangeInfo(LinkedHashMap&lt;String, Object&gt; parameters) {
+<span class="fc" id="L35">        return super.portfolioMarginExchangeInfo(parameters);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

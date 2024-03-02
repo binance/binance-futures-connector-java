@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CMWebsocketClientImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">io.github.binance:binance-futures-connector-java</a> &gt; <a href="index.source.html" class="el_package">com.binance.connector.futures.client.impl</a> &gt; <span class="el_source">CMWebsocketClientImpl.java</span></div><h1>CMWebsocketClientImpl.java</h1><pre class="source lang-java linenums">package com.binance.connector.futures.client.impl;
+
+import com.binance.connector.futures.client.enums.DefaultUrls;
+import com.binance.connector.futures.client.utils.RequestBuilder;
+import com.binance.connector.futures.client.utils.WebSocketCallback;
+import com.binance.connector.futures.client.utils.ParameterChecker;
+import okhttp3.Request;
+
+/**
+ * &lt;h2&gt;COIN-M Websocket Streams&lt;/h2&gt;
+ * All stream endpoints under the
+ * &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#websocket-market-streams&quot;&gt; Websocket Market Streams&lt;/a&gt; and
+ * &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#user-data-streams&quot;&gt; User Data Streams&lt;/a&gt;
+ * section of the API documentation will be implemented in this class.
+ * &lt;br&gt;
+ * Response will be returned as callback.
+ */
+public class CMWebsocketClientImpl extends WebsocketClientImpl {
+    public CMWebsocketClientImpl() {
+<span class="nc" id="L20">        super(DefaultUrls.COINM_WS_URL);</span>
+<span class="nc" id="L21">    }</span>
+
+    public CMWebsocketClientImpl(String baseUrl) {
+<span class="nc" id="L24">        super(baseUrl);</span>
+<span class="nc" id="L25">    }</span>
+
+    /**
+     * Index Price Stream
+     * &lt;br&gt;&lt;br&gt;
+     * &amp;lt;pair&amp;gt;@indexPrice or &amp;lt;pair&amp;gt;@indexPrice@1s
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: 3000ms or 1000ms
+     *
+     * @param pair trading pair
+     * @param speed speed in seconds, can be 1 or 3
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#index-price-stream&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#index-price-streams&lt;/a&gt;
+     */
+    public int indexPriceStream(String pair, int speed, WebSocketCallback onMessageCallback) {
+<span class="nc" id="L42">        ParameterChecker.checkParameterType(pair, String.class, &quot;pair&quot;);</span>
+<span class="nc" id="L43">        return indexPriceStream(pair, speed, getNoopCallback(), onMessageCallback, getNoopCallback(), getNoopCallback());</span>
+    }
+
+    /**
+     * Same as {@link #indexPriceStream(String, int, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param pair trading pair
+     * @param speed speed in seconds, can be 1 or 3
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    public int indexPriceStream(String pair, int speed, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L58">        ParameterChecker.checkParameterType(pair, String.class, &quot;pair&quot;);</span>
+<span class="nc" id="L59">        Request request = null;</span>
+<span class="nc" id="L60">        final int defaultSpeed = 3;</span>
+<span class="nc bnc" id="L61" title="All 2 branches missed.">        if (speed == defaultSpeed) {</span>
+<span class="nc" id="L62">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@indexPrice&quot;, getBaseUrl(), pair.toLowerCase(), speed));</span>
+        } else {
+<span class="nc" id="L64">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@indexPrice@%ss&quot;, getBaseUrl(), pair.toLowerCase(), speed));</span>
+        }
+<span class="nc" id="L66">        return super.createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+    /**
+     * Mark price and funding rate for a single pair pushed every 3 seconds or every second.
+     * &lt;br&gt;&lt;br&gt;
+     * &amp;lt;pair&amp;gt;@markPrice or &amp;lt;pair&amp;gt;@markPrice@1s
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: 3000ms or 1000ms
+     *
+     * @param pair trading pair
+     * @param speed speed in seconds, can be 1 or 3
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#mark-price-of-all-symbols-of-a-pair&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#mark-price-of-all-symbols-of-a-pair&lt;/a&gt;
+     */
+    public int markPriceSymbolsPairStream(String pair, int speed, WebSocketCallback onMessageCallback) {
+<span class="nc" id="L84">        ParameterChecker.checkParameterType(pair, String.class, &quot;pair&quot;);</span>
+<span class="nc" id="L85">        return markPriceSymbolsPairStream(pair, speed, getNoopCallback(), onMessageCallback, getNoopCallback(), getNoopCallback());</span>
+    }
+
+    /**
+     * Same as {@link #markPriceSymbolsPairStream(String, int, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param pair trading pair
+     * @param speed speed in seconds, can be 1 or 3
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    public int markPriceSymbolsPairStream(String pair, int speed, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L100">        ParameterChecker.checkParameterType(pair, String.class, &quot;pair&quot;);</span>
+<span class="nc" id="L101">        Request request = null;</span>
+<span class="nc" id="L102">        final int defaultSpeed = 3;</span>
+<span class="nc bnc" id="L103" title="All 2 branches missed.">        if (speed == defaultSpeed) {</span>
+<span class="nc" id="L104">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@markPrice&quot;, getBaseUrl(), pair.toLowerCase()));</span>
+        } else {
+<span class="nc" id="L106">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@markPrice@%ss&quot;, getBaseUrl(), pair.toLowerCase(), speed));</span>
+        }
+<span class="nc" id="L108">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+    /**
+     * The Kline/Candlestick Stream push updates to the current klines/candlestick every 250 milliseconds (if existing).
+     * &lt;br&gt;&lt;br&gt;
+     * &amp;lt;pair&amp;gt;@indexPriceKline_&amp;lt;interval&amp;gt;
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: 250ms
+     *
+     * @param pair trading pair
+     * @param interval kline interval - 1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d 3d 1w 1M
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#index-kline-candlestick-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#index-kline-candlestick-streams&lt;/a&gt;
+     */
+    public int indexKlineCandlestick(String pair, String interval, WebSocketCallback onMessageCallback) {
+<span class="nc" id="L126">        ParameterChecker.checkParameterType(pair, String.class, &quot;pair&quot;);</span>
+<span class="nc" id="L127">        return indexKlineCandlestick(pair, interval, getNoopCallback(), onMessageCallback, getNoopCallback(), getNoopCallback());</span>
+    }
+
+    /**
+     * Same as {@link #indexKlineCandlestick(String, String, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param pair trading pair
+     * @param interval kline interval - 1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d 3d 1w 1M
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    public int indexKlineCandlestick(String pair, String interval, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L142">        ParameterChecker.checkParameterType(pair, String.class, &quot;pair&quot;);</span>
+<span class="nc" id="L143">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@indexPriceKline_%s&quot;, getBaseUrl(), pair.toLowerCase(), interval));</span>
+<span class="nc" id="L144">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+    /**
+     * The Kline/Candlestick Stream push updates to the current klines/candlestick every 250 milliseconds (if existing).
+     * &lt;br&gt;&lt;br&gt;
+     * &amp;lt;symbol&amp;gt;@markPriceKline_&amp;lt;interval&amp;gt;
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: 250ms
+     *
+     * @param symbol trading symbol
+     * @param interval kline interval - 1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d 3d 1w 1M
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#mark-price-kline-candlestick-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#mark-price-kline-candlestick-streams&lt;/a&gt;
+     */
+    public int markKlineCandlestick(String symbol, String interval, WebSocketCallback onMessageCallback) {
+<span class="nc" id="L162">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="nc" id="L163">        return markKlineCandlestick(symbol, interval, getNoopCallback(), onMessageCallback, getNoopCallback(), getNoopCallback());</span>
+    }
+
+    /**
+     * Same as {@link #markKlineCandlestick(String, String, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param symbol trading symbol
+     * @param interval kline interval - 1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d 3d 1w 1M
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    public int markKlineCandlestick(String symbol, String interval, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L178">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="nc" id="L179">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@markPriceKline_%s&quot;, getBaseUrl(), symbol.toLowerCase(), interval));</span>
+<span class="nc" id="L180">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

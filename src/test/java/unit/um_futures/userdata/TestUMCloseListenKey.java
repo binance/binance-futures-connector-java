@@ -9,6 +9,7 @@ import org.junit.Test;
 import unit.MockData;
 import unit.MockWebServerDispatcher;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class TestUMCloseListenKey {
     private MockWebServer mockWebServer;
@@ -30,5 +31,11 @@ public class TestUMCloseListenKey {
         UMFuturesClientImpl client = new UMFuturesClientImpl(MockData.API_KEY, MockData.SECRET_KEY, baseUrl);
         String result = client.userData().closeListenKey();
         assertEquals(MockData.MOCK_RESPONSE, result);
+    }
+
+    @Test
+    public void testGetProductURl(){
+        UMFuturesClientImpl client = new UMFuturesClientImpl(MockData.API_KEY, MockData.SECRET_KEY, baseUrl);
+        assertNotNull(client.getProductUrl());
     }
 }
