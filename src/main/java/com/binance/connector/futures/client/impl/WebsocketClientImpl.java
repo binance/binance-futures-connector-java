@@ -721,4 +721,8 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
         connections.put(connectionId, connection);
         return connectionId;
     }
+//     fo the ease of testing the closeAllConnection Methods
+    public Map<Integer, WebSocketConnection> getConnections(){
+        return  connections;
+    }
 }

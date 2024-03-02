@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WebsocketClientImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">io.github.binance:binance-futures-connector-java</a> &gt; <a href="index.source.html" class="el_package">com.binance.connector.futures.client.impl</a> &gt; <span class="el_source">WebsocketClientImpl.java</span></div><h1>WebsocketClientImpl.java</h1><pre class="source lang-java linenums">package com.binance.connector.futures.client.impl;
+
+import com.binance.connector.futures.client.WebsocketClient;
+import com.binance.connector.futures.client.utils.HttpClientSingleton;
+import com.binance.connector.futures.client.utils.RequestBuilder;
+import com.binance.connector.futures.client.utils.UrlBuilder;
+import com.binance.connector.futures.client.utils.WebSocketCallback;
+import com.binance.connector.futures.client.utils.WebSocketConnection;
+import com.binance.connector.futures.client.utils.ParameterChecker;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import okhttp3.Request;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+/**
+ * &lt;h2&gt;Futures Websocket Streams&lt;/h2&gt;
+ * All stream endpoints under the
+ * &lt;a href=&quot;https://binance-docs.github.io/apidocs/futures/en/#websocket-market-streams&quot;&gt; USDⓈ-M Websocket Market Streams&lt;/a&gt; and
+ * &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#websocket-market-streams&quot;&gt; COIN-M Websocket Market Streams&lt;/a&gt; and
+ * &lt;a href=&quot;https://binance-docs.github.io/apidocs/futures/en/#user-data-streams&quot;&gt; USDⓈ-M User Data Streams&lt;/a&gt; and
+ * &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#user-data-streams&quot;&gt; COIN-M User Data Streams&lt;/a&gt;
+ * section of the API documentation will be implemented in this class.
+ * &lt;br&gt;
+ * Response will be returned as callback.
+ */
+public abstract class WebsocketClientImpl implements WebsocketClient {
+    private final String baseUrl;
+<span class="nc" id="L31">    private final Map&lt;Integer, WebSocketConnection&gt; connections = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L32">    private final WebSocketCallback noopCallback = msg -&gt; {</span>
+<span class="nc" id="L33">    };</span>
+<span class="nc" id="L34">    private static final Logger logger = LoggerFactory.getLogger(WebsocketClientImpl.class);</span>
+
+<span class="nc" id="L36">    public WebsocketClientImpl(String baseUrl) {</span>
+<span class="nc" id="L37">        this.baseUrl = baseUrl;</span>
+<span class="nc" id="L38">    }</span>
+
+    public WebSocketCallback getNoopCallback() {
+<span class="nc" id="L41">        return this.noopCallback;</span>
+    }
+
+    public String getBaseUrl() {
+<span class="nc" id="L45">        return this.baseUrl;</span>
+    }
+
+    /**
+     * The Aggregate Trade Streams push market trade information that is aggregated for fills with same price and taking side every 100 milliseconds.
+     * Only market trades will be aggregated, which means the insurance fund trades and ADL trades won't be aggregated.
+     * &lt;br&gt;&lt;br&gt;
+     * &amp;lt;symbol&amp;gt;@aggTrade
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: 100ms
+     *
+     * @param symbol trading symbol
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/futures/en/#aggregate-trade-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/futures/en/#aggregate-trade-streams&lt;/a&gt;
+     */
+    @Override
+    public int aggTradeStream(String symbol, WebSocketCallback onMessageCallback) {
+<span class="nc" id="L64">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="nc" id="L65">        return aggTradeStream(symbol, noopCallback,  onMessageCallback, noopCallback, noopCallback);</span>
+    }
+
+    /**
+     * Same as {@link #aggTradeStream(String, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param symbol trading symbol
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    @Override
+    public int aggTradeStream(String symbol, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L80">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="nc" id="L81">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@aggTrade&quot;, baseUrl, symbol.toLowerCase()));</span>
+<span class="nc" id="L82">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+    /**
+     * Mark price and funding rate for a single symbol pushed every 3 seconds or every second.
+     * &lt;br&gt;&lt;br&gt;
+     * &amp;lt;symbol&amp;gt;@markPrice or &amp;lt;symbol&amp;gt;@markPrice@1s
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: 3000ms or 1000ms
+     *
+     * @param symbol trading symbol
+     * @param speed speed in seconds, can be 1 or 3
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/futures/en/#mark-price-stream&quot;&gt;
+     * https://binance-docs.github.io/apidocs/futures/en/#mark-price-stream&lt;/a&gt;
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#mark-price-stream&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#mark-price-stream&lt;/a&gt;
+     */
+    @Override
+    public int markPriceStream(String symbol, int speed, WebSocketCallback onMessageCallback) {
+<span class="nc" id="L103">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="nc" id="L104">        return markPriceStream(symbol, speed, noopCallback, onMessageCallback, noopCallback, noopCallback);</span>
+    }
+
+    /**
+     * Same as {@link #markPriceStream(String, int, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param symbol trading symbol
+     * @param speed speed in seconds, can be 1 or 3
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    @Override
+    public int markPriceStream(String symbol, int speed, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L120">        Request request = null;</span>
+<span class="nc" id="L121">        final int defaultSpeed = 3;</span>
+<span class="nc bnc" id="L122" title="All 2 branches missed.">        if (speed == defaultSpeed) {</span>
+<span class="nc" id="L123">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@markPrice&quot;, baseUrl, symbol.toLowerCase()));</span>
+        } else {
+<span class="nc" id="L125">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@markPrice@%ss&quot;, baseUrl, symbol.toLowerCase(), speed));</span>
+        }
+<span class="nc" id="L127">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+    /**
+     * The Kline/Candlestick Stream push updates to the current klines/candlestick every 250 milliseconds (if existing).
+     * &lt;br&gt;&lt;br&gt;
+     * &amp;lt;symbol&amp;gt;@kline_&amp;lt;interval&amp;gt;
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: 250ms
+     *
+     * @param symbol trading symbol
+     * @param interval kline interval - 1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d 3d 1w 1M
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/futures/en/#kline-candlestick-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/futures/en/#kline-candlestick-streams&lt;/a&gt;
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#kline-candlestick-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#kline-candlestick-streams&lt;/a&gt;
+     */
+    @Override
+    public int klineStream(String symbol, String interval, WebSocketCallback onMessageCallback) {
+<span class="nc" id="L148">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="nc" id="L149">        return klineStream(symbol, interval, noopCallback, onMessageCallback, noopCallback, noopCallback);</span>
+    }
+
+    /**
+     * Same as {@link #klineStream(String, String, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param symbol trading symbol
+     * @param interval kline interval - 1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d 3d 1w 1M
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    @Override
+    public int klineStream(String symbol, String interval, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L165">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="nc" id="L166">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@kline_%s&quot;, baseUrl, symbol.toLowerCase(), interval));</span>
+<span class="nc" id="L167">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+    /**
+     * The Kline/Candlestick Stream push updates to the current klines/candlestick every 250 milliseconds (if existing). Contract Types are: perpetual, current_quarter, next_quarter
+     * &lt;br&gt;&lt;br&gt;
+     *  &amp;lt;pair&amp;gt;_&amp;lt;contractType&amp;gt;@continuousKline_&amp;lt;interval&amp;gt;
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: 250ms
+     *
+     * @param pair trading pair
+     * @param contractType perpetual, current_quarter, next_quarter
+     * @param interval kline interval - 1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d 3d 1w 1M
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#continuous-contract-kline-candlestick-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#continuous-contract-kline-candlestick-streams&lt;/a&gt;
+     */
+    @Override
+    public int continuousKlineStream(String pair, String contractType, String interval, WebSocketCallback onMessageCallback) {
+<span class="nc" id="L187">        ParameterChecker.checkParameterType(pair, String.class, &quot;pair&quot;);</span>
+<span class="nc" id="L188">        return continuousKlineStream(pair, contractType, interval, noopCallback, onMessageCallback, noopCallback, noopCallback);</span>
+    }
+
+    /**
+     * Same as {@link #continuousKlineStream(String, String, String, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param pair trading pair
+     * @param interval kline interval - 1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d 3d 1w 1M
+     * @param contractType perpetual, current_quarter, next_quarter
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    @Override
+    public int continuousKlineStream(String pair, String contractType, String interval, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L205">        ParameterChecker.checkParameterType(pair, String.class, &quot;pair&quot;);</span>
+<span class="nc" id="L206">        ParameterChecker.checkParameterType(contractType, String.class, &quot;contractType&quot;);</span>
+<span class="nc" id="L207">        ParameterChecker.checkParameterType(interval, String.class, &quot;interval&quot;);</span>
+
+<span class="nc" id="L209">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s_%s@continuousKline_%s&quot;, baseUrl, pair.toLowerCase(), contractType, interval));</span>
+<span class="nc" id="L210">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+    /**
+     * 24hr rolling window mini-ticker statistics.
+     * These are NOT the statistics of the UTC day, but a 24hr rolling window for the previous 24hrs.
+     * &lt;br&gt;&lt;br&gt;
+     * &amp;lt;symbol&amp;gt;@miniTicker
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: 500ms
+     *
+     * @param symbol trading symbol
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/futures/en/#individual-symbol-mini-ticker-stream&quot;&gt;
+     * https://binance-docs.github.io/apidocs/futures/en/#individual-symbol-mini-ticker-stream&lt;/a&gt;
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-mini-ticker-stream&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-mini-ticker-stream&lt;/a&gt;
+     */
+    @Override
+    public int miniTickerStream(String symbol, WebSocketCallback onMessageCallback) {
+<span class="nc" id="L231">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="nc" id="L232">        return miniTickerStream(symbol, noopCallback, onMessageCallback, noopCallback, noopCallback);</span>
+    }
+
+    /**
+     * Same as {@link #miniTickerStream(String, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param symbol trading symbol
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    @Override
+    public int miniTickerStream(String symbol, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L247">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="nc" id="L248">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@miniTicker&quot;, baseUrl, symbol.toLowerCase()));</span>
+<span class="nc" id="L249">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+    /**
+     * 24hr rolling window mini-ticker statistics for all symbols that changed in an array.
+     * These are NOT the statistics of the UTC day, but a 24hr rolling window for the previous 24hrs.
+     * Note that only tickers that have changed will be present in the array.
+     * &lt;br&gt;&lt;br&gt;
+     * !miniTicker@arr
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: 1000ms
+     *
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/futures/en/#all-market-mini-tickers-stream&quot;&gt;
+     * https://binance-docs.github.io/apidocs/futures/en/#all-market-mini-tickers-stream&lt;/a&gt;
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#all-market-mini-tickers-stream&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#all-market-mini-tickers-stream&lt;/a&gt;
+     */
+    @Override
+    public int allMiniTickerStream(WebSocketCallback onMessageCallback) {
+<span class="nc" id="L270">        return allMiniTickerStream(noopCallback, onMessageCallback, noopCallback, noopCallback);</span>
+    }
+
+    /**
+     * Same as {@link #allMiniTickerStream(WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    @Override
+    public int allMiniTickerStream(WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L284">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/!miniTicker@arr&quot;, baseUrl));</span>
+<span class="nc" id="L285">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+    /**
+     * 24hr rolling window ticker statistics for a single symbol.
+     * These are NOT the statistics of the UTC day, but a 24hr rolling window for the previous 24hrs.
+     * &lt;br&gt;&lt;br&gt;
+     * &amp;lt;symbol&amp;gt;@ticker
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: 500ms
+     *
+     * @param symbol trading symbol
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/futures/en/#individual-symbol-ticker-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/futures/en/#individual-symbol-ticker-streams&lt;/a&gt;
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-ticker-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-ticker-streams&lt;/a&gt;
+     */
+    @Override
+    public int symbolTicker(String symbol, WebSocketCallback onMessageCallback) {
+<span class="nc" id="L306">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="nc" id="L307">        return symbolTicker(symbol, noopCallback, onMessageCallback, noopCallback, noopCallback);</span>
+    }
+
+    /**
+     * Same as {@link #symbolTicker(String, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param symbol trading symbol
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    @Override
+    public int symbolTicker(String symbol, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L322">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="nc" id="L323">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@ticker&quot;, baseUrl, symbol.toLowerCase()));</span>
+<span class="nc" id="L324">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+    /**
+     * 24hr rolling window ticker statistics for all symbols.
+     * These are NOT the statistics of the UTC day, but a 24hr rolling window from requestTime to 24hrs before.
+     * Note that only tickers that have changed will be present in the array.
+     * &lt;br&gt;&lt;br&gt;
+     * !ticker@arr
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: 1000ms
+     *
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/futures/en/#all-market-tickers-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/futures/en/#all-market-tickers-streams&lt;/a&gt;
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#all-market-tickers-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#all-market-tickers-streams&lt;/a&gt;
+     */
+    @Override
+    public int allTickerStream(WebSocketCallback onMessageCallback) {
+<span class="nc" id="L345">        return allTickerStream(noopCallback, onMessageCallback, noopCallback, noopCallback);</span>
+    }
+
+    /**
+     * Same as {@link #allTickerStream(WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    @Override
+    public int allTickerStream(WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L359">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/!ticker@arr&quot;, baseUrl));</span>
+<span class="nc" id="L360">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+     /**
+     * Pushes any update to the best bid or ask's price or quantity in real-time for a specified symbol.
+     * &lt;br&gt;&lt;br&gt;
+     * &amp;lt;symbol&amp;gt;@bookTicker
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: Real-time
+     *
+     * @param symbol trading symbol
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/futures/en/#individual-symbol-book-ticker-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/futures/en/#individual-symbol-book-ticker-streams&lt;/a&gt;
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-book-ticker-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-book-ticker-streams&lt;/a&gt;
+     */
+    @Override
+    public int bookTicker(String symbol, WebSocketCallback onMessageCallback) {
+<span class="nc" id="L380">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="nc" id="L381">        return bookTicker(symbol, noopCallback, onMessageCallback, noopCallback, noopCallback);</span>
+    }
+
+    /**
+     * Same as {@link #bookTicker(String, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param symbol trading symbol
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    @Override
+    public int bookTicker(String symbol, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L396">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="nc" id="L397">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@bookTicker&quot;, baseUrl, symbol.toLowerCase()));</span>
+<span class="nc" id="L398">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+    /**
+     * Pushes any update to the best bid or ask's price or quantity in real-time for all symbols.
+     * &lt;br&gt;&lt;br&gt;
+     * !bookTicker
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: Real-time
+     *
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/futures/en/#all-book-tickers-stream&quot;&gt;
+     * https://binance-docs.github.io/apidocs/futures/en/#all-book-tickers-stream&lt;/a&gt;
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#all-book-tickers-stream&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#all-book-tickers-stream&lt;/a&gt;
+     */
+    @Override
+    public int allBookTickerStream(WebSocketCallback onMessageCallback) {
+<span class="nc" id="L417">        return allBookTickerStream(noopCallback, onMessageCallback, noopCallback, noopCallback);</span>
+    }
+
+    /**
+     * Same as {@link #allBookTickerStream(WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    @Override
+    public int allBookTickerStream(WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L431">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/!bookTicker&quot;, baseUrl));</span>
+<span class="nc" id="L432">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+    /**
+     * The Liquidation Order Snapshot Streams push force liquidation order information for specific symbol.
+     * For each symbol，only the latest one liquidation order within 1000ms will be pushed as the snapshot.
+     * If no liquidation happens in the interval of 1000ms, no stream will be pushed.
+     * &lt;br&gt;&lt;br&gt;
+     * &amp;lt;symbol&amp;gt;@forceOrder
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: 1000ms
+     *
+     * @param symbol trading symbol
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/futures/en/#liquidation-order-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/futures/en/#liquidation-order-streams&lt;/a&gt;
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#liquidation-order-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#liquidation-order-streams&lt;/a&gt;
+     */
+    @Override
+    public int forceOrderStream(String symbol, WebSocketCallback onMessageCallback) {
+<span class="nc" id="L454">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="nc" id="L455">        return forceOrderStream(symbol, noopCallback, onMessageCallback, noopCallback, noopCallback);</span>
+    }
+
+    /**
+     * Same as {@link #forceOrderStream(String, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param symbol trading symbol
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    @Override
+    public int forceOrderStream(String symbol, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L470">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="nc" id="L471">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@forceOrder&quot;, baseUrl, symbol.toLowerCase()));</span>
+<span class="nc" id="L472">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+    /**
+     * The All Liquidation Order Snapshot Streams push force liquidation order information for all symbols in the market.
+     * For each symbol，only the latest one liquidation order within 1000ms will be pushed as the snapshot.
+     * If no liquidation happens in the interval of 1000ms, no stream will be pushed.
+     * &lt;br&gt;&lt;br&gt;
+     * !forceOrder@arr
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: 1000ms
+     *
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/futures/en/#all-book-tickers-stream&quot;&gt;
+     * https://binance-docs.github.io/apidocs/futures/en/#all-book-tickers-stream&lt;/a&gt;
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#all-market-liquidation-order-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#all-market-liquidation-order-streams&lt;/a&gt;
+     */
+    @Override
+    public int allForceOrderStream(WebSocketCallback onMessageCallback) {
+<span class="nc" id="L493">        return allForceOrderStream(noopCallback, onMessageCallback, noopCallback, noopCallback);</span>
+    }
+
+    /**
+     * Same as {@link #allForceOrderStream(WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    @Override
+    public int allForceOrderStream(WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L507">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/!forceOrder@arr&quot;, baseUrl));</span>
+<span class="nc" id="L508">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+    /**
+     * Top bids and asks, Valid are 5, 10, or 20.
+     * &lt;br&gt;&lt;br&gt;
+     * &amp;lt;symbol&amp;gt;@depth&amp;lt;levels&amp;gt;@&amp;lt;speed&amp;gt;ms
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: 250ms, 500ms or 100ms
+     *
+     * @param symbol trading symbol
+     * @param levels order book depth level, can be 5, 10, or 20
+     * @param speed  update speed  in ms, can be 250, 500 or 100
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/futures/en/#partial-book-depth-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/futures/en/#partial-book-depth-streams&lt;/a&gt;
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#partial-book-depth-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#partial-book-depth-streams&lt;/a&gt;
+     */
+    @Override
+    public int partialDepthStream(String symbol, int levels, int speed, WebSocketCallback onMessageCallback) {
+<span class="nc" id="L530">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="nc" id="L531">        return partialDepthStream(symbol, levels, speed, noopCallback, onMessageCallback, noopCallback, noopCallback);</span>
+    }
+
+    /**
+     * Same as {@link #partialDepthStream(String, int, int, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param symbol trading symbol
+     * @param levels order book depth level, can be 5, 10, or 20
+     * @param speed update speed in ms, can be 250, 500 or 100
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    @Override
+    public int partialDepthStream(String symbol, int levels, int speed, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L548">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+
+<span class="nc" id="L550">        Request request = null;</span>
+<span class="nc" id="L551">        final int defaultSpeed = 250;</span>
+<span class="nc bnc" id="L552" title="All 2 branches missed.">        if (speed == defaultSpeed) {</span>
+<span class="nc" id="L553">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@depth%s&quot;, baseUrl, symbol.toLowerCase(), levels));</span>
+        } else {
+<span class="nc" id="L555">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@depth%s@%sms&quot;, baseUrl, symbol.toLowerCase(), levels, speed));</span>
+        }
+
+<span class="nc" id="L558">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+    /**
+     * Bids and asks, pushed every 250 milliseconds, 500 milliseconds, 100 milliseconds (if existing)
+     * &lt;br&gt;&lt;br&gt;
+     * &amp;lt;symbol&amp;gt;@depth@&amp;lt;speed&amp;gt;ms
+     * &lt;br&gt;&lt;br&gt;
+     * Update Speed: 250ms, 500ms, 100ms
+     *
+     * @param symbol trading symbol
+     * @param speed  update speed in ms, can be 250, 500 or 100
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/futures/en/#diff-book-depth-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/futures/en/#diff-book-depth-streams&lt;/a&gt;
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#diff-book-depth-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#diff-book-depth-streams&lt;/a&gt;
+     */
+    @Override
+    public int diffDepthStream(String symbol, int speed, WebSocketCallback onMessageCallback) {
+<span class="nc" id="L579">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="nc" id="L580">        return diffDepthStream(symbol, speed, noopCallback, onMessageCallback, noopCallback, noopCallback);</span>
+    }
+
+    /**
+     * Same as {@link #diffDepthStream(String, int, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param symbol trading symbol
+     * @param speed update speed in ms, can be 250, 500 or 100
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    @Override
+    public int diffDepthStream(String symbol, int speed, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L596">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+
+<span class="nc" id="L598">        Request request = null;</span>
+<span class="nc" id="L599">        final int defaultSpeed = 250;</span>
+<span class="nc bnc" id="L600" title="All 2 branches missed.">        if (speed == defaultSpeed) {</span>
+<span class="nc" id="L601">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@depth&quot;, baseUrl, symbol.toLowerCase(), speed));</span>
+        } else {
+<span class="nc" id="L603">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@depth@%sms&quot;, baseUrl, symbol.toLowerCase(), speed));</span>
+        }
+<span class="nc" id="L605">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+
+    }
+
+     /**
+     * User Data Streams are accessed at /ws/&amp;lt;listenKey&amp;gt;
+     *
+     * @param listenKey listen key
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/futures/en/#user-data-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/futures/en/#user-data-streams&lt;/a&gt;
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#user-data-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#user-data-streams&lt;/a&gt;
+     */
+    @Override
+    public int listenUserStream(String listenKey, WebSocketCallback onMessageCallback) {
+<span class="nc" id="L622">        return listenUserStream(listenKey, noopCallback, onMessageCallback, noopCallback, noopCallback);</span>
+    }
+
+    /**
+     * Same as {@link #listenUserStream(String, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param listenKey listen key
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    @Override
+    public int listenUserStream(String listenKey, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L637">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s&quot;, baseUrl, listenKey));</span>
+<span class="nc" id="L638">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+    /**
+     * Combined streams are accessed at /stream?streams=&amp;lt;streamName1&amp;gt;/&amp;lt;streamName2&amp;gt;/&amp;lt;streamName3&amp;gt;
+     *
+     * @param streams A list of stream names to be combined &lt;br&gt;
+     * @param onMessageCallback onMessageCallback
+     * @return int - Connection ID
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/futures/en/#websocket-market-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/futures/en/#websocket-market-streams&lt;/a&gt;
+     * @see &lt;a href=&quot;https://binance-docs.github.io/apidocs/delivery/en/#websocket-market-streams&quot;&gt;
+     * https://binance-docs.github.io/apidocs/delivery/en/#websocket-market-streams&lt;/a&gt;
+     */
+    @Override
+    public int combineStreams(ArrayList&lt;String&gt; streams, WebSocketCallback onMessageCallback) {
+<span class="nc" id="L654">        return combineStreams(streams, noopCallback, onMessageCallback, noopCallback, noopCallback);</span>
+    }
+
+    /**
+     * Same as {@link #combineStreams(ArrayList, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
+     *
+     * @param streams stream name list
+     * @param onOpenCallback onOpenCallback
+     * @param onMessageCallback onMessageCallback
+     * @param onClosingCallback onClosingCallback
+     * @param onFailureCallback onFailureCallback
+     * @return int - Connection ID
+     */
+    @Override
+    public int combineStreams(ArrayList&lt;String&gt; streams, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
+<span class="nc" id="L669">        String url = UrlBuilder.buildStreamUrl(String.format(&quot;%s/stream&quot;, baseUrl), streams);</span>
+<span class="nc" id="L670">        Request request = RequestBuilder.buildWebsocketRequest(url);</span>
+<span class="nc" id="L671">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+    }
+
+    /**
+     * Closes a specific stream based on stream Id.
+     *
+     * @param connectionId Connection ID
+     */
+    @Override
+    public void closeConnection(int connectionId) {
+<span class="nc bnc" id="L681" title="All 2 branches missed.">        if (connections.containsKey(connectionId)) {</span>
+<span class="nc" id="L682">            connections.get(connectionId).close();</span>
+<span class="nc" id="L683">            logger.info(&quot;Closing Connection ID {}&quot;, connectionId);</span>
+<span class="nc" id="L684">            connections.remove(connectionId);</span>
+        } else {
+<span class="nc" id="L686">            logger.info(&quot;Connection ID {} does not exist!&quot;, connectionId);</span>
+        }
+<span class="nc" id="L688">    }</span>
+
+    /**
+     * Closes all streams
+     */
+    @Override
+    public void closeAllConnections() {
+<span class="nc bnc" id="L695" title="All 2 branches missed.">        if (!connections.isEmpty()) {</span>
+<span class="nc" id="L696">            logger.info(&quot;Closing {} connections(s)&quot;, connections.size());</span>
+<span class="nc" id="L697">            Iterator&lt;Map.Entry&lt;Integer, WebSocketConnection&gt;&gt; iter = connections.entrySet().iterator();</span>
+<span class="nc bnc" id="L698" title="All 2 branches missed.">            while (iter.hasNext()) {</span>
+<span class="nc" id="L699">                WebSocketConnection connection = iter.next().getValue();</span>
+<span class="nc" id="L700">                connection.close();</span>
+<span class="nc" id="L701">                iter.remove();</span>
+<span class="nc" id="L702">            }</span>
+        }
+
+<span class="nc bnc" id="L705" title="All 2 branches missed.">        if (connections.isEmpty()) {</span>
+<span class="nc" id="L706">            HttpClientSingleton.getHttpClient().dispatcher().executorService().shutdown();</span>
+<span class="nc" id="L707">            logger.info(&quot;All connections are closed!&quot;);</span>
+        }
+<span class="nc" id="L709">    }</span>
+
+    public int createConnection(
+            WebSocketCallback onOpenCallback,
+            WebSocketCallback onMessageCallback,
+            WebSocketCallback onClosingCallback,
+            WebSocketCallback onFailureCallback,
+            Request request
+    ) {
+<span class="nc" id="L718">        WebSocketConnection connection = new WebSocketConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+<span class="nc" id="L719">        connection.connect();</span>
+<span class="nc" id="L720">        int connectionId = connection.getConnectionId();</span>
+<span class="nc" id="L721">        connections.put(connectionId, connection);</span>
+<span class="nc" id="L722">        return connectionId;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

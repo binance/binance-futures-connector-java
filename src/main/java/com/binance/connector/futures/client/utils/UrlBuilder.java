@@ -19,6 +19,13 @@ public final class UrlBuilder {
     private UrlBuilder() {
     }
 
+    private UrlBuilder testObj =  new UrlBuilder();
+
+    public UrlBuilder getTestObj() {
+        return testObj;
+    }
+
+
     public static String buildFullUrl(String baseUrl, String urlPath, LinkedHashMap<String, Object> parameters, String signature) {
         if (parameters != null && !parameters.isEmpty()) {
             StringBuilder sb = new StringBuilder(baseUrl);
