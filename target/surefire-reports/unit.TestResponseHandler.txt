@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: unit.TestResponseHandler
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 s -- in unit.TestResponseHandler
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 s -- in unit.TestResponseHandler

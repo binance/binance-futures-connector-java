@@ -44,6 +44,20 @@ public class CMWebsocketClientImpl extends WebsocketClientImpl {
     }
 
     /**
+     * For creating the request and refactoring the request builder because of long statement and code redundancy smell.
+     * @param initalString
+     * @param speed
+     * @param pair
+     * @return
+     */
+
+//    Refactored Area Starts Method apllied -&gt; Extract method
+    public String indexPriceStreamRequestString(String initalString, int speed, String pair){
+<span class="fc" id="L56">        String BaseUrl = getBaseUrl();</span>
+<span class="fc" id="L57">        pair = pair.toLowerCase();</span>
+<span class="fc" id="L58">        return String.format(initalString,BaseUrl,pair,speed) ;</span>
+    }
+    /**
      * Same as {@link #indexPriceStream(String, int, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
      *
      * @param pair trading pair
@@ -55,16 +69,19 @@ public class CMWebsocketClientImpl extends WebsocketClientImpl {
      * @return int - Connection ID
      */
     public int indexPriceStream(String pair, int speed, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
-<span class="fc" id="L58">        ParameterChecker.checkParameterType(pair, String.class, &quot;pair&quot;);</span>
-<span class="fc" id="L59">        Request request = null;</span>
-<span class="fc" id="L60">        final int defaultSpeed = 3;</span>
-<span class="fc bfc" id="L61" title="All 2 branches covered.">        if (speed == defaultSpeed) {</span>
-<span class="fc" id="L62">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@indexPrice&quot;, getBaseUrl(), pair.toLowerCase(), speed));</span>
-        } else {
-<span class="fc" id="L64">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@indexPrice@%ss&quot;, getBaseUrl(), pair.toLowerCase(), speed));</span>
+<span class="fc" id="L72">        ParameterChecker.checkParameterType(pair, String.class, &quot;pair&quot;);</span>
+<span class="fc" id="L73">        Request request = null;</span>
+<span class="fc" id="L74">        final int defaultSpeed = 3;</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">        if (speed == defaultSpeed) {</span>
+<span class="fc" id="L76">            String Format = indexPriceStreamRequestString(&quot;%s/ws/%s@indexPrice&quot;,speed,pair);</span>
+<span class="fc" id="L77">            request = RequestBuilder.buildWebsocketRequest(Format);</span>
+<span class="fc" id="L78">        } else {</span>
+<span class="fc" id="L79">            String Format = indexPriceStreamRequestString(&quot;%s/ws/%s@indexPrice@%ss&quot;,speed,pair);</span>
+<span class="fc" id="L80">            request = RequestBuilder.buildWebsocketRequest(Format);</span>
         }
-<span class="fc" id="L66">        return super.createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+<span class="fc" id="L82">        return super.createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
     }
+//Refactored Area Ends
 
     /**
      * Mark price and funding rate for a single pair pushed every 3 seconds or every second.
@@ -81,8 +98,8 @@ public class CMWebsocketClientImpl extends WebsocketClientImpl {
      * https://binance-docs.github.io/apidocs/delivery/en/#mark-price-of-all-symbols-of-a-pair&lt;/a&gt;
      */
     public int markPriceSymbolsPairStream(String pair, int speed, WebSocketCallback onMessageCallback) {
-<span class="fc" id="L84">        ParameterChecker.checkParameterType(pair, String.class, &quot;pair&quot;);</span>
-<span class="fc" id="L85">        return markPriceSymbolsPairStream(new MarkPriceSymbolParams(pair, speed, getNoopCallback(), onMessageCallback, getNoopCallback(), getNoopCallback()));</span>
+<span class="fc" id="L101">        ParameterChecker.checkParameterType(pair, String.class, &quot;pair&quot;);</span>
+<span class="fc" id="L102">        return markPriceSymbolsPairStream(new MarkPriceSymbolParams(pair, speed, getNoopCallback(), onMessageCallback, getNoopCallback(), getNoopCallback()));</span>
     }
 
     /**
@@ -91,15 +108,15 @@ public class CMWebsocketClientImpl extends WebsocketClientImpl {
      * @param markPriceSymbolParams@return int - Connection ID
      */
     public int markPriceSymbolsPairStream(MarkPriceSymbolParams markPriceSymbolParams) {
-<span class="fc" id="L94">        ParameterChecker.checkParameterType(markPriceSymbolParams.getPair(), String.class, &quot;pair&quot;);</span>
-<span class="fc" id="L95">        Request request = null;</span>
-<span class="fc" id="L96">        final int defaultSpeed = 3;</span>
-<span class="pc bpc" id="L97" title="1 of 2 branches missed.">        if (markPriceSymbolParams.getSpeed() == defaultSpeed) {</span>
-<span class="nc" id="L98">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@markPrice&quot;, getBaseUrl(), markPriceSymbolParams.getPair().toLowerCase()));</span>
+<span class="fc" id="L111">        ParameterChecker.checkParameterType(markPriceSymbolParams.getPair(), String.class, &quot;pair&quot;);</span>
+<span class="fc" id="L112">        Request request = null;</span>
+<span class="fc" id="L113">        final int defaultSpeed = 3;</span>
+<span class="pc bpc" id="L114" title="1 of 2 branches missed.">        if (markPriceSymbolParams.getSpeed() == defaultSpeed) {</span>
+<span class="nc" id="L115">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@markPrice&quot;, getBaseUrl(), markPriceSymbolParams.getPair().toLowerCase()));</span>
         } else {
-<span class="fc" id="L100">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@markPrice@%ss&quot;, getBaseUrl(), markPriceSymbolParams.getPair().toLowerCase(), markPriceSymbolParams.getSpeed()));</span>
+<span class="fc" id="L117">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@markPrice@%ss&quot;, getBaseUrl(), markPriceSymbolParams.getPair().toLowerCase(), markPriceSymbolParams.getSpeed()));</span>
         }
-<span class="fc" id="L102">        return createConnection(markPriceSymbolParams.getOnOpenCallback(), markPriceSymbolParams.getOnMessageCallback(), markPriceSymbolParams.getOnClosingCallback(), markPriceSymbolParams.getOnFailureCallback(), request);</span>
+<span class="fc" id="L119">        return createConnection(markPriceSymbolParams.getOnOpenCallback(), markPriceSymbolParams.getOnMessageCallback(), markPriceSymbolParams.getOnClosingCallback(), markPriceSymbolParams.getOnFailureCallback(), request);</span>
     }
 
     /**
@@ -117,8 +134,8 @@ public class CMWebsocketClientImpl extends WebsocketClientImpl {
      * https://binance-docs.github.io/apidocs/delivery/en/#index-kline-candlestick-streams&lt;/a&gt;
      */
     public int indexKlineCandlestick(String pair, String interval, WebSocketCallback onMessageCallback) {
-<span class="fc" id="L120">        ParameterChecker.checkParameterType(pair, String.class, &quot;pair&quot;);</span>
-<span class="fc" id="L121">        return indexKlineCandlestick(pair, interval, getNoopCallback(), onMessageCallback, getNoopCallback(), getNoopCallback());</span>
+<span class="fc" id="L137">        ParameterChecker.checkParameterType(pair, String.class, &quot;pair&quot;);</span>
+<span class="fc" id="L138">        return indexKlineCandlestick(pair, interval, getNoopCallback(), onMessageCallback, getNoopCallback(), getNoopCallback());</span>
     }
 
     /**
@@ -133,9 +150,9 @@ public class CMWebsocketClientImpl extends WebsocketClientImpl {
      * @return int - Connection ID
      */
     public int indexKlineCandlestick(String pair, String interval, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
-<span class="fc" id="L136">        ParameterChecker.checkParameterType(pair, String.class, &quot;pair&quot;);</span>
-<span class="fc" id="L137">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@indexPriceKline_%s&quot;, getBaseUrl(), pair.toLowerCase(), interval));</span>
-<span class="fc" id="L138">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+<span class="fc" id="L153">        ParameterChecker.checkParameterType(pair, String.class, &quot;pair&quot;);</span>
+<span class="fc" id="L154">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@indexPriceKline_%s&quot;, getBaseUrl(), pair.toLowerCase(), interval));</span>
+<span class="fc" id="L155">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
     }
 
     /**
@@ -153,8 +170,8 @@ public class CMWebsocketClientImpl extends WebsocketClientImpl {
      * https://binance-docs.github.io/apidocs/delivery/en/#mark-price-kline-candlestick-streams&lt;/a&gt;
      */
     public int markKlineCandlestick(String symbol, String interval, WebSocketCallback onMessageCallback) {
-<span class="fc" id="L156">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
-<span class="fc" id="L157">        return markKlineCandlestick(symbol, interval, getNoopCallback(), onMessageCallback, getNoopCallback(), getNoopCallback());</span>
+<span class="fc" id="L173">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="fc" id="L174">        return markKlineCandlestick(symbol, interval, getNoopCallback(), onMessageCallback, getNoopCallback(), getNoopCallback());</span>
     }
 
     /**
@@ -169,9 +186,9 @@ public class CMWebsocketClientImpl extends WebsocketClientImpl {
      * @return int - Connection ID
      */
     public int markKlineCandlestick(String symbol, String interval, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
-<span class="fc" id="L172">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
-<span class="fc" id="L173">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@markPriceKline_%s&quot;, getBaseUrl(), symbol.toLowerCase(), interval));</span>
-<span class="fc" id="L174">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+<span class="fc" id="L189">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="fc" id="L190">        Request request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@markPriceKline_%s&quot;, getBaseUrl(), symbol.toLowerCase(), interval));</span>
+<span class="fc" id="L191">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

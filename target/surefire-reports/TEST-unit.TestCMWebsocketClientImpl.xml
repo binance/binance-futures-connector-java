@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="unit.TestCMWebsocketClientImpl" time="0.083" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="unit.TestCMWebsocketClientImpl" time="0.124" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Users\patha\AppData\Local\Temp\surefire9912722967623679035\surefirebooter-20240329164407436_3.jar C:\Users\patha\AppData\Local\Temp\surefire9912722967623679035 2024-03-29T16-44-07_024-jvmRun1 surefire-20240329164407436_1tmp surefire_0-20240329164407436_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\patha\AppData\Local\Temp\surefire11286908761121741956\surefirebooter-20240330031034139_3.jar C:\Users\patha\AppData\Local\Temp\surefire11286908761121741956 2024-03-30T03-10-33_674-jvmRun1 surefire-20240330031034139_1tmp surefire_0-20240330031034139_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="G:\binance-futures-connector-java\target\test-classes;G:\binance-futures-connector-java\target\classes;C:\Users\patha\.m2\repository\com\squareup\okhttp3\okhttp\4.9.2\okhttp-4.9.2.jar;C:\Users\patha\.m2\repository\com\squareup\okio\okio\2.8.0\okio-2.8.0.jar;C:\Users\patha\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.4.0\kotlin-stdlib-common-1.4.0.jar;C:\Users\patha\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.4.10\kotlin-stdlib-1.4.10.jar;C:\Users\patha\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\patha\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;C:\Users\patha\.m2\repository\com\squareup\okhttp3\mockwebserver\4.9.1\mockwebserver-4.9.1.jar;C:\Users\patha\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk8\1.4.10\kotlin-stdlib-jdk8-1.4.10.jar;C:\Users\patha\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk7\1.4.10\kotlin-stdlib-jdk7-1.4.10.jar;C:\Users\patha\.m2\repository\org\json\json\20231013\json-20231013.jar;C:\Users\patha\.m2\repository\org\slf4j\slf4j-api\1.7.32\slf4j-api-1.7.32.jar;C:\Users\patha\.m2\repository\ch\qos\logback\logback-classic\1.2.13\logback-classic-1.2.13.jar;C:\Users\patha\.m2\repository\ch\qos\logback\logback-core\1.2.13\logback-core-1.2.13.jar;C:\Users\patha\.m2\repository\org\apache\maven\plugins\maven-checkstyle-plugin\3.1.2\maven-checkstyle-plugin-3.1.2.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-artifact\3.0\maven-artifact-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-core\3.0\maven-core-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-settings\3.0\maven-settings-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-settings-builder\3.0\maven-settings-builder-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-repository-metadata\3.0\maven-repository-metadata-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-model-builder\3.0\maven-model-builder-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-aether-provider\3.0\maven-aether-provider-3.0.jar;C:\Users\patha\.m2\repository\org\sonatype\aether\aether-impl\1.7\aether-impl-1.7.jar;C:\Users\patha\.m2\repository\org\sonatype\aether\aether-spi\1.7\aether-spi-1.7.jar;C:\Users\patha\.m2\repository\org\sonatype\aether\aether-api\1.7\aether-api-1.7.jar;C:\Users\patha\.m2\repository\org\sonatype\aether\aether-util\1.7\aether-util-1.7.jar;C:\Users\patha\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\1.4.2\sisu-inject-plexus-1.4.2.jar;C:\Users\patha\.m2\repository\org\sonatype\sisu\sisu-inject-bean\1.4.2\sisu-inject-bean-1.4.2.jar;C:\Users\patha\.m2\repository\org\sonatype\sisu\sisu-guice\2.1.7\sisu-guice-2.1.7-noaop.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.3\plexus-classworlds-2.2.3.jar;C:\Users\patha\.m2\repository\org\sonatype\plexus\plexus-sec-dispatcher\1.3\plexus-sec-dispatcher-1.3.jar;C:\Users\patha\.m2\repository\org\sonatype\plexus\plexus-cipher\1.4\plexus-cipher-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-model\3.0\maven-model-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-plugin-api\3.0\maven-plugin-api-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\reporting\maven-reporting-api\3.0\maven-reporting-api-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\reporting\maven-reporting-impl\2.3\maven-reporting-impl-2.3.jar;C:\Users\patha\.m2\repository\org\apache\maven\shared\maven-shared-utils\0.6\maven-shared-utils-0.6.jar;C:\Users\patha\.m2\repository\com\google\code\findbugs\jsr305\2.0.1\jsr305-2.0.1.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-core\1.2\doxia-core-1.2.jar;C:\Users\patha\.m2\repository\xerces\xercesImpl\2.9.1\xercesImpl-2.9.1.jar;C:\Users\patha\.m2\repository\xml-apis\xml-apis\1.3.04\xml-apis-1.3.04.jar;C:\Users\patha\.m2\repository\org\apache\httpcomponents\httpclient\4.0.2\httpclient-4.0.2.jar;C:\Users\patha\.m2\repository\org\apache\httpcomponents\httpcore\4.0.1\httpcore-4.0.1.jar;C:\Users\patha\.m2\repository\commons-validator\commons-validator\1.3.1\commons-validator-1.3.1.jar;C:\Users\patha\.m2\repository\commons-digester\commons-digester\1.6\commons-digester-1.6.jar;C:\Users\patha\.m2\repository\commons-logging\commons-logging\1.0.4\commons-logging-1.0.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.4\doxia-sink-api-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-logging-api\1.4\doxia-logging-api-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-decoration-model\1.4\doxia-decoration-model-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-site-renderer\1.4\doxia-site-renderer-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-module-xhtml\1.4\doxia-module-xhtml-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-module-fml\1.4\doxia-module-fml-1.4.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-i18n\1.0-beta-7\plexus-i18n-1.0-beta-7.jar;C:\Users\patha\.m2\repository\org\apache\velocity\velocity-tools\2.0\velocity-tools-2.0.jar;C:\Users\patha\.m2\repository\commons-chain\commons-chain\1.1\commons-chain-1.1.jar;C:\Users\patha\.m2\repository\dom4j\dom4j\1.1\dom4j-1.1.jar;C:\Users\patha\.m2\repository\oro\oro\2.0.8\oro-2.0.8.jar;C:\Users\patha\.m2\repository\sslext\sslext\1.2-0\sslext-1.2-0.jar;C:\Users\patha\.m2\repository\org\apache\struts\struts-core\1.3.8\struts-core-1.3.8.jar;C:\Users\patha\.m2\repository\org\apache\struts\struts-taglib\1.3.8\struts-taglib-1.3.8.jar;C:\Users\patha\.m2\repository\org\apache\struts\struts-tiles\1.3.8\struts-tiles-1.3.8.jar;C:\Users\patha\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-integration-tools\1.6\doxia-integration-tools-1.6.jar;C:\Users\patha\.m2\repository\commons-io\commons-io\1.4\commons-io-1.4.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-9\plexus-container-default-1.0-alpha-9.jar;C:\Users\patha\.m2\repository\classworlds\classworlds\1.1-alpha-2\classworlds-1.1-alpha-2.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-component-annotations\2.0.0\plexus-component-annotations-2.0.0.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-resources\1.1.0\plexus-resources-1.1.0.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-utils\3.3.0\plexus-utils-3.3.0.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-interpolation\1.26\plexus-interpolation-1.26.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-velocity\1.2\plexus-velocity-1.2.jar;C:\Users\patha\.m2\repository\com\puppycrawl\tools\checkstyle\8.29\checkstyle-8.29.jar;C:\Users\patha\.m2\repository\info\picocli\picocli\4.1.4\picocli-4.1.4.jar;C:\Users\patha\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\patha\.m2\repository\org\antlr\antlr4-runtime\4.8-1\antlr4-runtime-4.8-1.jar;C:\Users\patha\.m2\repository\commons-beanutils\commons-beanutils\1.9.4\commons-beanutils-1.9.4.jar;C:\Users\patha\.m2\repository\com\google\guava\guava\28.2-jre\guava-28.2-jre.jar;C:\Users\patha\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\patha\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\patha\.m2\repository\org\checkerframework\checker-qual\2.10.0\checker-qual-2.10.0.jar;C:\Users\patha\.m2\repository\com\google\errorprone\error_prone_annotations\2.3.4\error_prone_annotations-2.3.4.jar;C:\Users\patha\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\patha\.m2\repository\net\sf\saxon\Saxon-HE\9.9.1-6\Saxon-HE-9.9.1-6.jar;C:\Users\patha\.m2\repository\org\apache\velocity\velocity\1.7\velocity-1.7.jar;C:\Users\patha\.m2\repository\commons-lang\commons-lang\2.4\commons-lang-2.4.jar;C:\Users\patha\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\patha\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\patha\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\patha\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\patha\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.1\junit-jupiter-params-5.10.1.jar;C:\Users\patha\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\patha\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\patha\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\patha\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\patha\AppData\Local\Temp\surefire9912722967623679035\surefirebooter-20240329164407436_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\patha\AppData\Local\Temp\surefire11286908761121741956\surefirebooter-20240330031034139_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.6+9-LTS-190"/>
@@ -57,47 +57,47 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="checkPriceSymbolPairStream" classname="unit.TestCMWebsocketClientImpl" time="0.033">
-    <system-out><![CDATA[2024-03-29 16:44:13.595[1711741453595] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 1] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
-2024-03-29 16:44:13.616[1711741453616] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 2] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
-2024-03-29 16:44:13.617[1711741453617] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 3] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
-2024-03-29 16:44:13.619[1711741453619] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 4] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
-2024-03-29 16:44:13.620[1711741453620] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 5] Connecting to dstream.binance.com/ws/btcusdt@markPrice@1s
-2024-03-29 16:44:13.621[1711741453621] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 6] Connecting to dstream.binance.com/ws/btcusdt@markPrice
+  <testcase name="checkPriceSymbolPairStream" classname="unit.TestCMWebsocketClientImpl" time="0.037">
+    <system-out><![CDATA[2024-03-30 03:10:39.912[1711779039912] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 1] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-03-30 03:10:39.934[1711779039934] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 2] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-03-30 03:10:39.935[1711779039935] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 3] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-03-30 03:10:39.937[1711779039937] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 4] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-03-30 03:10:39.939[1711779039939] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 5] Connecting to dstream.binance.com/ws/btcusdt@markPrice@1s
+2024-03-30 03:10:39.940[1711779039940] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 6] Connecting to dstream.binance.com/ws/btcusdt@markPrice
 ]]></system-out>
   </testcase>
-  <testcase name="checkConnectionCloseById" classname="unit.TestCMWebsocketClientImpl" time="0.01">
-    <system-out><![CDATA[2024-03-29 16:44:13.623[1711741453623] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 7] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
-2024-03-29 16:44:13.625[1711741453625] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 8] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
-2024-03-29 16:44:13.626[1711741453626] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 9] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
-2024-03-29 16:44:13.627[1711741453627] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 10] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
-2024-03-29 16:44:13.628[1711741453628] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 7] Closing connection to dstream.binance.com/ws/btcusdt@indexPrice@1s
-2024-03-29 16:44:13.632[1711741453632] | INFO  | main       | c.b.c.f.c.impl.WebsocketClientImpl   - Closing Connection ID 7
+  <testcase name="checkConnectionCloseById" classname="unit.TestCMWebsocketClientImpl" time="0.022">
+    <system-out><![CDATA[2024-03-30 03:10:39.944[1711779039944] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 7] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-03-30 03:10:39.945[1711779039945] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 8] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-03-30 03:10:39.946[1711779039946] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 9] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-03-30 03:10:39.948[1711779039948] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 10] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-03-30 03:10:39.955[1711779039955] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 7] Closing connection to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-03-30 03:10:39.964[1711779039964] | INFO  | main       | c.b.c.f.c.impl.WebsocketClientImpl   - Closing Connection ID 7
 ]]></system-out>
   </testcase>
-  <testcase name="checkCandleList" classname="unit.TestCMWebsocketClientImpl" time="0.004">
-    <system-out><![CDATA[2024-03-29 16:44:13.634[1711741453634] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 11] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
-2024-03-29 16:44:13.635[1711741453635] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 12] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
-2024-03-29 16:44:13.636[1711741453636] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 13] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
-2024-03-29 16:44:13.637[1711741453637] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 14] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+  <testcase name="checkCandleList" classname="unit.TestCMWebsocketClientImpl" time="0.007">
+    <system-out><![CDATA[2024-03-30 03:10:39.966[1711779039966] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 11] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-03-30 03:10:39.967[1711779039967] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 12] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-03-30 03:10:39.970[1711779039970] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 13] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-03-30 03:10:39.971[1711779039971] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 14] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
 ]]></system-out>
   </testcase>
-  <testcase name="checkConnectionClosedState" classname="unit.TestCMWebsocketClientImpl" time="0.006">
-    <system-out><![CDATA[2024-03-29 16:44:13.639[1711741453639] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 15] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
-2024-03-29 16:44:13.641[1711741453641] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 16] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
-2024-03-29 16:44:13.642[1711741453642] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 17] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
-2024-03-29 16:44:13.643[1711741453643] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 18] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
-2024-03-29 16:44:13.644[1711741453644] | INFO  | main       | c.b.c.f.c.impl.WebsocketClientImpl   - Closing 4 connections(s)
-2024-03-29 16:44:13.644[1711741453644] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 16] Closing connection to dstream.binance.com/ws/btcusdt@indexPrice
-2024-03-29 16:44:13.644[1711741453644] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 17] Closing connection to dstream.binance.com/ws/btcusdt@indexPriceKline_1
-2024-03-29 16:44:13.644[1711741453644] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 18] Closing connection to dstream.binance.com/ws/btcusdt@markPriceKline_1
-2024-03-29 16:44:13.645[1711741453645] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 15] Closing connection to dstream.binance.com/ws/btcusdt@indexPrice@1s
-2024-03-29 16:44:13.645[1711741453645] | INFO  | main       | c.b.c.f.c.impl.WebsocketClientImpl   - All connections are closed!
+  <testcase name="checkConnectionClosedState" classname="unit.TestCMWebsocketClientImpl" time="0.018">
+    <system-out><![CDATA[2024-03-30 03:10:39.974[1711779039974] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 15] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-03-30 03:10:39.980[1711779039980] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 16] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-03-30 03:10:39.982[1711779039982] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 17] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-03-30 03:10:39.985[1711779039985] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 18] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-03-30 03:10:39.989[1711779039989] | INFO  | main       | c.b.c.f.c.impl.WebsocketClientImpl   - Closing 4 connections(s)
+2024-03-30 03:10:39.990[1711779039990] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 16] Closing connection to dstream.binance.com/ws/btcusdt@indexPrice
+2024-03-30 03:10:39.990[1711779039990] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 17] Closing connection to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-03-30 03:10:39.991[1711779039991] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 18] Closing connection to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-03-30 03:10:39.991[1711779039991] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 15] Closing connection to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-03-30 03:10:39.991[1711779039991] | INFO  | main       | c.b.c.f.c.impl.WebsocketClientImpl   - All connections are closed!
 ]]></system-out>
   </testcase>
-  <testcase name="checkIndexPrice" classname="unit.TestCMWebsocketClientImpl" time="0.025">
-    <system-out><![CDATA[2024-03-29 16:44:13.646[1711741453646] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 19] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
-2024-03-29 16:44:13.659[1711741453659] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 19] Failure
+  <testcase name="checkIndexPrice" classname="unit.TestCMWebsocketClientImpl" time="0.035">
+    <system-out><![CDATA[2024-03-30 03:10:39.994[1711779039994] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 19] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-03-30 03:10:40.014[1711779040014] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 19] Failure
 java.io.InterruptedIOException: executor rejected
 	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
 	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
@@ -107,7 +107,7 @@ java.io.InterruptedIOException: executor rejected
 	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
 	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
 	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:719)
-	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:66)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:82)
 	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:43)
 	at unit.TestCMWebsocketClientImpl.indexPriceStream(TestCMWebsocketClientImpl.java:17)
 	at unit.TestCMWebsocketClientImpl.<init>(TestCMWebsocketClientImpl.java:59)
@@ -154,14 +154,14 @@ java.io.InterruptedIOException: executor rejected
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@6befbb12 rejected from java.util.concurrent.ThreadPoolExecutor@21d9cd04[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@4662752a rejected from java.util.concurrent.ThreadPoolExecutor@693f2213[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
 	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
 	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
 	... 54 common frames omitted
-2024-03-29 16:44:13.660[1711741453660] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 20] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
-2024-03-29 16:44:13.662[1711741453662] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 20] Failure
+2024-03-30 03:10:40.016[1711779040016] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 20] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-03-30 03:10:40.018[1711779040018] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 20] Failure
 java.io.InterruptedIOException: executor rejected
 	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
 	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
@@ -171,7 +171,7 @@ java.io.InterruptedIOException: executor rejected
 	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
 	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
 	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:719)
-	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:66)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:82)
 	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:43)
 	at unit.TestCMWebsocketClientImpl.indexPriceStream(TestCMWebsocketClientImpl.java:17)
 	at unit.TestCMWebsocketClientImpl.<init>(TestCMWebsocketClientImpl.java:60)
@@ -218,14 +218,14 @@ java.io.InterruptedIOException: executor rejected
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@4e17442f rejected from java.util.concurrent.ThreadPoolExecutor@21d9cd04[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@33d230ce rejected from java.util.concurrent.ThreadPoolExecutor@693f2213[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
 	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
 	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
 	... 54 common frames omitted
-2024-03-29 16:44:13.663[1711741453663] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 21] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
-2024-03-29 16:44:13.664[1711741453664] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 21] Failure
+2024-03-30 03:10:40.020[1711779040020] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 21] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-03-30 03:10:40.021[1711779040021] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 21] Failure
 java.io.InterruptedIOException: executor rejected
 	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
 	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
@@ -235,8 +235,8 @@ java.io.InterruptedIOException: executor rejected
 	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
 	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
 	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:719)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexKlineCandlestick(CMWebsocketClientImpl.java:155)
 	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexKlineCandlestick(CMWebsocketClientImpl.java:138)
-	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexKlineCandlestick(CMWebsocketClientImpl.java:121)
 	at unit.TestCMWebsocketClientImpl.indexKlineCandlestick(TestCMWebsocketClientImpl.java:37)
 	at unit.TestCMWebsocketClientImpl.<init>(TestCMWebsocketClientImpl.java:62)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -282,14 +282,14 @@ java.io.InterruptedIOException: executor rejected
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@5d7f8467 rejected from java.util.concurrent.ThreadPoolExecutor@21d9cd04[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@63f9ddf9 rejected from java.util.concurrent.ThreadPoolExecutor@693f2213[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
 	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
 	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
 	... 54 common frames omitted
-2024-03-29 16:44:13.665[1711741453665] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 22] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
-2024-03-29 16:44:13.667[1711741453667] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 22] Failure
+2024-03-30 03:10:40.022[1711779040022] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 22] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-03-30 03:10:40.023[1711779040023] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 22] Failure
 java.io.InterruptedIOException: executor rejected
 	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
 	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
@@ -299,8 +299,8 @@ java.io.InterruptedIOException: executor rejected
 	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
 	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
 	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:719)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.markKlineCandlestick(CMWebsocketClientImpl.java:191)
 	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.markKlineCandlestick(CMWebsocketClientImpl.java:174)
-	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.markKlineCandlestick(CMWebsocketClientImpl.java:157)
 	at unit.TestCMWebsocketClientImpl.markKlineCandlestick(TestCMWebsocketClientImpl.java:42)
 	at unit.TestCMWebsocketClientImpl.<init>(TestCMWebsocketClientImpl.java:62)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -346,14 +346,14 @@ java.io.InterruptedIOException: executor rejected
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@5c234920 rejected from java.util.concurrent.ThreadPoolExecutor@21d9cd04[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@4f5c30b1 rejected from java.util.concurrent.ThreadPoolExecutor@693f2213[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
 	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
 	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
 	... 54 common frames omitted
-2024-03-29 16:44:13.669[1711741453669] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 23] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
-2024-03-29 16:44:13.670[1711741453670] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 23] Failure
+2024-03-30 03:10:40.024[1711779040024] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 23] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-03-30 03:10:40.026[1711779040026] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 23] Failure
 java.io.InterruptedIOException: executor rejected
 	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
 	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
@@ -363,7 +363,7 @@ java.io.InterruptedIOException: executor rejected
 	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
 	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
 	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:719)
-	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:66)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:82)
 	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:43)
 	at unit.TestCMWebsocketClientImpl.indexPriceStream(TestCMWebsocketClientImpl.java:17)
 	at unit.TestCMWebsocketClientImpl.checkIndexPrice(TestCMWebsocketClientImpl.java:73)
@@ -409,7 +409,7 @@ java.io.InterruptedIOException: executor rejected
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@681de87f rejected from java.util.concurrent.ThreadPoolExecutor@21d9cd04[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@29bd85db rejected from java.util.concurrent.ThreadPoolExecutor@693f2213[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
 	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)

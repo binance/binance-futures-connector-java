@@ -44,6 +44,20 @@ public class CMWebsocketClientImpl extends WebsocketClientImpl {
     }
 
     /**
+     * For creating the request and refactoring the request builder because of long statement and code redundancy smell.
+     * @param initalString
+     * @param speed
+     * @param pair
+     * @return
+     */
+
+//    Refactored Area Starts Method apllied -> Extract method
+    public String indexPriceStreamRequestString(String initalString, int speed, String pair){
+        String BaseUrl = getBaseUrl();
+        pair = pair.toLowerCase();
+        return String.format(initalString,BaseUrl,pair,speed) ;
+    }
+    /**
      * Same as {@link #indexPriceStream(String, int, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
      *
      * @param pair trading pair
@@ -59,12 +73,15 @@ public class CMWebsocketClientImpl extends WebsocketClientImpl {
         Request request = null;
         final int defaultSpeed = 3;
         if (speed == defaultSpeed) {
-            request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@indexPrice", getBaseUrl(), pair.toLowerCase(), speed));
+            String Format = indexPriceStreamRequestString("%s/ws/%s@indexPrice",speed,pair);
+            request = RequestBuilder.buildWebsocketRequest(Format);
         } else {
-            request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@indexPrice@%ss", getBaseUrl(), pair.toLowerCase(), speed));
+            String Format = indexPriceStreamRequestString("%s/ws/%s@indexPrice@%ss",speed,pair);
+            request = RequestBuilder.buildWebsocketRequest(Format);
         }
         return super.createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);
     }
+//Refactored Area Ends
 
     /**
      * Mark price and funding rate for a single pair pushed every 3 seconds or every second.

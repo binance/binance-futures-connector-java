@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: unit.um_futures.account.TestUMFuturesAccountBalance
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in unit.um_futures.account.TestUMFuturesAccountBalance
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.183 s -- in unit.um_futures.account.TestUMFuturesAccountBalance
