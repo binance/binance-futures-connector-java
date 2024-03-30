@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: unit.cm_futures.account.TestCMAccountInformation
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.206 s -- in unit.cm_futures.account.TestCMAccountInformation
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.002 s -- in unit.cm_futures.account.TestCMAccountInformation

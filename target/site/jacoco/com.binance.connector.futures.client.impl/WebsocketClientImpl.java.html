@@ -28,21 +28,21 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class WebsocketClientImpl implements WebsocketClient {
     private final String baseUrl;
-<span class="nc" id="L31">    private final Map&lt;Integer, WebSocketConnection&gt; connections = new HashMap&lt;&gt;();</span>
-<span class="nc" id="L32">    private final WebSocketCallback noopCallback = msg -&gt; {</span>
-<span class="nc" id="L33">    };</span>
-<span class="nc" id="L34">    private static final Logger logger = LoggerFactory.getLogger(WebsocketClientImpl.class);</span>
+<span class="fc" id="L31">    private final Map&lt;Integer, WebSocketConnection&gt; connections = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L32">    private final WebSocketCallback noopCallback = msg -&gt; {</span>
+<span class="fc" id="L33">    };</span>
+<span class="fc" id="L34">    private static final Logger logger = LoggerFactory.getLogger(WebsocketClientImpl.class);</span>
 
-<span class="nc" id="L36">    public WebsocketClientImpl(String baseUrl) {</span>
-<span class="nc" id="L37">        this.baseUrl = baseUrl;</span>
-<span class="nc" id="L38">    }</span>
+<span class="fc" id="L36">    public WebsocketClientImpl(String baseUrl) {</span>
+<span class="fc" id="L37">        this.baseUrl = baseUrl;</span>
+<span class="fc" id="L38">    }</span>
 
     public WebSocketCallback getNoopCallback() {
-<span class="nc" id="L41">        return this.noopCallback;</span>
+<span class="fc" id="L41">        return this.noopCallback;</span>
     }
 
     public String getBaseUrl() {
-<span class="nc" id="L45">        return this.baseUrl;</span>
+<span class="fc" id="L45">        return this.baseUrl;</span>
     }
 
     /**
@@ -100,8 +100,8 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      */
     @Override
     public int markPriceStream(String symbol, int speed, WebSocketCallback onMessageCallback) {
-<span class="nc" id="L103">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
-<span class="nc" id="L104">        return markPriceStream(symbol, speed, noopCallback, onMessageCallback, noopCallback, noopCallback);</span>
+<span class="fc" id="L103">        ParameterChecker.checkParameterType(symbol, String.class, &quot;symbol&quot;);</span>
+<span class="fc" id="L104">        return markPriceStream(symbol, speed, noopCallback, onMessageCallback, noopCallback, noopCallback);</span>
     }
 
     /**
@@ -117,14 +117,14 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      */
     @Override
     public int markPriceStream(String symbol, int speed, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
-<span class="nc" id="L120">        Request request = null;</span>
-<span class="nc" id="L121">        final int defaultSpeed = 3;</span>
-<span class="nc bnc" id="L122" title="All 2 branches missed.">        if (speed == defaultSpeed) {</span>
-<span class="nc" id="L123">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@markPrice&quot;, baseUrl, symbol.toLowerCase()));</span>
+<span class="fc" id="L120">        Request request = null;</span>
+<span class="fc" id="L121">        final int defaultSpeed = 3;</span>
+<span class="pc bpc" id="L122" title="1 of 2 branches missed.">        if (speed == defaultSpeed) {</span>
+<span class="fc" id="L123">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@markPrice&quot;, baseUrl, symbol.toLowerCase()));</span>
         } else {
 <span class="nc" id="L125">            request = RequestBuilder.buildWebsocketRequest(String.format(&quot;%s/ws/%s@markPrice@%ss&quot;, baseUrl, symbol.toLowerCase(), speed));</span>
         }
-<span class="nc" id="L127">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+<span class="fc" id="L127">        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
     }
 
     /**
@@ -678,35 +678,35 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      */
     @Override
     public void closeConnection(int connectionId) {
-<span class="nc bnc" id="L681" title="All 2 branches missed.">        if (connections.containsKey(connectionId)) {</span>
-<span class="nc" id="L682">            connections.get(connectionId).close();</span>
-<span class="nc" id="L683">            logger.info(&quot;Closing Connection ID {}&quot;, connectionId);</span>
-<span class="nc" id="L684">            connections.remove(connectionId);</span>
+<span class="pc bpc" id="L681" title="1 of 2 branches missed.">        if (connections.containsKey(connectionId)) {</span>
+<span class="fc" id="L682">            connections.get(connectionId).close();</span>
+<span class="fc" id="L683">            logger.info(&quot;Closing Connection ID {}&quot;, connectionId);</span>
+<span class="fc" id="L684">            connections.remove(connectionId);</span>
         } else {
 <span class="nc" id="L686">            logger.info(&quot;Connection ID {} does not exist!&quot;, connectionId);</span>
         }
-<span class="nc" id="L688">    }</span>
+<span class="fc" id="L688">    }</span>
 
     /**
      * Closes all streams
      */
     @Override
     public void closeAllConnections() {
-<span class="nc bnc" id="L695" title="All 2 branches missed.">        if (!connections.isEmpty()) {</span>
-<span class="nc" id="L696">            logger.info(&quot;Closing {} connections(s)&quot;, connections.size());</span>
-<span class="nc" id="L697">            Iterator&lt;Map.Entry&lt;Integer, WebSocketConnection&gt;&gt; iter = connections.entrySet().iterator();</span>
-<span class="nc bnc" id="L698" title="All 2 branches missed.">            while (iter.hasNext()) {</span>
-<span class="nc" id="L699">                WebSocketConnection connection = iter.next().getValue();</span>
-<span class="nc" id="L700">                connection.close();</span>
-<span class="nc" id="L701">                iter.remove();</span>
-<span class="nc" id="L702">            }</span>
+<span class="pc bpc" id="L695" title="1 of 2 branches missed.">        if (!connections.isEmpty()) {</span>
+<span class="fc" id="L696">            logger.info(&quot;Closing {} connections(s)&quot;, connections.size());</span>
+<span class="fc" id="L697">            Iterator&lt;Map.Entry&lt;Integer, WebSocketConnection&gt;&gt; iter = connections.entrySet().iterator();</span>
+<span class="fc bfc" id="L698" title="All 2 branches covered.">            while (iter.hasNext()) {</span>
+<span class="fc" id="L699">                WebSocketConnection connection = iter.next().getValue();</span>
+<span class="fc" id="L700">                connection.close();</span>
+<span class="fc" id="L701">                iter.remove();</span>
+<span class="fc" id="L702">            }</span>
         }
 
-<span class="nc bnc" id="L705" title="All 2 branches missed.">        if (connections.isEmpty()) {</span>
-<span class="nc" id="L706">            HttpClientSingleton.getHttpClient().dispatcher().executorService().shutdown();</span>
-<span class="nc" id="L707">            logger.info(&quot;All connections are closed!&quot;);</span>
+<span class="pc bpc" id="L705" title="1 of 2 branches missed.">        if (connections.isEmpty()) {</span>
+<span class="fc" id="L706">            HttpClientSingleton.getHttpClient().dispatcher().executorService().shutdown();</span>
+<span class="fc" id="L707">            logger.info(&quot;All connections are closed!&quot;);</span>
         }
-<span class="nc" id="L709">    }</span>
+<span class="fc" id="L709">    }</span>
 
     public int createConnection(
             WebSocketCallback onOpenCallback,
@@ -715,11 +715,15 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
             WebSocketCallback onFailureCallback,
             Request request
     ) {
-<span class="nc" id="L718">        WebSocketConnection connection = new WebSocketConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
-<span class="nc" id="L719">        connection.connect();</span>
-<span class="nc" id="L720">        int connectionId = connection.getConnectionId();</span>
-<span class="nc" id="L721">        connections.put(connectionId, connection);</span>
-<span class="nc" id="L722">        return connectionId;</span>
+<span class="fc" id="L718">        WebSocketConnection connection = new WebSocketConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);</span>
+<span class="fc" id="L719">        connection.connect();</span>
+<span class="fc" id="L720">        int connectionId = connection.getConnectionId();</span>
+<span class="fc" id="L721">        connections.put(connectionId, connection);</span>
+<span class="fc" id="L722">        return connectionId;</span>
+    }
+//     fo the ease of testing the closeAllConnection Methods
+    public Map&lt;Integer, WebSocketConnection&gt; getConnections() {
+<span class="fc" id="L726">        return  connections;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

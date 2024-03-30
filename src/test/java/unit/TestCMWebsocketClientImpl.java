@@ -1,13 +1,15 @@
 package unit;
 import com.binance.connector.futures.client.impl.CMWebsocketClientImpl;
 import com.binance.connector.futures.client.utils.WebSocketCallback;
-import static org.junit.Assert.*;
 import com.binance.connector.futures.client.utils.WebSocketConnection;
 import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertNotEquals;
+
 
 public class TestCMWebsocketClientImpl extends CMWebsocketClientImpl {
     @Override
@@ -61,11 +63,10 @@ public class TestCMWebsocketClientImpl extends CMWebsocketClientImpl {
 
     public void getCheckConnectionList(ArrayList<Integer> checkConnectionList) {
         this.checkConnectionList = checkConnectionList;
-//        checkConnectionList.add(Arrays.asList())
+//        checkConnectionList.add(Arrays.asList());
     }
 
     @Test
-
     public void checkIndexPrice(){
         assertNotNull(connectionId); // checking for the if statement when the speed is high 1000ms.
         assertNotNull(connectionIdForDefaultSpeed); // checking for the if statement when the speed = default speed.
@@ -76,11 +77,13 @@ public class TestCMWebsocketClientImpl extends CMWebsocketClientImpl {
     @Test
     public void checkPriceSymbolPairStream(){
         assertNotNull(markPriceSymbolsPairStream("BTCUSDT", 1, mockObj)); // checking wether when this method is hit is it really returning the connection id or not.
+        assertNotEquals(connectionId, markPriceStream("BTCUSDT", 3, mockObj)); // checking wether the function is returning the new connection id or not.
+        // because after getting called this many times in one runtime it should create new connection id and not overwrite the existing one.
     }
 
     @Test
     public void checkConnectionCloseById(){
-        closeConnection(connectionId);
+        closeConnection(connectionId); // for checking if the conenction is closed for the provided id or not
         assertTrue(!getConnections().containsValue(connectionId));
     }
 

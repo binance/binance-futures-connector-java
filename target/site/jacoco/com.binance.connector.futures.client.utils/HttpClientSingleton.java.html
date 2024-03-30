@@ -10,10 +10,10 @@ public final class HttpClientSingleton {
     }
 
     public static OkHttpClient getHttpClient() {
-<span class="nc bnc" id="L13" title="All 2 branches missed.">        if (httpClient == null) {</span>
+<span class="pc bpc" id="L13" title="1 of 2 branches missed.">        if (httpClient == null) {</span>
 <span class="nc" id="L14">            createHttpClient(null);</span>
         }
-<span class="nc" id="L16">        return httpClient;</span>
+<span class="fc" id="L16">        return httpClient;</span>
     }
 
     public static OkHttpClient getHttpClient(ProxyAuth proxy) {

@@ -34,7 +34,7 @@ public class TestUMCloseListenKey {
     }
 
     @Test
-    public void testGetProductURl(){
+    public void testGetProductURl() {
         UMFuturesClientImpl client = new UMFuturesClientImpl(MockData.API_KEY, MockData.SECRET_KEY, baseUrl);
         assertNotNull(client.getProductUrl());
     }

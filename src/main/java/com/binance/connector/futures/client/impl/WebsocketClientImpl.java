@@ -722,7 +722,7 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
         return connectionId;
     }
 //     fo the ease of testing the closeAllConnection Methods
-    public Map<Integer, WebSocketConnection> getConnections(){
+    public Map<Integer, WebSocketConnection> getConnections() {
         return  connections;
     }
 }

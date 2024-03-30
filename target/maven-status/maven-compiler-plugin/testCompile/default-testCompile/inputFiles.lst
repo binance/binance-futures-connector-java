@@ -89,6 +89,7 @@ G:\binance-futures-connector-java\src\test\java\unit\MockWebServerDispatcher.jav
 G:\binance-futures-connector-java\src\test\java\unit\cm_futures\market\TestCMLongShortRatio.java
 G:\binance-futures-connector-java\src\test\java\unit\cm_futures\account\TestCMQueryCurrentOpenOrder.java
 G:\binance-futures-connector-java\src\test\java\unit\um_futures\account\TestUMDownloadIdForFuturesTransactionHistory.java
+G:\binance-futures-connector-java\src\test\java\unit\TestCMWebsocketClientImpl.java
 G:\binance-futures-connector-java\src\test\java\examples\cm_futures\account\CancelMultipleOrders.java
 G:\binance-futures-connector-java\src\test\java\unit\um_futures\market\TestUMIndexPriceKlines.java
 G:\binance-futures-connector-java\src\test\java\examples\um_futures\websocket\AllMiniTickerStream.java

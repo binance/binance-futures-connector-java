@@ -1,0 +1,5 @@
+com.binance.connector.futures.client
+com.binance.connector.futures.client.impl
+com.binance.connector.futures.client.impl.cm_futures
+com.binance.connector.futures.client.impl.futures
+com.binance.connector.futures.client.impl.um_futures

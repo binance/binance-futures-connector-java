@@ -6,6 +6,7 @@ G:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\cl
 G:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\impl\FuturesClientImpl.java
 G:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\utils\HttpClientSingleton.java
 G:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\utils\ParameterChecker.java
+G:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\impl\MarkPriceSymbolParams.java
 G:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\impl\um_futures\UMAccount.java
 G:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\enums\HttpMethod.java
 G:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\impl\cm_futures\CMAccount.java

@@ -10,10 +10,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class WebSocketConnection extends WebSocketListener {
-<span class="nc" id="L13">    private static final AtomicInteger connectionCounter = new AtomicInteger(0);</span>
+<span class="fc" id="L13">    private static final AtomicInteger connectionCounter = new AtomicInteger(0);</span>
     private static final int NORMAL_CLOSURE_STATUS = 1000;
-<span class="nc" id="L15">    private static final OkHttpClient client = HttpClientSingleton.getHttpClient();</span>
-<span class="nc" id="L16">    private static final Logger logger = LoggerFactory.getLogger(WebSocketConnection.class);</span>
+<span class="fc" id="L15">    private static final OkHttpClient client = HttpClientSingleton.getHttpClient();</span>
+<span class="fc" id="L16">    private static final Logger logger = LoggerFactory.getLogger(WebSocketConnection.class);</span>
 
     private final WebSocketCallback onOpenCallback;
     private final WebSocketCallback onMessageCallback;
@@ -33,40 +33,40 @@ public class WebSocketConnection extends WebSocketListener {
             WebSocketCallback onClosingCallback,
             WebSocketCallback onFailureCallback,
             Request request
-<span class="nc" id="L36">    ) {</span>
-<span class="nc" id="L37">        this.onOpenCallback = onOpenCallback;</span>
-<span class="nc" id="L38">        this.onMessageCallback = onMessageCallback;</span>
-<span class="nc" id="L39">        this.onClosingCallback = onClosingCallback;</span>
-<span class="nc" id="L40">        this.onFailureCallback = onFailureCallback;</span>
-<span class="nc" id="L41">        this.connectionId = WebSocketConnection.connectionCounter.incrementAndGet();</span>
-<span class="nc" id="L42">        this.request = request;</span>
-<span class="nc" id="L43">        this.streamName = request.url().host() + request.url().encodedPath();</span>
-<span class="nc" id="L44">        this.webSocket = null;</span>
-<span class="nc" id="L45">        this.mutex = new Object();</span>
-<span class="nc" id="L46">    }</span>
+<span class="fc" id="L36">    ) {</span>
+<span class="fc" id="L37">        this.onOpenCallback = onOpenCallback;</span>
+<span class="fc" id="L38">        this.onMessageCallback = onMessageCallback;</span>
+<span class="fc" id="L39">        this.onClosingCallback = onClosingCallback;</span>
+<span class="fc" id="L40">        this.onFailureCallback = onFailureCallback;</span>
+<span class="fc" id="L41">        this.connectionId = WebSocketConnection.connectionCounter.incrementAndGet();</span>
+<span class="fc" id="L42">        this.request = request;</span>
+<span class="fc" id="L43">        this.streamName = request.url().host() + request.url().encodedPath();</span>
+<span class="fc" id="L44">        this.webSocket = null;</span>
+<span class="fc" id="L45">        this.mutex = new Object();</span>
+<span class="fc" id="L46">    }</span>
 
     public void connect() {
-<span class="nc" id="L49">        synchronized (mutex) {</span>
-<span class="nc bnc" id="L50" title="All 2 branches missed.">            if (null == webSocket) {</span>
-<span class="nc" id="L51">                logger.info(&quot;[Connection {}] Connecting to {}&quot;, connectionId, streamName);</span>
-<span class="nc" id="L52">                webSocket = client.newWebSocket(request, this);</span>
+<span class="fc" id="L49">        synchronized (mutex) {</span>
+<span class="pc bpc" id="L50" title="1 of 2 branches missed.">            if (null == webSocket) {</span>
+<span class="fc" id="L51">                logger.info(&quot;[Connection {}] Connecting to {}&quot;, connectionId, streamName);</span>
+<span class="fc" id="L52">                webSocket = client.newWebSocket(request, this);</span>
             } else {
 <span class="nc" id="L54">                logger.info(&quot;[Connection {}] is already connected to {}&quot;, connectionId, streamName);</span>
             }
-<span class="nc" id="L56">        }</span>
-<span class="nc" id="L57">    }</span>
+<span class="fc" id="L56">        }</span>
+<span class="fc" id="L57">    }</span>
 
     public int getConnectionId() {
-<span class="nc" id="L60">        return connectionId;</span>
+<span class="fc" id="L60">        return connectionId;</span>
     }
 
 
     public void close() {
-<span class="nc bnc" id="L65" title="All 2 branches missed.">        if (null != webSocket) {</span>
-<span class="nc" id="L66">            logger.info(&quot;[Connection {}] Closing connection to {}&quot;, connectionId, streamName);</span>
-<span class="nc" id="L67">            webSocket.close(NORMAL_CLOSURE_STATUS, null);</span>
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">        if (null != webSocket) {</span>
+<span class="fc" id="L66">            logger.info(&quot;[Connection {}] Closing connection to {}&quot;, connectionId, streamName);</span>
+<span class="fc" id="L67">            webSocket.close(NORMAL_CLOSURE_STATUS, null);</span>
         }
-<span class="nc" id="L69">    }</span>
+<span class="fc" id="L69">    }</span>
 
     @Override
     public void onOpen(WebSocket ws, Response response) {
@@ -87,8 +87,8 @@ public class WebSocketConnection extends WebSocketListener {
 
     @Override
     public void onFailure(WebSocket ws, Throwable t, Response response) {
-<span class="nc" id="L90">        logger.error(&quot;[Connection {}] Failure&quot;, connectionId, t);</span>
-<span class="nc" id="L91">        onFailureCallback.onReceive(null);</span>
-<span class="nc" id="L92">    }</span>
+<span class="fc" id="L90">        logger.error(&quot;[Connection {}] Failure&quot;, connectionId, t);</span>
+<span class="fc" id="L91">        onFailureCallback.onReceive(null);</span>
+<span class="fc" id="L92">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
