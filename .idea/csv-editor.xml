@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\smells\DesignSmells.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\smells\ImplementationSmells.csv">
           <value>
             <Attribute>
@@ -18,6 +25,13 @@
           </value>
         </entry>
         <entry key="\smells\MethodMetrics.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\smells\TestabilitySmells.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

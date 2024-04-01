@@ -70,15 +70,15 @@ public class WebSocketConnection extends WebSocketListener {
 
     @Override
     public void onOpen(WebSocket ws, Response response) {
-<span class="fc" id="L73">        logger.info(&quot;[Connection {}] Connected to Server&quot;, connectionId);</span>
-<span class="fc" id="L74">        onOpenCallback.onReceive(null);</span>
-<span class="fc" id="L75">    }</span>
+<span class="nc" id="L73">        logger.info(&quot;[Connection {}] Connected to Server&quot;, connectionId);</span>
+<span class="nc" id="L74">        onOpenCallback.onReceive(null);</span>
+<span class="nc" id="L75">    }</span>
 
     @Override
     public void onClosing(WebSocket ws, int code, String reason) {
-<span class="fc" id="L79">        super.onClosing(ws, code, reason);</span>
-<span class="fc" id="L80">        onClosingCallback.onReceive(reason);</span>
-<span class="fc" id="L81">    }</span>
+<span class="nc" id="L79">        super.onClosing(ws, code, reason);</span>
+<span class="nc" id="L80">        onClosingCallback.onReceive(reason);</span>
+<span class="nc" id="L81">    }</span>
 
     @Override
     public void onMessage(WebSocket ws, String text) {

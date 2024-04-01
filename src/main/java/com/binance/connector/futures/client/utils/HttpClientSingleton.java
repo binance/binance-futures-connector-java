@@ -36,11 +36,15 @@ public final class HttpClientSingleton {
             }
         }
     }
+    private static boolean verifyHttpCondition(ProxyAuth proxy){
+        Proxy prevProxy = httpClient.proxy();
+        boolean condition1 = proxy != null && !proxy.getProxy().equals(prevProxy);
+        boolean condition2 = proxy == null && prevProxy != null;
+        return (condition1||condition2);
+    }
 
     private static void verifyHttpClient(ProxyAuth proxy) {
-        Proxy prevProxy = httpClient.proxy();
-
-        if ((proxy != null && !proxy.getProxy().equals(prevProxy)) || (proxy == null && prevProxy != null)) {
+        if (verifyHttpCondition(proxy)) {
             createHttpClient(proxy);
         }
     }
