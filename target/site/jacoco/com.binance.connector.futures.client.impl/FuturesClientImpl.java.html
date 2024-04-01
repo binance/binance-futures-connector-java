@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FuturesClientImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">io.github.binance:binance-futures-connector-java</a> &gt; <a href="index.source.html" class="el_package">com.binance.connector.futures.client.impl</a> &gt; <span class="el_source">FuturesClientImpl.java</span></div><h1>FuturesClientImpl.java</h1><pre class="source lang-java linenums">package com.binance.connector.futures.client.impl;
+
+import com.binance.connector.futures.client.FuturesClient;
+import com.binance.connector.futures.client.utils.ProxyAuth;
+
+public abstract class FuturesClientImpl implements FuturesClient {
+    private final String apiKey;
+    private final String secretKey;
+    private final String baseUrl;
+    private final String productUrl;
+    private boolean showLimitUsage;
+<span class="fc" id="L12">    private ProxyAuth proxy = null;</span>
+
+    public FuturesClientImpl(String baseUrl, String product) {
+<span class="fc" id="L15">        this(null, null, baseUrl, product);</span>
+<span class="fc" id="L16">    }</span>
+
+    public FuturesClientImpl(String baseUrl, String product, boolean showLimitUsage) {
+<span class="nc" id="L19">        this(null, null, baseUrl, product, showLimitUsage);</span>
+<span class="nc" id="L20">    }</span>
+
+    public FuturesClientImpl(String apiKey, String secretKey, String baseUrl, String product) {
+<span class="fc" id="L23">        this(apiKey, secretKey, baseUrl, product, false);</span>
+<span class="fc" id="L24">    }</span>
+
+<span class="fc" id="L26">    public FuturesClientImpl(String apiKey, String secretKey, String baseUrl, String product, boolean showLimitUsage) {</span>
+<span class="fc" id="L27">        this.apiKey = apiKey;</span>
+<span class="fc" id="L28">        this.secretKey = secretKey;</span>
+<span class="fc" id="L29">        this.baseUrl = baseUrl;</span>
+<span class="fc" id="L30">        this.productUrl = baseUrl + product;</span>
+<span class="fc" id="L31">        this.showLimitUsage = showLimitUsage;</span>
+<span class="fc" id="L32">    }</span>
+
+    public String getApiKey() {
+<span class="fc" id="L35">        return this.apiKey;</span>
+    }
+
+    public String getSecretKey() {
+<span class="fc" id="L39">        return this.secretKey;</span>
+    }
+
+    public String getBaseUrl() {
+<span class="fc" id="L43">        return this.baseUrl;</span>
+    }
+
+    public String getProductUrl() {
+<span class="fc" id="L47">        return this.productUrl;</span>
+    }
+
+    public boolean getShowLimitUsage() {
+<span class="fc" id="L51">        return this.showLimitUsage;</span>
+    }
+
+    public void setShowLimitUsage(boolean showLimitUsage) {
+<span class="nc" id="L55">        this.showLimitUsage = showLimitUsage;</span>
+<span class="nc" id="L56">    }</span>
+
+    public void setProxy(ProxyAuth proxy) {
+<span class="nc" id="L59">        this.proxy = proxy;</span>
+<span class="nc" id="L60">    }</span>
+
+    public ProxyAuth getProxy() {
+<span class="fc" id="L63">        return proxy;</span>
+    }
+
+    public void unsetProxy() {
+<span class="nc" id="L67">        this.proxy = null;</span>
+<span class="nc" id="L68">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -26,7 +26,6 @@ E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\cl
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\utils\UrlBuilder.java
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\impl\CMWebsocketClientImpl.java
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\logging\util\MsEpochConverter.java
-E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\WebsocketClient.java
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\enums\RequestType.java
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\impl\um_futures\UMMarket.java
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\impl\UMWebsocketClientImpl.java

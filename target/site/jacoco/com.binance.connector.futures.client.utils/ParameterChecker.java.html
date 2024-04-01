@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ParameterChecker.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">io.github.binance:binance-futures-connector-java</a> &gt; <a href="index.source.html" class="el_package">com.binance.connector.futures.client.utils</a> &gt; <span class="el_source">ParameterChecker.java</span></div><h1>ParameterChecker.java</h1><pre class="source lang-java linenums">package com.binance.connector.futures.client.utils;
+
+import com.binance.connector.futures.client.exceptions.BinanceConnectorException;
+import java.util.LinkedHashMap;
+
+public final class ParameterChecker {
+
+    private ParameterChecker() {
+    }
+
+    public static void checkParameter(LinkedHashMap&lt;String, Object&gt; parameters, String parameter, Class t) {
+<span class="fc" id="L12">        checkRequiredParameter(parameters, parameter);</span>
+<span class="fc" id="L13">        checkParameterType(parameters.get(parameter), t, parameter);</span>
+<span class="fc" id="L14">    }</span>
+
+    public static void checkOrParameters(LinkedHashMap&lt;String, Object&gt; parameters, String parameter, String parameter2) {
+<span class="fc bfc" id="L17" title="All 4 branches covered.">        if (!parameters.containsKey(parameter) &amp;&amp; (!parameters.containsKey(parameter2))) {</span>
+<span class="fc" id="L18">            throw new BinanceConnectorException(String.format(&quot;Either \&quot;%s\&quot; or \&quot;%s\&quot; is required!&quot;, parameter, parameter2));</span>
+        }
+<span class="fc" id="L20">    }</span>
+
+    public static void checkRequiredParameter(LinkedHashMap&lt;String, Object&gt; parameters, String parameter) {
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (!parameters.containsKey(parameter)) {</span>
+<span class="fc" id="L24">            throw new BinanceConnectorException(String.format(&quot;\&quot;%s\&quot; is a mandatory parameter!&quot;, parameter));</span>
+        }
+<span class="fc" id="L26">    }</span>
+
+    public static void checkParameterType(Object parameter, Class t, String name) {
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if (!t.isInstance(parameter)) {</span>
+<span class="fc" id="L30">            throw new BinanceConnectorException(String.format(&quot;\&quot;%s\&quot; must be of %s type.&quot;, name, t));</span>
+<span class="fc bfc" id="L31" title="All 4 branches covered.">        } else if (t == String.class &amp;&amp; parameter.toString().trim().equals(&quot;&quot;)) {</span>
+<span class="fc" id="L32">            throw new BinanceConnectorException(String.format(&quot;\&quot;%s\&quot; must not be empty.&quot;, name));</span>
+        }
+<span class="fc" id="L34">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

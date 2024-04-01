@@ -1,0 +1,5 @@
+# Created at 2024-04-01T19:28:59.621
+Boot Manifest-JAR contains absolute paths in classpath 'E:\binance-futures-connector-java\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

@@ -15,7 +15,6 @@ com\binance\connector\futures\client\impl\um_futures\UMPortfolioMargin.class
 com\binance\connector\futures\client\impl\futures\Account.class
 com\binance\connector\futures\client\impl\futures\Market.class
 com\binance\connector\futures\client\utils\ResponseHandler.class
-com\binance\connector\futures\client\WebsocketClient.class
 com\binance\connector\futures\client\utils\RequestBuilder$1.class
 com\binance\connector\futures\client\utils\RequestHandler.class
 com\binance\connector\futures\client\utils\SignatureGenerator.class
