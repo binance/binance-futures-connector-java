@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: unit.um_futures.account.TestUMDownloadIdForFuturesTransactionHistory
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s -- in unit.um_futures.account.TestUMDownloadIdForFuturesTransactionHistory

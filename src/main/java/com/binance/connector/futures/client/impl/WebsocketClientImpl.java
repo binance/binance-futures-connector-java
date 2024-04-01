@@ -120,9 +120,13 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
         Request request = null;
         final int defaultSpeed = 3;
         if (speed == defaultSpeed) {
-            request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@markPrice", baseUrl, symbol.toLowerCase()));
-        } else {
-            request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@markPrice@%ss", baseUrl, symbol.toLowerCase(), speed));
+            String reqStr = String.format("%s/ws/%s@markPrice", baseUrl, symbol.toLowerCase());
+            request = RequestBuilder.buildWebsocketRequest(reqStr);
+        }
+        else {
+            String reqStr = String.format("%s/ws/%s@markPrice@%ss", baseUrl, symbol.toLowerCase(), speed);
+            request = RequestBuilder.buildWebsocketRequest(reqStr);
+
         }
         return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);
     }

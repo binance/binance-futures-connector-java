@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.binance.connector.futures.client"},{"l":"com.binance.connector.futures.client.impl"},{"l":"com.binance.connector.futures.client.impl.cm_futures"},{"l":"com.binance.connector.futures.client.impl.futures"},{"l":"com.binance.connector.futures.client.impl.um_futures"}];updateSearchResults();
