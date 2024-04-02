@@ -37,6 +37,7 @@ public class RequestHandler {
      * @return String - response from server
      */
 
+//    giving the false positive smell
     private String sendApiRequest(String baseUrl, String urlPath, String signature, LinkedHashMap<String, Object> parameters,
                                   HttpMethod httpMethod, RequestType requestType, boolean showLimitUsage) {
         String fullUrl = UrlBuilder.buildFullUrl(baseUrl, urlPath, parameters, signature);

@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: unit.um_futures.account.TestUMPositionMarginChangeHistory
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.008 s <<< FAILURE! -- in unit.um_futures.account.TestUMPositionMarginChangeHistory
+unit.um_futures.account.TestUMPositionMarginChangeHistory.testPositionMarginChangeHistory -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMPositionMarginChangeHistory.testPositionMarginChangeHistory(TestUMPositionMarginChangeHistory.java:49)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+
+unit.um_futures.account.TestUMPositionMarginChangeHistory.testPositionMarginChangeHistoryWithoutSymbol -- Time elapsed: 0.003 s <<< FAILURE!
+java.lang.AssertionError: unexpected exception type thrown; expected:<com.binance.connector.futures.client.exceptions.BinanceConnectorException> but was:<java.lang.NoSuchMethodError>
+	at org.junit.Assert.assertThrows(Assert.java:1020)
+	at org.junit.Assert.assertThrows(Assert.java:981)
+	at unit.um_futures.account.TestUMPositionMarginChangeHistory.testPositionMarginChangeHistoryWithoutSymbol(TestUMPositionMarginChangeHistory.java:36)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+Caused by: java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMPositionMarginChangeHistory.lambda$testPositionMarginChangeHistoryWithoutSymbol$0(TestUMPositionMarginChangeHistory.java:36)
+	at org.junit.Assert.assertThrows(Assert.java:1001)
+	... 3 more
+

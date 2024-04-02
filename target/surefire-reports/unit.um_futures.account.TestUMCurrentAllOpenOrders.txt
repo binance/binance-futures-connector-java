@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: unit.um_futures.account.TestUMCurrentAllOpenOrders
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.052 s <<< FAILURE! -- in unit.um_futures.account.TestUMCurrentAllOpenOrders
+unit.um_futures.account.TestUMCurrentAllOpenOrders.testCurrentAllOpenOrders -- Time elapsed: 0.049 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMCurrentAllOpenOrders.testCurrentAllOpenOrders(TestUMCurrentAllOpenOrders.java:48)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+
+unit.um_futures.account.TestUMCurrentAllOpenOrders.testCurrentAllOpenOrdersWithoutSymbol -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMCurrentAllOpenOrders.testCurrentAllOpenOrdersWithoutSymbol(TestUMCurrentAllOpenOrders.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+

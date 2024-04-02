@@ -44,6 +44,20 @@ public class CMWebsocketClientImpl extends WebsocketClientImpl {
     }
 
     /**
+     * For creating the request and refactoring the request builder because of long statement and code redundancy smell.
+     * @param initalString
+     * @param speed
+     * @param pair
+     * @return
+     */
+
+//    Refactored Area Starts Method apllied -> Extract method
+    public String indexPriceStreamRequestString(String initalString, int speed, String pair){
+        String BaseUrl = getBaseUrl();
+        pair = pair.toLowerCase();
+        return String.format(initalString,BaseUrl,pair,speed) ;
+    }
+    /**
      * Same as {@link #indexPriceStream(String, int, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
      *
      * @param pair trading pair
@@ -59,12 +73,15 @@ public class CMWebsocketClientImpl extends WebsocketClientImpl {
         Request request = null;
         final int defaultSpeed = 3;
         if (speed == defaultSpeed) {
-            request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@indexPrice", getBaseUrl(), pair.toLowerCase(), speed));
+            String Format = indexPriceStreamRequestString("%s/ws/%s@indexPrice",speed,pair);
+            request = RequestBuilder.buildWebsocketRequest(Format);
         } else {
-            request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@indexPrice@%ss", getBaseUrl(), pair.toLowerCase(), speed));
+            String Format = indexPriceStreamRequestString("%s/ws/%s@indexPrice@%ss",speed,pair);
+            request = RequestBuilder.buildWebsocketRequest(Format);
         }
         return super.createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);
     }
+//Refactored Area Ends
 
     /**
      * Mark price and funding rate for a single pair pushed every 3 seconds or every second.
@@ -82,30 +99,24 @@ public class CMWebsocketClientImpl extends WebsocketClientImpl {
      */
     public int markPriceSymbolsPairStream(String pair, int speed, WebSocketCallback onMessageCallback) {
         ParameterChecker.checkParameterType(pair, String.class, "pair");
-        return markPriceSymbolsPairStream(pair, speed, getNoopCallback(), onMessageCallback, getNoopCallback(), getNoopCallback());
+        return markPriceSymbolsPairStream(new MarkPriceSymbolParams(pair, speed, getNoopCallback(), onMessageCallback, getNoopCallback(), getNoopCallback()));
     }
 
     /**
      * Same as {@link #markPriceSymbolsPairStream(String, int, WebSocketCallback)} plus accepts callbacks for all major websocket connection events.
      *
-     * @param pair trading pair
-     * @param speed speed in seconds, can be 1 or 3
-     * @param onOpenCallback onOpenCallback
-     * @param onMessageCallback onMessageCallback
-     * @param onClosingCallback onClosingCallback
-     * @param onFailureCallback onFailureCallback
-     * @return int - Connection ID
+     * @param markPriceSymbolParams@return int - Connection ID
      */
-    public int markPriceSymbolsPairStream(String pair, int speed, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
-        ParameterChecker.checkParameterType(pair, String.class, "pair");
+    public int markPriceSymbolsPairStream(MarkPriceSymbolParams markPriceSymbolParams) {
+        ParameterChecker.checkParameterType(markPriceSymbolParams.getPair(), String.class, "pair");
         Request request = null;
         final int defaultSpeed = 3;
-        if (speed == defaultSpeed) {
-            request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@markPrice", getBaseUrl(), pair.toLowerCase()));
+        if (markPriceSymbolParams.getSpeed() == defaultSpeed) {
+            request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@markPrice", getBaseUrl(), markPriceSymbolParams.getPair().toLowerCase()));
         } else {
-            request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@markPrice@%ss", getBaseUrl(), pair.toLowerCase(), speed));
+            request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@markPrice@%ss", getBaseUrl(), markPriceSymbolParams.getPair().toLowerCase(), markPriceSymbolParams.getSpeed()));
         }
-        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);
+        return createConnection(markPriceSymbolParams.getOnOpenCallback(), markPriceSymbolParams.getOnMessageCallback(), markPriceSymbolParams.getOnClosingCallback(), markPriceSymbolParams.getOnFailureCallback(), request);
     }
 
     /**

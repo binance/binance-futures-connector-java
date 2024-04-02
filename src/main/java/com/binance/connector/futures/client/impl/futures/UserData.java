@@ -84,4 +84,18 @@ public abstract class UserData {
     public String closeListenKey() {
         return requestHandler.sendWithApiKeyRequest(productUrl, LISTEN_KEY, null, HttpMethod.DELETE, showLimitUsage);
     }
+
+    /**
+     * <h2>USDⓈ-Margined User Data Streams Endpoints</h2>
+     * All endpoints under the
+     * <a href="https://binance-docs.github.io/apidocs/futures/en/#user-data-streams">User Data Streams</a>
+     * section of the API documentation will be implemented in this class.
+     * <br>
+     * Response will be returned in <i>String format</i>.
+     */
+    public static class UMUserData extends UserData {
+        public UMUserData(String productUrl, String apiKey, boolean showLimitUsage, ProxyAuth proxy) {
+            super(productUrl, apiKey, showLimitUsage, proxy);
+        }
+    }
 }

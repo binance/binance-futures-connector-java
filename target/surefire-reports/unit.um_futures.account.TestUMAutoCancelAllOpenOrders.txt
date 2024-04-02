@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: unit.um_futures.account.TestUMAutoCancelAllOpenOrders
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.011 s <<< FAILURE! -- in unit.um_futures.account.TestUMAutoCancelAllOpenOrders
+unit.um_futures.account.TestUMAutoCancelAllOpenOrders.testAutoCancelAllOpenOrdersWithoutParameters -- Time elapsed: 0.005 s <<< FAILURE!
+java.lang.AssertionError: unexpected exception type thrown; expected:<com.binance.connector.futures.client.exceptions.BinanceConnectorException> but was:<java.lang.NoSuchMethodError>
+	at org.junit.Assert.assertThrows(Assert.java:1020)
+	at org.junit.Assert.assertThrows(Assert.java:981)
+	at unit.um_futures.account.TestUMAutoCancelAllOpenOrders.testAutoCancelAllOpenOrdersWithoutParameters(TestUMAutoCancelAllOpenOrders.java:37)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+Caused by: java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMAutoCancelAllOpenOrders.lambda$testAutoCancelAllOpenOrdersWithoutParameters$0(TestUMAutoCancelAllOpenOrders.java:37)
+	at org.junit.Assert.assertThrows(Assert.java:1001)
+	... 3 more
+
+unit.um_futures.account.TestUMAutoCancelAllOpenOrders.testAutoCancelAllOpenOrders -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMAutoCancelAllOpenOrders.testAutoCancelAllOpenOrders(TestUMAutoCancelAllOpenOrders.java:51)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+

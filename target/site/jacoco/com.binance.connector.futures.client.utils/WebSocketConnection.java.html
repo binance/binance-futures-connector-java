@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WebSocketConnection.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">io.github.binance:binance-futures-connector-java</a> &gt; <a href="index.source.html" class="el_package">com.binance.connector.futures.client.utils</a> &gt; <span class="el_source">WebSocketConnection.java</span></div><h1>WebSocketConnection.java</h1><pre class="source lang-java linenums">package com.binance.connector.futures.client.utils;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.WebSocket;
+import okhttp3.WebSocketListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class WebSocketConnection extends WebSocketListener {
+<span class="fc" id="L13">    private static final AtomicInteger connectionCounter = new AtomicInteger(0);</span>
+    private static final int NORMAL_CLOSURE_STATUS = 1000;
+<span class="fc" id="L15">    private static final OkHttpClient client = HttpClientSingleton.getHttpClient();</span>
+<span class="fc" id="L16">    private static final Logger logger = LoggerFactory.getLogger(WebSocketConnection.class);</span>
+
+    private final WebSocketCallback onOpenCallback;
+    private final WebSocketCallback onMessageCallback;
+    private final WebSocketCallback onClosingCallback;
+    private final WebSocketCallback onFailureCallback;
+    private final int connectionId;
+    private final Request request;
+    private final String streamName;
+
+    private WebSocket webSocket;
+
+    private final Object mutex;
+
+    public WebSocketConnection(
+            WebSocketCallback onOpenCallback,
+            WebSocketCallback onMessageCallback,
+            WebSocketCallback onClosingCallback,
+            WebSocketCallback onFailureCallback,
+            Request request
+<span class="fc" id="L36">    ) {</span>
+<span class="fc" id="L37">        this.onOpenCallback = onOpenCallback;</span>
+<span class="fc" id="L38">        this.onMessageCallback = onMessageCallback;</span>
+<span class="fc" id="L39">        this.onClosingCallback = onClosingCallback;</span>
+<span class="fc" id="L40">        this.onFailureCallback = onFailureCallback;</span>
+<span class="fc" id="L41">        this.connectionId = WebSocketConnection.connectionCounter.incrementAndGet();</span>
+<span class="fc" id="L42">        this.request = request;</span>
+<span class="fc" id="L43">        this.streamName = request.url().host() + request.url().encodedPath();</span>
+<span class="fc" id="L44">        this.webSocket = null;</span>
+<span class="fc" id="L45">        this.mutex = new Object();</span>
+<span class="fc" id="L46">    }</span>
+
+    public void connect() {
+<span class="fc" id="L49">        synchronized (mutex) {</span>
+<span class="pc bpc" id="L50" title="1 of 2 branches missed.">            if (null == webSocket) {</span>
+<span class="fc" id="L51">                logger.info(&quot;[Connection {}] Connecting to {}&quot;, connectionId, streamName);</span>
+<span class="fc" id="L52">                webSocket = client.newWebSocket(request, this);</span>
+            } else {
+<span class="nc" id="L54">                logger.info(&quot;[Connection {}] is already connected to {}&quot;, connectionId, streamName);</span>
+            }
+<span class="fc" id="L56">        }</span>
+<span class="fc" id="L57">    }</span>
+
+    public int getConnectionId() {
+<span class="fc" id="L60">        return connectionId;</span>
+    }
+
+
+    public void close() {
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">        if (null != webSocket) {</span>
+<span class="fc" id="L66">            logger.info(&quot;[Connection {}] Closing connection to {}&quot;, connectionId, streamName);</span>
+<span class="fc" id="L67">            webSocket.close(NORMAL_CLOSURE_STATUS, null);</span>
+        }
+<span class="fc" id="L69">    }</span>
+
+    @Override
+    public void onOpen(WebSocket ws, Response response) {
+<span class="fc" id="L73">        logger.info(&quot;[Connection {}] Connected to Server&quot;, connectionId);</span>
+<span class="fc" id="L74">        onOpenCallback.onReceive(null);</span>
+<span class="fc" id="L75">    }</span>
+
+    @Override
+    public void onClosing(WebSocket ws, int code, String reason) {
+<span class="fc" id="L79">        super.onClosing(ws, code, reason);</span>
+<span class="fc" id="L80">        onClosingCallback.onReceive(reason);</span>
+<span class="fc" id="L81">    }</span>
+
+    @Override
+    public void onMessage(WebSocket ws, String text) {
+<span class="nc" id="L85">        onMessageCallback.onReceive(text);</span>
+<span class="nc" id="L86">    }</span>
+
+    @Override
+    public void onFailure(WebSocket ws, Throwable t, Response response) {
+<span class="fc" id="L90">        logger.error(&quot;[Connection {}] Failure&quot;, connectionId, t);</span>
+<span class="fc" id="L91">        onFailureCallback.onReceive(null);</span>
+<span class="fc" id="L92">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

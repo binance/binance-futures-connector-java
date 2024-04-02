@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: unit.um_futures.account.TestUMGetLeverageBracket
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.022 s <<< FAILURE! -- in unit.um_futures.account.TestUMGetLeverageBracket
+unit.um_futures.account.TestUMGetLeverageBracket.testGetLeverageBracketWithSymbol -- Time elapsed: 0.007 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMGetLeverageBracket.testGetLeverageBracketWithSymbol(TestUMGetLeverageBracket.java:48)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+
+unit.um_futures.account.TestUMGetLeverageBracket.testGetLeverageBracket -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMGetLeverageBracket.testGetLeverageBracket(TestUMGetLeverageBracket.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+

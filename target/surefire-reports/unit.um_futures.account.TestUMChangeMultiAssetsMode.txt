@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: unit.um_futures.account.TestUMChangeMultiAssetsMode
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.019 s <<< FAILURE! -- in unit.um_futures.account.TestUMChangeMultiAssetsMode
+unit.um_futures.account.TestUMChangeMultiAssetsMode.testChangeMultiAssetsModeWithoutMultiAssetsMargin -- Time elapsed: 0.013 s <<< FAILURE!
+java.lang.AssertionError: unexpected exception type thrown; expected:<com.binance.connector.futures.client.exceptions.BinanceConnectorException> but was:<java.lang.NoSuchMethodError>
+	at org.junit.Assert.assertThrows(Assert.java:1020)
+	at org.junit.Assert.assertThrows(Assert.java:981)
+	at unit.um_futures.account.TestUMChangeMultiAssetsMode.testChangeMultiAssetsModeWithoutMultiAssetsMargin(TestUMChangeMultiAssetsMode.java:36)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+Caused by: java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMChangeMultiAssetsMode.lambda$testChangeMultiAssetsModeWithoutMultiAssetsMargin$0(TestUMChangeMultiAssetsMode.java:36)
+	at org.junit.Assert.assertThrows(Assert.java:1001)
+	... 3 more
+
+unit.um_futures.account.TestUMChangeMultiAssetsMode.testChangeMultiAssetsMode -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMChangeMultiAssetsMode.testChangeMultiAssetsMode(TestUMChangeMultiAssetsMode.java:49)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+

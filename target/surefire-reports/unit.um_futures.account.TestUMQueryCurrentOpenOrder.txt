@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------
+Test set: unit.um_futures.account.TestUMQueryCurrentOpenOrder
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 2, Errors: 2, Skipped: 0, Time elapsed: 0.013 s <<< FAILURE! -- in unit.um_futures.account.TestUMQueryCurrentOpenOrder
+unit.um_futures.account.TestUMQueryCurrentOpenOrder.testQueryCurrentOpenOrder -- Time elapsed: 0.003 s <<< FAILURE!
+java.lang.AssertionError: unexpected exception type thrown; expected:<com.binance.connector.futures.client.exceptions.BinanceConnectorException> but was:<java.lang.NoSuchMethodError>
+	at org.junit.Assert.assertThrows(Assert.java:1020)
+	at org.junit.Assert.assertThrows(Assert.java:981)
+	at unit.um_futures.account.TestUMQueryCurrentOpenOrder.testQueryCurrentOpenOrder(TestUMQueryCurrentOpenOrder.java:49)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+Caused by: java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMQueryCurrentOpenOrder.lambda$testQueryCurrentOpenOrder$1(TestUMQueryCurrentOpenOrder.java:49)
+	at org.junit.Assert.assertThrows(Assert.java:1001)
+	... 3 more
+
+unit.um_futures.account.TestUMQueryCurrentOpenOrder.testQueryCurrentOpenOrderWithoutSymbol -- Time elapsed: 0.004 s <<< FAILURE!
+java.lang.AssertionError: unexpected exception type thrown; expected:<com.binance.connector.futures.client.exceptions.BinanceConnectorException> but was:<java.lang.NoSuchMethodError>
+	at org.junit.Assert.assertThrows(Assert.java:1020)
+	at org.junit.Assert.assertThrows(Assert.java:981)
+	at unit.um_futures.account.TestUMQueryCurrentOpenOrder.testQueryCurrentOpenOrderWithoutSymbol(TestUMQueryCurrentOpenOrder.java:36)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+Caused by: java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMQueryCurrentOpenOrder.lambda$testQueryCurrentOpenOrderWithoutSymbol$0(TestUMQueryCurrentOpenOrder.java:36)
+	at org.junit.Assert.assertThrows(Assert.java:1001)
+	... 3 more
+
+unit.um_futures.account.TestUMQueryCurrentOpenOrder.testQueryCurrentOpenOrderWithOrderId -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMQueryCurrentOpenOrder.testQueryCurrentOpenOrderWithOrderId(TestUMQueryCurrentOpenOrder.java:63)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+
+unit.um_futures.account.TestUMQueryCurrentOpenOrder.testQueryCurrentOpenOrderWithOrigClientOrderId -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMQueryCurrentOpenOrder.testQueryCurrentOpenOrderWithOrigClientOrderId(TestUMQueryCurrentOpenOrder.java:78)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+

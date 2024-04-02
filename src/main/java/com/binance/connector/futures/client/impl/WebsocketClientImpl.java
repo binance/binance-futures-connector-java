@@ -1,6 +1,5 @@
 package com.binance.connector.futures.client.impl;
 
-import com.binance.connector.futures.client.WebsocketClient;
 import com.binance.connector.futures.client.utils.HttpClientSingleton;
 import com.binance.connector.futures.client.utils.RequestBuilder;
 import com.binance.connector.futures.client.utils.UrlBuilder;
@@ -26,7 +25,7 @@ import org.slf4j.LoggerFactory;
  * <br>
  * Response will be returned as callback.
  */
-public abstract class WebsocketClientImpl implements WebsocketClient {
+public abstract class WebsocketClientImpl {
     private final String baseUrl;
     private final Map<Integer, WebSocketConnection> connections = new HashMap<>();
     private final WebSocketCallback noopCallback = msg -> {
@@ -59,7 +58,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#aggregate-trade-streams">
      * https://binance-docs.github.io/apidocs/futures/en/#aggregate-trade-streams</a>
      */
-    @Override
     public int aggTradeStream(String symbol, WebSocketCallback onMessageCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
         return aggTradeStream(symbol, noopCallback,  onMessageCallback, noopCallback, noopCallback);
@@ -75,7 +73,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param onFailureCallback onFailureCallback
      * @return int - Connection ID
      */
-    @Override
     public int aggTradeStream(String symbol, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
         Request request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@aggTrade", baseUrl, symbol.toLowerCase()));
@@ -98,7 +95,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#mark-price-stream">
      * https://binance-docs.github.io/apidocs/delivery/en/#mark-price-stream</a>
      */
-    @Override
     public int markPriceStream(String symbol, int speed, WebSocketCallback onMessageCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
         return markPriceStream(symbol, speed, noopCallback, onMessageCallback, noopCallback, noopCallback);
@@ -115,14 +111,17 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param onFailureCallback onFailureCallback
      * @return int - Connection ID
      */
-    @Override
     public int markPriceStream(String symbol, int speed, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         Request request = null;
         final int defaultSpeed = 3;
         if (speed == defaultSpeed) {
-            request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@markPrice", baseUrl, symbol.toLowerCase()));
-        } else {
-            request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@markPrice@%ss", baseUrl, symbol.toLowerCase(), speed));
+            String reqStr = String.format("%s/ws/%s@markPrice", baseUrl, symbol.toLowerCase());
+            request = RequestBuilder.buildWebsocketRequest(reqStr);
+        }
+        else {
+            String reqStr = String.format("%s/ws/%s@markPrice@%ss", baseUrl, symbol.toLowerCase(), speed);
+            request = RequestBuilder.buildWebsocketRequest(reqStr);
+
         }
         return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);
     }
@@ -143,7 +142,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#kline-candlestick-streams">
      * https://binance-docs.github.io/apidocs/delivery/en/#kline-candlestick-streams</a>
      */
-    @Override
     public int klineStream(String symbol, String interval, WebSocketCallback onMessageCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
         return klineStream(symbol, interval, noopCallback, onMessageCallback, noopCallback, noopCallback);
@@ -160,7 +158,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param onFailureCallback onFailureCallback
      * @return int - Connection ID
      */
-    @Override
     public int klineStream(String symbol, String interval, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
         Request request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@kline_%s", baseUrl, symbol.toLowerCase(), interval));
@@ -182,7 +179,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#continuous-contract-kline-candlestick-streams">
      * https://binance-docs.github.io/apidocs/delivery/en/#continuous-contract-kline-candlestick-streams</a>
      */
-    @Override
     public int continuousKlineStream(String pair, String contractType, String interval, WebSocketCallback onMessageCallback) {
         ParameterChecker.checkParameterType(pair, String.class, "pair");
         return continuousKlineStream(pair, contractType, interval, noopCallback, onMessageCallback, noopCallback, noopCallback);
@@ -200,7 +196,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param onFailureCallback onFailureCallback
      * @return int - Connection ID
      */
-    @Override
     public int continuousKlineStream(String pair, String contractType, String interval, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         ParameterChecker.checkParameterType(pair, String.class, "pair");
         ParameterChecker.checkParameterType(contractType, String.class, "contractType");
@@ -226,7 +221,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-mini-ticker-stream">
      * https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-mini-ticker-stream</a>
      */
-    @Override
     public int miniTickerStream(String symbol, WebSocketCallback onMessageCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
         return miniTickerStream(symbol, noopCallback, onMessageCallback, noopCallback, noopCallback);
@@ -242,7 +236,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param onFailureCallback onFailureCallback
      * @return int - Connection ID
      */
-    @Override
     public int miniTickerStream(String symbol, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
         Request request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@miniTicker", baseUrl, symbol.toLowerCase()));
@@ -265,7 +258,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#all-market-mini-tickers-stream">
      * https://binance-docs.github.io/apidocs/delivery/en/#all-market-mini-tickers-stream</a>
      */
-    @Override
     public int allMiniTickerStream(WebSocketCallback onMessageCallback) {
         return allMiniTickerStream(noopCallback, onMessageCallback, noopCallback, noopCallback);
     }
@@ -279,7 +271,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param onFailureCallback onFailureCallback
      * @return int - Connection ID
      */
-    @Override
     public int allMiniTickerStream(WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         Request request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/!miniTicker@arr", baseUrl));
         return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);
@@ -301,7 +292,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-ticker-streams">
      * https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-ticker-streams</a>
      */
-    @Override
     public int symbolTicker(String symbol, WebSocketCallback onMessageCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
         return symbolTicker(symbol, noopCallback, onMessageCallback, noopCallback, noopCallback);
@@ -317,7 +307,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param onFailureCallback onFailureCallback
      * @return int - Connection ID
      */
-    @Override
     public int symbolTicker(String symbol, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
         Request request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@ticker", baseUrl, symbol.toLowerCase()));
@@ -340,7 +329,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#all-market-tickers-streams">
      * https://binance-docs.github.io/apidocs/delivery/en/#all-market-tickers-streams</a>
      */
-    @Override
     public int allTickerStream(WebSocketCallback onMessageCallback) {
         return allTickerStream(noopCallback, onMessageCallback, noopCallback, noopCallback);
     }
@@ -354,7 +342,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param onFailureCallback onFailureCallback
      * @return int - Connection ID
      */
-    @Override
     public int allTickerStream(WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         Request request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/!ticker@arr", baseUrl));
         return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);
@@ -375,7 +362,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-book-ticker-streams">
      * https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-book-ticker-streams</a>
      */
-    @Override
     public int bookTicker(String symbol, WebSocketCallback onMessageCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
         return bookTicker(symbol, noopCallback, onMessageCallback, noopCallback, noopCallback);
@@ -391,7 +377,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param onFailureCallback onFailureCallback
      * @return int - Connection ID
      */
-    @Override
     public int bookTicker(String symbol, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
         Request request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@bookTicker", baseUrl, symbol.toLowerCase()));
@@ -412,7 +397,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#all-book-tickers-stream">
      * https://binance-docs.github.io/apidocs/delivery/en/#all-book-tickers-stream</a>
      */
-    @Override
     public int allBookTickerStream(WebSocketCallback onMessageCallback) {
         return allBookTickerStream(noopCallback, onMessageCallback, noopCallback, noopCallback);
     }
@@ -426,7 +410,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param onFailureCallback onFailureCallback
      * @return int - Connection ID
      */
-    @Override
     public int allBookTickerStream(WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         Request request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/!bookTicker", baseUrl));
         return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);
@@ -449,7 +432,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#liquidation-order-streams">
      * https://binance-docs.github.io/apidocs/delivery/en/#liquidation-order-streams</a>
      */
-    @Override
     public int forceOrderStream(String symbol, WebSocketCallback onMessageCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
         return forceOrderStream(symbol, noopCallback, onMessageCallback, noopCallback, noopCallback);
@@ -465,7 +447,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param onFailureCallback onFailureCallback
      * @return int - Connection ID
      */
-    @Override
     public int forceOrderStream(String symbol, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
         Request request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@forceOrder", baseUrl, symbol.toLowerCase()));
@@ -488,7 +469,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#all-market-liquidation-order-streams">
      * https://binance-docs.github.io/apidocs/delivery/en/#all-market-liquidation-order-streams</a>
      */
-    @Override
     public int allForceOrderStream(WebSocketCallback onMessageCallback) {
         return allForceOrderStream(noopCallback, onMessageCallback, noopCallback, noopCallback);
     }
@@ -502,7 +482,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param onFailureCallback onFailureCallback
      * @return int - Connection ID
      */
-    @Override
     public int allForceOrderStream(WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         Request request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/!forceOrder@arr", baseUrl));
         return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);
@@ -525,7 +504,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#partial-book-depth-streams">
      * https://binance-docs.github.io/apidocs/delivery/en/#partial-book-depth-streams</a>
      */
-    @Override
     public int partialDepthStream(String symbol, int levels, int speed, WebSocketCallback onMessageCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
         return partialDepthStream(symbol, levels, speed, noopCallback, onMessageCallback, noopCallback, noopCallback);
@@ -543,7 +521,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param onFailureCallback onFailureCallback
      * @return int - Connection ID
      */
-    @Override
     public int partialDepthStream(String symbol, int levels, int speed, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
 
@@ -574,7 +551,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#diff-book-depth-streams">
      * https://binance-docs.github.io/apidocs/delivery/en/#diff-book-depth-streams</a>
      */
-    @Override
     public int diffDepthStream(String symbol, int speed, WebSocketCallback onMessageCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
         return diffDepthStream(symbol, speed, noopCallback, onMessageCallback, noopCallback, noopCallback);
@@ -591,7 +567,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param onFailureCallback onFailureCallback
      * @return int - Connection ID
      */
-    @Override
     public int diffDepthStream(String symbol, int speed, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
 
@@ -617,7 +592,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#user-data-streams">
      * https://binance-docs.github.io/apidocs/delivery/en/#user-data-streams</a>
      */
-    @Override
     public int listenUserStream(String listenKey, WebSocketCallback onMessageCallback) {
         return listenUserStream(listenKey, noopCallback, onMessageCallback, noopCallback, noopCallback);
     }
@@ -632,7 +606,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param onFailureCallback onFailureCallback
      * @return int - Connection ID
      */
-    @Override
     public int listenUserStream(String listenKey, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         Request request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s", baseUrl, listenKey));
         return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);
@@ -649,7 +622,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#websocket-market-streams">
      * https://binance-docs.github.io/apidocs/delivery/en/#websocket-market-streams</a>
      */
-    @Override
     public int combineStreams(ArrayList<String> streams, WebSocketCallback onMessageCallback) {
         return combineStreams(streams, noopCallback, onMessageCallback, noopCallback, noopCallback);
     }
@@ -664,7 +636,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param onFailureCallback onFailureCallback
      * @return int - Connection ID
      */
-    @Override
     public int combineStreams(ArrayList<String> streams, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         String url = UrlBuilder.buildStreamUrl(String.format("%s/stream", baseUrl), streams);
         Request request = RequestBuilder.buildWebsocketRequest(url);
@@ -676,7 +647,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      *
      * @param connectionId Connection ID
      */
-    @Override
     public void closeConnection(int connectionId) {
         if (connections.containsKey(connectionId)) {
             connections.get(connectionId).close();
@@ -690,7 +660,6 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
     /**
      * Closes all streams
      */
-    @Override
     public void closeAllConnections() {
         if (!connections.isEmpty()) {
             logger.info("Closing {} connections(s)", connections.size());
@@ -720,5 +689,9 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
         int connectionId = connection.getConnectionId();
         connections.put(connectionId, connection);
         return connectionId;
+    }
+//     fo the ease of testing the closeAllConnection Methods
+    public Map<Integer, WebSocketConnection> getConnections() {
+        return  connections;
     }
 }

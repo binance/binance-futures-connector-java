@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: unit.um_futures.account.TestUMPositionInformation
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.007 s <<< FAILURE! -- in unit.um_futures.account.TestUMPositionInformation
+unit.um_futures.account.TestUMPositionInformation.testPositionInformationNoSymbol -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMPositionInformation.testPositionInformationNoSymbol(TestUMPositionInformation.java:33)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+
+unit.um_futures.account.TestUMPositionInformation.testPositionInformation -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMPositionInformation.testPositionInformation(TestUMPositionInformation.java:47)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+

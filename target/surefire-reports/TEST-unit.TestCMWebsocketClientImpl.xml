@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="unit.TestCMWebsocketClientImpl" time="0.131" tests="5" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="E:\binance-futures-connector-java\target\test-classes;E:\binance-futures-connector-java\target\classes;C:\Users\patha\.m2\repository\com\squareup\okhttp3\okhttp\4.9.2\okhttp-4.9.2.jar;C:\Users\patha\.m2\repository\com\squareup\okio\okio\2.8.0\okio-2.8.0.jar;C:\Users\patha\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.4.0\kotlin-stdlib-common-1.4.0.jar;C:\Users\patha\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.4.10\kotlin-stdlib-1.4.10.jar;C:\Users\patha\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\patha\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;C:\Users\patha\.m2\repository\com\squareup\okhttp3\mockwebserver\4.9.1\mockwebserver-4.9.1.jar;C:\Users\patha\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk8\1.4.10\kotlin-stdlib-jdk8-1.4.10.jar;C:\Users\patha\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk7\1.4.10\kotlin-stdlib-jdk7-1.4.10.jar;C:\Users\patha\.m2\repository\org\json\json\20231013\json-20231013.jar;C:\Users\patha\.m2\repository\org\slf4j\slf4j-api\1.7.32\slf4j-api-1.7.32.jar;C:\Users\patha\.m2\repository\ch\qos\logback\logback-classic\1.2.13\logback-classic-1.2.13.jar;C:\Users\patha\.m2\repository\ch\qos\logback\logback-core\1.2.13\logback-core-1.2.13.jar;C:\Users\patha\.m2\repository\org\apache\maven\plugins\maven-checkstyle-plugin\3.1.2\maven-checkstyle-plugin-3.1.2.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-artifact\3.0\maven-artifact-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-core\3.0\maven-core-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-settings\3.0\maven-settings-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-settings-builder\3.0\maven-settings-builder-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-repository-metadata\3.0\maven-repository-metadata-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-model-builder\3.0\maven-model-builder-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-aether-provider\3.0\maven-aether-provider-3.0.jar;C:\Users\patha\.m2\repository\org\sonatype\aether\aether-impl\1.7\aether-impl-1.7.jar;C:\Users\patha\.m2\repository\org\sonatype\aether\aether-spi\1.7\aether-spi-1.7.jar;C:\Users\patha\.m2\repository\org\sonatype\aether\aether-api\1.7\aether-api-1.7.jar;C:\Users\patha\.m2\repository\org\sonatype\aether\aether-util\1.7\aether-util-1.7.jar;C:\Users\patha\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\1.4.2\sisu-inject-plexus-1.4.2.jar;C:\Users\patha\.m2\repository\org\sonatype\sisu\sisu-inject-bean\1.4.2\sisu-inject-bean-1.4.2.jar;C:\Users\patha\.m2\repository\org\sonatype\sisu\sisu-guice\2.1.7\sisu-guice-2.1.7-noaop.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.3\plexus-classworlds-2.2.3.jar;C:\Users\patha\.m2\repository\org\sonatype\plexus\plexus-sec-dispatcher\1.3\plexus-sec-dispatcher-1.3.jar;C:\Users\patha\.m2\repository\org\sonatype\plexus\plexus-cipher\1.4\plexus-cipher-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-model\3.0\maven-model-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-plugin-api\3.0\maven-plugin-api-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\reporting\maven-reporting-api\3.0\maven-reporting-api-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\reporting\maven-reporting-impl\2.3\maven-reporting-impl-2.3.jar;C:\Users\patha\.m2\repository\org\apache\maven\shared\maven-shared-utils\0.6\maven-shared-utils-0.6.jar;C:\Users\patha\.m2\repository\com\google\code\findbugs\jsr305\2.0.1\jsr305-2.0.1.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-core\1.2\doxia-core-1.2.jar;C:\Users\patha\.m2\repository\xerces\xercesImpl\2.9.1\xercesImpl-2.9.1.jar;C:\Users\patha\.m2\repository\xml-apis\xml-apis\1.3.04\xml-apis-1.3.04.jar;C:\Users\patha\.m2\repository\org\apache\httpcomponents\httpclient\4.0.2\httpclient-4.0.2.jar;C:\Users\patha\.m2\repository\org\apache\httpcomponents\httpcore\4.0.1\httpcore-4.0.1.jar;C:\Users\patha\.m2\repository\commons-validator\commons-validator\1.3.1\commons-validator-1.3.1.jar;C:\Users\patha\.m2\repository\commons-digester\commons-digester\1.6\commons-digester-1.6.jar;C:\Users\patha\.m2\repository\commons-logging\commons-logging\1.0.4\commons-logging-1.0.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.4\doxia-sink-api-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-logging-api\1.4\doxia-logging-api-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-decoration-model\1.4\doxia-decoration-model-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-site-renderer\1.4\doxia-site-renderer-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-module-xhtml\1.4\doxia-module-xhtml-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-module-fml\1.4\doxia-module-fml-1.4.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-i18n\1.0-beta-7\plexus-i18n-1.0-beta-7.jar;C:\Users\patha\.m2\repository\org\apache\velocity\velocity-tools\2.0\velocity-tools-2.0.jar;C:\Users\patha\.m2\repository\commons-chain\commons-chain\1.1\commons-chain-1.1.jar;C:\Users\patha\.m2\repository\dom4j\dom4j\1.1\dom4j-1.1.jar;C:\Users\patha\.m2\repository\oro\oro\2.0.8\oro-2.0.8.jar;C:\Users\patha\.m2\repository\sslext\sslext\1.2-0\sslext-1.2-0.jar;C:\Users\patha\.m2\repository\org\apache\struts\struts-core\1.3.8\struts-core-1.3.8.jar;C:\Users\patha\.m2\repository\org\apache\struts\struts-taglib\1.3.8\struts-taglib-1.3.8.jar;C:\Users\patha\.m2\repository\org\apache\struts\struts-tiles\1.3.8\struts-tiles-1.3.8.jar;C:\Users\patha\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-integration-tools\1.6\doxia-integration-tools-1.6.jar;C:\Users\patha\.m2\repository\commons-io\commons-io\1.4\commons-io-1.4.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-9\plexus-container-default-1.0-alpha-9.jar;C:\Users\patha\.m2\repository\classworlds\classworlds\1.1-alpha-2\classworlds-1.1-alpha-2.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-component-annotations\2.0.0\plexus-component-annotations-2.0.0.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-resources\1.1.0\plexus-resources-1.1.0.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-utils\3.3.0\plexus-utils-3.3.0.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-interpolation\1.26\plexus-interpolation-1.26.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-velocity\1.2\plexus-velocity-1.2.jar;C:\Users\patha\.m2\repository\com\puppycrawl\tools\checkstyle\8.29\checkstyle-8.29.jar;C:\Users\patha\.m2\repository\info\picocli\picocli\4.1.4\picocli-4.1.4.jar;C:\Users\patha\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\patha\.m2\repository\org\antlr\antlr4-runtime\4.8-1\antlr4-runtime-4.8-1.jar;C:\Users\patha\.m2\repository\commons-beanutils\commons-beanutils\1.9.4\commons-beanutils-1.9.4.jar;C:\Users\patha\.m2\repository\com\google\guava\guava\28.2-jre\guava-28.2-jre.jar;C:\Users\patha\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\patha\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\patha\.m2\repository\org\checkerframework\checker-qual\2.10.0\checker-qual-2.10.0.jar;C:\Users\patha\.m2\repository\com\google\errorprone\error_prone_annotations\2.3.4\error_prone_annotations-2.3.4.jar;C:\Users\patha\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\patha\.m2\repository\net\sf\saxon\Saxon-HE\9.9.1-6\Saxon-HE-9.9.1-6.jar;C:\Users\patha\.m2\repository\org\apache\velocity\velocity\1.7\velocity-1.7.jar;C:\Users\patha\.m2\repository\commons-lang\commons-lang\2.4\commons-lang-2.4.jar;C:\Users\patha\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\patha\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\patha\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\patha\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\patha\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.1\junit-jupiter-params-5.10.1.jar;C:\Users\patha\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\patha\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\patha\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\patha\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\patha\.m2\repository\org\apache\logging\log4j\log4j-1.2-api\2.20.0\log4j-1.2-api-2.20.0.jar;C:\Users\patha\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Halifax"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
+    <property name="sun.java.command" value="C:\Users\patha\AppData\Local\Temp\surefire11024569628848419529\surefirebooter-20240401223337847_3.jar C:\Users\patha\AppData\Local\Temp\surefire11024569628848419529 2024-04-01T22-33-37_385-jvmRun1 surefire-20240401223337847_1tmp surefire_0-20240401223337847_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="E:\binance-futures-connector-java\target\test-classes;E:\binance-futures-connector-java\target\classes;C:\Users\patha\.m2\repository\com\squareup\okhttp3\okhttp\4.9.2\okhttp-4.9.2.jar;C:\Users\patha\.m2\repository\com\squareup\okio\okio\2.8.0\okio-2.8.0.jar;C:\Users\patha\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.4.0\kotlin-stdlib-common-1.4.0.jar;C:\Users\patha\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.4.10\kotlin-stdlib-1.4.10.jar;C:\Users\patha\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\patha\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;C:\Users\patha\.m2\repository\com\squareup\okhttp3\mockwebserver\4.9.1\mockwebserver-4.9.1.jar;C:\Users\patha\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk8\1.4.10\kotlin-stdlib-jdk8-1.4.10.jar;C:\Users\patha\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk7\1.4.10\kotlin-stdlib-jdk7-1.4.10.jar;C:\Users\patha\.m2\repository\org\json\json\20231013\json-20231013.jar;C:\Users\patha\.m2\repository\org\slf4j\slf4j-api\1.7.32\slf4j-api-1.7.32.jar;C:\Users\patha\.m2\repository\ch\qos\logback\logback-classic\1.2.13\logback-classic-1.2.13.jar;C:\Users\patha\.m2\repository\ch\qos\logback\logback-core\1.2.13\logback-core-1.2.13.jar;C:\Users\patha\.m2\repository\org\apache\maven\plugins\maven-checkstyle-plugin\3.1.2\maven-checkstyle-plugin-3.1.2.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-artifact\3.0\maven-artifact-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-core\3.0\maven-core-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-settings\3.0\maven-settings-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-settings-builder\3.0\maven-settings-builder-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-repository-metadata\3.0\maven-repository-metadata-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-model-builder\3.0\maven-model-builder-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-aether-provider\3.0\maven-aether-provider-3.0.jar;C:\Users\patha\.m2\repository\org\sonatype\aether\aether-impl\1.7\aether-impl-1.7.jar;C:\Users\patha\.m2\repository\org\sonatype\aether\aether-spi\1.7\aether-spi-1.7.jar;C:\Users\patha\.m2\repository\org\sonatype\aether\aether-api\1.7\aether-api-1.7.jar;C:\Users\patha\.m2\repository\org\sonatype\aether\aether-util\1.7\aether-util-1.7.jar;C:\Users\patha\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\1.4.2\sisu-inject-plexus-1.4.2.jar;C:\Users\patha\.m2\repository\org\sonatype\sisu\sisu-inject-bean\1.4.2\sisu-inject-bean-1.4.2.jar;C:\Users\patha\.m2\repository\org\sonatype\sisu\sisu-guice\2.1.7\sisu-guice-2.1.7-noaop.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.3\plexus-classworlds-2.2.3.jar;C:\Users\patha\.m2\repository\org\sonatype\plexus\plexus-sec-dispatcher\1.3\plexus-sec-dispatcher-1.3.jar;C:\Users\patha\.m2\repository\org\sonatype\plexus\plexus-cipher\1.4\plexus-cipher-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-model\3.0\maven-model-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\maven-plugin-api\3.0\maven-plugin-api-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\reporting\maven-reporting-api\3.0\maven-reporting-api-3.0.jar;C:\Users\patha\.m2\repository\org\apache\maven\reporting\maven-reporting-impl\2.3\maven-reporting-impl-2.3.jar;C:\Users\patha\.m2\repository\org\apache\maven\shared\maven-shared-utils\0.6\maven-shared-utils-0.6.jar;C:\Users\patha\.m2\repository\com\google\code\findbugs\jsr305\2.0.1\jsr305-2.0.1.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-core\1.2\doxia-core-1.2.jar;C:\Users\patha\.m2\repository\xerces\xercesImpl\2.9.1\xercesImpl-2.9.1.jar;C:\Users\patha\.m2\repository\xml-apis\xml-apis\1.3.04\xml-apis-1.3.04.jar;C:\Users\patha\.m2\repository\org\apache\httpcomponents\httpclient\4.0.2\httpclient-4.0.2.jar;C:\Users\patha\.m2\repository\org\apache\httpcomponents\httpcore\4.0.1\httpcore-4.0.1.jar;C:\Users\patha\.m2\repository\commons-validator\commons-validator\1.3.1\commons-validator-1.3.1.jar;C:\Users\patha\.m2\repository\commons-digester\commons-digester\1.6\commons-digester-1.6.jar;C:\Users\patha\.m2\repository\commons-logging\commons-logging\1.0.4\commons-logging-1.0.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.4\doxia-sink-api-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-logging-api\1.4\doxia-logging-api-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-decoration-model\1.4\doxia-decoration-model-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-site-renderer\1.4\doxia-site-renderer-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-module-xhtml\1.4\doxia-module-xhtml-1.4.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-module-fml\1.4\doxia-module-fml-1.4.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-i18n\1.0-beta-7\plexus-i18n-1.0-beta-7.jar;C:\Users\patha\.m2\repository\org\apache\velocity\velocity-tools\2.0\velocity-tools-2.0.jar;C:\Users\patha\.m2\repository\commons-chain\commons-chain\1.1\commons-chain-1.1.jar;C:\Users\patha\.m2\repository\dom4j\dom4j\1.1\dom4j-1.1.jar;C:\Users\patha\.m2\repository\oro\oro\2.0.8\oro-2.0.8.jar;C:\Users\patha\.m2\repository\sslext\sslext\1.2-0\sslext-1.2-0.jar;C:\Users\patha\.m2\repository\org\apache\struts\struts-core\1.3.8\struts-core-1.3.8.jar;C:\Users\patha\.m2\repository\org\apache\struts\struts-taglib\1.3.8\struts-taglib-1.3.8.jar;C:\Users\patha\.m2\repository\org\apache\struts\struts-tiles\1.3.8\struts-tiles-1.3.8.jar;C:\Users\patha\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar;C:\Users\patha\.m2\repository\org\apache\maven\doxia\doxia-integration-tools\1.6\doxia-integration-tools-1.6.jar;C:\Users\patha\.m2\repository\commons-io\commons-io\1.4\commons-io-1.4.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-9\plexus-container-default-1.0-alpha-9.jar;C:\Users\patha\.m2\repository\classworlds\classworlds\1.1-alpha-2\classworlds-1.1-alpha-2.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-component-annotations\2.0.0\plexus-component-annotations-2.0.0.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-resources\1.1.0\plexus-resources-1.1.0.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-utils\3.3.0\plexus-utils-3.3.0.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-interpolation\1.26\plexus-interpolation-1.26.jar;C:\Users\patha\.m2\repository\org\codehaus\plexus\plexus-velocity\1.2\plexus-velocity-1.2.jar;C:\Users\patha\.m2\repository\com\puppycrawl\tools\checkstyle\8.29\checkstyle-8.29.jar;C:\Users\patha\.m2\repository\info\picocli\picocli\4.1.4\picocli-4.1.4.jar;C:\Users\patha\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\patha\.m2\repository\org\antlr\antlr4-runtime\4.8-1\antlr4-runtime-4.8-1.jar;C:\Users\patha\.m2\repository\commons-beanutils\commons-beanutils\1.9.4\commons-beanutils-1.9.4.jar;C:\Users\patha\.m2\repository\com\google\guava\guava\28.2-jre\guava-28.2-jre.jar;C:\Users\patha\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\patha\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\patha\.m2\repository\org\checkerframework\checker-qual\2.10.0\checker-qual-2.10.0.jar;C:\Users\patha\.m2\repository\com\google\errorprone\error_prone_annotations\2.3.4\error_prone_annotations-2.3.4.jar;C:\Users\patha\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\patha\.m2\repository\net\sf\saxon\Saxon-HE\9.9.1-6\Saxon-HE-9.9.1-6.jar;C:\Users\patha\.m2\repository\org\apache\velocity\velocity\1.7\velocity-1.7.jar;C:\Users\patha\.m2\repository\commons-lang\commons-lang\2.4\commons-lang-2.4.jar;C:\Users\patha\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\patha\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\patha\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\patha\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\patha\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.1\junit-jupiter-params-5.10.1.jar;C:\Users\patha\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\patha\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\patha\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\patha\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\patha\.m2\repository\org\apache\logging\log4j\log4j-1.2-api\2.20.0\log4j-1.2-api-2.20.0.jar;C:\Users\patha\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\patha"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-01-17"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-17"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="E:\binance-futures-connector-java"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\patha\AppData\Local\Temp\surefire11024569628848419529\surefirebooter-20240401223337847_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.6+9-LTS-190"/>
+    <property name="user.name" value="patha"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\patha\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\patha\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2023.3.6"/>
+    <property name="java.version" value="17.0.6"/>
+    <property name="user.dir" value="E:\binance-futures-connector-java"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;&quot;C:\Program Files\Java\jdk-17\bin;&quot;;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\patha\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\patha\AppData\Local\Programs\Python\Python310\;C:\Users\patha\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\PyCharm Community Edition 2022.3.3\bin;;C:\Users\patha\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\patha\AppData\Roaming\npm;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="17.0.6+9-LTS-190"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="checkPriceSymbolPairStream" classname="unit.TestCMWebsocketClientImpl" time="0.091">
+    <system-out><![CDATA[2024-04-01 22:33:44.847[1712021624847] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 1] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:33:44.864[1712021624864] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 2] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:33:44.865[1712021624865] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 3] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:33:44.866[1712021624866] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 4] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-04-01 22:33:44.867[1712021624867] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 5] Connecting to dstream.binance.com/ws/btcusdt@markPrice@1s
+2024-04-01 22:33:44.868[1712021624868] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 6] Connecting to dstream.binance.com/ws/btcusdt@markPrice
+]]></system-out>
+  </testcase>
+  <testcase name="checkConnectionCloseById" classname="unit.TestCMWebsocketClientImpl" time="0.009">
+    <system-out><![CDATA[2024-04-01 22:33:44.869[1712021624869] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 7] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:33:44.870[1712021624870] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 8] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:33:44.871[1712021624871] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 9] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:33:44.872[1712021624872] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 10] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-04-01 22:33:44.874[1712021624874] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 7] Closing connection to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:33:44.877[1712021624877] | INFO  | main       | c.b.c.f.c.impl.WebsocketClientImpl   - Closing Connection ID 7
+]]></system-out>
+  </testcase>
+  <testcase name="checkCandleList" classname="unit.TestCMWebsocketClientImpl" time="0.006">
+    <system-out><![CDATA[2024-04-01 22:33:44.880[1712021624880] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 11] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:33:44.881[1712021624881] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 12] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:33:44.882[1712021624882] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 13] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:33:44.883[1712021624883] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 14] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+]]></system-out>
+  </testcase>
+  <testcase name="checkConnectionClosedState" classname="unit.TestCMWebsocketClientImpl" time="0.006">
+    <system-out><![CDATA[2024-04-01 22:33:44.885[1712021624885] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 15] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:33:44.886[1712021624886] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 16] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:33:44.887[1712021624887] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 17] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:33:44.888[1712021624888] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 18] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-04-01 22:33:44.889[1712021624889] | INFO  | main       | c.b.c.f.c.impl.WebsocketClientImpl   - Closing 4 connections(s)
+2024-04-01 22:33:44.889[1712021624889] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 16] Closing connection to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:33:44.890[1712021624890] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 17] Closing connection to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:33:44.890[1712021624890] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 18] Closing connection to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-04-01 22:33:44.890[1712021624890] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 15] Closing connection to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:33:44.891[1712021624891] | INFO  | main       | c.b.c.f.c.impl.WebsocketClientImpl   - All connections are closed!
+]]></system-out>
+  </testcase>
+  <testcase name="checkIndexPrice" classname="unit.TestCMWebsocketClientImpl" time="0.017">
+    <system-out><![CDATA[2024-04-01 22:33:44.892[1712021624892] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 19] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:33:44.900[1712021624900] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 19] Failure
+java.io.InterruptedIOException: executor rejected
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
+	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
+	at okhttp3.Dispatcher.enqueue$okhttp(Dispatcher.kt:125)
+	at okhttp3.internal.connection.RealCall.enqueue(RealCall.kt:164)
+	at okhttp3.internal.ws.RealWebSocket.connect(RealWebSocket.kt:165)
+	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
+	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
+	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:688)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:82)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:43)
+	at unit.TestCMWebsocketClientImpl.indexPriceStream(TestCMWebsocketClientImpl.java:17)
+	at unit.TestCMWebsocketClientImpl.<init>(TestCMWebsocketClientImpl.java:59)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:250)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:260)
+	at org.junit.runners.BlockJUnit4ClassRunner$2.runReflectiveCall(BlockJUnit4ClassRunner.java:309)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@1282e98 rejected from java.util.concurrent.ThreadPoolExecutor@4db0ba1c[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
+	... 54 common frames omitted
+2024-04-01 22:33:44.901[1712021624901] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 20] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:33:44.902[1712021624902] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 20] Failure
+java.io.InterruptedIOException: executor rejected
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
+	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
+	at okhttp3.Dispatcher.enqueue$okhttp(Dispatcher.kt:125)
+	at okhttp3.internal.connection.RealCall.enqueue(RealCall.kt:164)
+	at okhttp3.internal.ws.RealWebSocket.connect(RealWebSocket.kt:165)
+	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
+	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
+	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:688)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:82)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:43)
+	at unit.TestCMWebsocketClientImpl.indexPriceStream(TestCMWebsocketClientImpl.java:17)
+	at unit.TestCMWebsocketClientImpl.<init>(TestCMWebsocketClientImpl.java:60)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:250)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:260)
+	at org.junit.runners.BlockJUnit4ClassRunner$2.runReflectiveCall(BlockJUnit4ClassRunner.java:309)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@3030836d rejected from java.util.concurrent.ThreadPoolExecutor@4db0ba1c[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
+	... 54 common frames omitted
+2024-04-01 22:33:44.903[1712021624903] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 21] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:33:44.903[1712021624903] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 21] Failure
+java.io.InterruptedIOException: executor rejected
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
+	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
+	at okhttp3.Dispatcher.enqueue$okhttp(Dispatcher.kt:125)
+	at okhttp3.internal.connection.RealCall.enqueue(RealCall.kt:164)
+	at okhttp3.internal.ws.RealWebSocket.connect(RealWebSocket.kt:165)
+	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
+	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
+	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:688)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexKlineCandlestick(CMWebsocketClientImpl.java:155)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexKlineCandlestick(CMWebsocketClientImpl.java:138)
+	at unit.TestCMWebsocketClientImpl.indexKlineCandlestick(TestCMWebsocketClientImpl.java:37)
+	at unit.TestCMWebsocketClientImpl.<init>(TestCMWebsocketClientImpl.java:62)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:250)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:260)
+	at org.junit.runners.BlockJUnit4ClassRunner$2.runReflectiveCall(BlockJUnit4ClassRunner.java:309)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@4c24f3a2 rejected from java.util.concurrent.ThreadPoolExecutor@4db0ba1c[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
+	... 54 common frames omitted
+2024-04-01 22:33:44.904[1712021624904] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 22] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-04-01 22:33:44.905[1712021624905] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 22] Failure
+java.io.InterruptedIOException: executor rejected
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
+	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
+	at okhttp3.Dispatcher.enqueue$okhttp(Dispatcher.kt:125)
+	at okhttp3.internal.connection.RealCall.enqueue(RealCall.kt:164)
+	at okhttp3.internal.ws.RealWebSocket.connect(RealWebSocket.kt:165)
+	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
+	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
+	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:688)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.markKlineCandlestick(CMWebsocketClientImpl.java:191)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.markKlineCandlestick(CMWebsocketClientImpl.java:174)
+	at unit.TestCMWebsocketClientImpl.markKlineCandlestick(TestCMWebsocketClientImpl.java:42)
+	at unit.TestCMWebsocketClientImpl.<init>(TestCMWebsocketClientImpl.java:62)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:250)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:260)
+	at org.junit.runners.BlockJUnit4ClassRunner$2.runReflectiveCall(BlockJUnit4ClassRunner.java:309)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@4c176ff1 rejected from java.util.concurrent.ThreadPoolExecutor@4db0ba1c[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
+	... 54 common frames omitted
+2024-04-01 22:33:44.907[1712021624907] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 23] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:33:44.907[1712021624907] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 23] Failure
+java.io.InterruptedIOException: executor rejected
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
+	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
+	at okhttp3.Dispatcher.enqueue$okhttp(Dispatcher.kt:125)
+	at okhttp3.internal.connection.RealCall.enqueue(RealCall.kt:164)
+	at okhttp3.internal.ws.RealWebSocket.connect(RealWebSocket.kt:165)
+	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
+	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
+	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:688)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:82)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:43)
+	at unit.TestCMWebsocketClientImpl.indexPriceStream(TestCMWebsocketClientImpl.java:17)
+	at unit.TestCMWebsocketClientImpl.checkIndexPrice(TestCMWebsocketClientImpl.java:73)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@6aff97d6 rejected from java.util.concurrent.ThreadPoolExecutor@4db0ba1c[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
+	... 53 common frames omitted
+]]></system-out>
+  </testcase>
+</testsuite>
