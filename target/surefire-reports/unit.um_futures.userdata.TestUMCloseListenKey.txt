@@ -1,4 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: unit.um_futures.userdata.TestUMCloseListenKey
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in unit.um_futures.userdata.TestUMCloseListenKey
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 s <<< FAILURE! -- in unit.um_futures.userdata.TestUMCloseListenKey
+unit.um_futures.userdata.TestUMCloseListenKey.testCloseListenKey -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMUserData com.binance.connector.futures.client.impl.UMFuturesClientImpl.userData()'
+	at unit.um_futures.userdata.TestUMCloseListenKey.testCloseListenKey(TestUMCloseListenKey.java:32)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+

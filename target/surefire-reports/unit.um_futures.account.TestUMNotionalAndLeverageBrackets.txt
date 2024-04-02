@@ -1,4 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: unit.um_futures.account.TestUMNotionalAndLeverageBrackets
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in unit.um_futures.account.TestUMNotionalAndLeverageBrackets
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.007 s <<< FAILURE! -- in unit.um_futures.account.TestUMNotionalAndLeverageBrackets
+unit.um_futures.account.TestUMNotionalAndLeverageBrackets.testNotionalAndLeverageBracketsNoSymbol -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMNotionalAndLeverageBrackets.testNotionalAndLeverageBracketsNoSymbol(TestUMNotionalAndLeverageBrackets.java:33)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+
+unit.um_futures.account.TestUMNotionalAndLeverageBrackets.testNotionalAndLeverageBrackets -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMNotionalAndLeverageBrackets.testNotionalAndLeverageBrackets(TestUMNotionalAndLeverageBrackets.java:47)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+

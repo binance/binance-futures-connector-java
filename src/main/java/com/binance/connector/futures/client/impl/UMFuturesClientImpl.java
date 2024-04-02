@@ -1,8 +1,8 @@
 package com.binance.connector.futures.client.impl;
 
 import com.binance.connector.futures.client.enums.DefaultUrls;
+import com.binance.connector.futures.client.impl.futures.Account;
 import com.binance.connector.futures.client.impl.futures.UserData;
-import com.binance.connector.futures.client.impl.um_futures.UMAccount;
 import com.binance.connector.futures.client.impl.um_futures.UMMarket;
 import com.binance.connector.futures.client.impl.um_futures.UMPortfolioMargin;
 
@@ -40,8 +40,8 @@ public class UMFuturesClientImpl extends FuturesClientImpl {
     }
 
     @Override
-    public UMAccount account() {
-        return new UMAccount(getProductUrl(), getApiKey(), getSecretKey(), getShowLimitUsage(), getProxy());
+    public Account.UMAccount account() {
+        return new Account.UMAccount(getProductUrl(), getApiKey(), getSecretKey(), getShowLimitUsage(), getProxy());
     }
 
     @Override

@@ -23,10 +23,10 @@ com\binance\connector\futures\client\exceptions\BinanceServerException.class
 com\binance\connector\futures\client\impl\cm_futures\CMUserData.class
 com\binance\connector\futures\client\impl\CMFuturesClientImpl.class
 com\binance\connector\futures\client\utils\RequestHandler$1.class
-com\binance\connector\futures\client\impl\um_futures\UMAccount.class
 com\binance\connector\futures\logging\util\MsEpochConverter.class
 com\binance\connector\futures\client\FuturesClient.class
 com\binance\connector\futures\client\enums\DefaultUrls.class
+com\binance\connector\futures\client\impl\futures\Account$UMAccount.class
 com\binance\connector\futures\client\utils\ProxyAuth.class
 com\binance\connector\futures\client\impl\UMWebsocketClientImpl.class
 com\binance\connector\futures\client\impl\cm_futures\CMAccount.class

@@ -14,7 +14,6 @@ E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\cl
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\enums\DefaultUrls.java
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\utils\ParameterChecker.java
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\impl\futures\Account.java
-E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\impl\um_futures\UMAccount.java
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\exceptions\BinanceServerException.java
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\utils\ResponseHandler.java
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\impl\futures\PortfolioMargin.java

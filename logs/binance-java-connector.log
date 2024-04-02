@@ -6904,3 +6904,1023 @@ Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.interna
 2024-04-01 19:29:08.001[1712010548001] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 6] Connected to Server
 2024-04-01 19:29:08.001[1712010548001] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 4] Connected to Server
 2024-04-01 19:29:08.008[1712010548008] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - PUT http://kubernetes.docker.internal:51729//fapi/v1/listenKey
+2024-04-01 22:33:43.089[1712021623089] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54648//dapi/v1/account?timestamp=1712021622982&signature=c91333b96bb68de15f8f831e0e7cb60fc06a1750f2ff52649c8ddc2b98bb6f1a
+2024-04-01 22:33:43.756[1712021623756] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54650//dapi/v1/userTrades?symbol=bnbusd_perpetual&timestamp=1712021623755&signature=58595c500f62b17663bfdb3b674c45d4e9dcf3f93396b76dbe6225cccfe18153
+2024-04-01 22:33:43.791[1712021623791] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54653//dapi/v1/allOrders?symbol=bnbusd_perpetual&timestamp=1712021623789&signature=5a303ef1e21b425f4c23447beeecedcc1e4d662b1a3bad3b6d83e3749d0fa02d
+2024-04-01 22:33:43.838[1712021623838] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:54657//dapi/v1/countdownCancelAll?symbol=BNBUSDT&countdownTime=10000&timestamp=1712021623838&signature=6135a5ba0365528149acf2026d4df09812cb6925ca9c60e66d9b398c3d88f441
+2024-04-01 22:33:43.895[1712021623895] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - DELETE http://kubernetes.docker.internal:54660//dapi/v1/allOpenOrders?symbol=BNBUSDT&timestamp=1712021623894&signature=b21fef1217282c3241baf26534bf990c71c986c2323d321666928f06d17934b3
+2024-04-01 22:33:43.915[1712021623915] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - DELETE http://kubernetes.docker.internal:54663//dapi/v1/batchOrders?symbol=BNBUSDT&orderIdList=&timestamp=1712021623915&signature=0dba98b01c9c340e25a830d8d8f06b2165256735df0d2331eea2910980bcb8bc
+2024-04-01 22:33:43.956[1712021623956] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - DELETE http://kubernetes.docker.internal:54665//dapi/v1/order?symbol=BNBUSD_PERP&orderId=&timestamp=1712021623955&signature=a634a60d32f806b46298fec3d3138bf88e17880d4ba0d5e2b45f23d71971db3d
+2024-04-01 22:33:43.971[1712021623971] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - DELETE http://kubernetes.docker.internal:54668//dapi/v1/order?symbol=BNBUSD_PERP&orderId=123&origClientOrderId=456&timestamp=1712021623971&signature=c1eb5384c2a4b1fbb0f37d580c2dd4298bfa0b05d51a820966958de03272cb42
+2024-04-01 22:33:43.989[1712021623989] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:54670//dapi/v1/leverage?symbol=BNBUSDT&leverage=20&timestamp=1712021623988&signature=610179c1aec8ff7750a246bddccba94b058bb9d30c066344b5317fe493bf65f5
+2024-04-01 22:33:44.011[1712021624011] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:54674//dapi/v1/positionSide/dual?dualSidePosition=true&timestamp=1712021624011&signature=496aea2d8b6d970bbbced9d703bd08d0e32421462d68ce86fbbe5e6bb7178a59
+2024-04-01 22:33:44.026[1712021624026] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54676//dapi/v1/openOrders?symbol=BNBUSDT&timestamp=1712021624025&signature=4b9587398adea0d7dbfb09eee845ec913c0667ff9e50446e9b4ceedd4c7654c8
+2024-04-01 22:33:44.037[1712021624037] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54678//dapi/v1/openOrders?timestamp=1712021624036&signature=4ce1f93d6fed1a9e2a609f6ac4fa5d1e5cd998572a7c276f79dcba5149f0d931
+2024-04-01 22:33:44.050[1712021624050] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54680//dapi/v1/positionSide/dual?timestamp=1712021624049&signature=130d8d26c6875e2388e4f797d26559d3fe3856bdabeff2d9bc58c2a60a70d795
+2024-04-01 22:33:44.062[1712021624062] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54682//dapi/v1/balance?timestamp=1712021624061&signature=910a882b0e0f5263e201b26fbe84b027ed9b2d5e8f93b82ef43720d037126f3b
+2024-04-01 22:33:44.077[1712021624077] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54684//dapi/v1/leverageBracket?pair=BNBUSD&timestamp=1712021624077&signature=097852873396a7bbd3f5c68c004019c672ed172407b9042f7a1a6a7d4098729b
+2024-04-01 22:33:44.089[1712021624089] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54686//dapi/v1/leverageBracket?timestamp=1712021624088&signature=f26c7688a5ebdf09f59b1cd951793e135639b9933bb4626a479fb59c52c36a9e
+2024-04-01 22:33:44.110[1712021624110] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54688//dapi/v2/leverageBracket?timestamp=1712021624109&signature=1f8960b898e3b4691d62c79ba6ec8432fdf7493e16429b1c2020807de8152499
+2024-04-01 22:33:44.121[1712021624121] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54690//dapi/v2/leverageBracket?symbol=BNBUSD_PERP&timestamp=1712021624119&signature=97c14de34f2e90252e3151fd9f4d25963423d04ecdc9027b9dd8153f2032fec3
+2024-04-01 22:33:44.135[1712021624135] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54692//dapi/v1/income?symbol=BNBUSDT&timestamp=1712021624135&signature=be898b9675bba3e920e4db8be1b0bbd2af20f75fdebd6c5cfcbe4070a8d30421
+2024-04-01 22:33:44.143[1712021624143] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54694//dapi/v1/income?timestamp=1712021624142&signature=156cd1e728430eef1a5cd3f2db2747349d5062f9447c2b1233372499b2ba3d10
+2024-04-01 22:33:44.159[1712021624159] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:54697//dapi/v1/positionMargin?symbol=BNBUSDT&amount=100.0&type=1&timestamp=1712021624159&signature=a6ab73c09cababafc0eb86fde43a7b3478cbdc7d000da567dd093dc79b745bb0
+2024-04-01 22:33:44.172[1712021624172] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - PUT http://kubernetes.docker.internal:54699//dapi/v1/order?orderId=123456&symbol=BNBUSD_PERP&side=BUY&timestamp=1712021624172&signature=1be02ed7d08e037e553ae38aeaa2b6e7861f21dfe572aea5eb12166d74804a5f
+2024-04-01 22:33:44.196[1712021624196] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54703//dapi/v1/orderAmendment?orderId=123456&symbol=BNBUSD_PERP&side=BUY&timestamp=1712021624195&signature=7ea69bda5959f7268a3952e7fa95485ec7dda48fc9666564af06a6d194396a56
+2024-04-01 22:33:44.210[1712021624210] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:54706//dapi/v1/order?symbol=BNBUSDT&side=BUY&type=MARKET&quantity=0.01&timestamp=1712021624209&signature=3f5a4c69b19c91b1358c91325de369c4026788108a06b3b11e7631d188d54ebb
+2024-04-01 22:33:44.218[1712021624218] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54708//dapi/v1/leverageBracket?timestamp=1712021624218&signature=3712c48d4624a8be9d9eece70b4e2f870e1a0c30a61ec47e8165b8cc7fdde9fb
+2024-04-01 22:33:44.225[1712021624225] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54710//dapi/v1/leverageBracket?symbol=BNBUSDT&timestamp=1712021624225&signature=f9230c61fcca84fda0edbcc3a4a7ccc09a82889f43e3913dff00ac0c271f0c8b
+2024-04-01 22:33:44.233[1712021624233] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54712//dapi/v1/adlQuantile?timestamp=1712021624233&signature=28d29bf54f668dbbc8b6bcc9e4f546fd59ca309f59f337f58c6d25f7262a3c23
+2024-04-01 22:33:44.239[1712021624239] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54714//dapi/v1/adlQuantile?symbol=BNBUSDT&timestamp=1712021624239&signature=3c11884490a6d71abb5ff9aa86ef6b9fda4ef3fc6f03e2c312d3d47b278788ac
+2024-04-01 22:33:44.248[1712021624248] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54716//dapi/v1/positionRisk?timestamp=1712021624248&signature=80f771a3407dbc7db39b1167868e2bcc74ab3e5c2a481ef846cb5177a0a35f24
+2024-04-01 22:33:44.254[1712021624254] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54718//dapi/v1/positionRisk?pair=bnbusd_perpetual&timestamp=1712021624254&signature=86f1cf6a43b8cfef19f38db7cabadbdd815f89d4782e1df10857d3397a0b80b6
+2024-04-01 22:33:44.263[1712021624263] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54720//dapi/v1/positionMargin/history?symbol=BNBUSDT&timestamp=1712021624263&signature=2053ba109f2d71f2983f04e2899f429c65d0c5f0f871174f125e328d9e6e3a67
+2024-04-01 22:33:44.277[1712021624277] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54725//dapi/v1/openOrder?symbol=BNBUSDT&orderId=123&timestamp=1712021624277&signature=8fd8f2ba7905cb72791bea80c0dd25e1a2ed1c54ff6fe529c8caed29fde2e532
+2024-04-01 22:33:44.288[1712021624288] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54727//dapi/v1/openOrder?symbol=BNBUSDT&origClientOrderId=123&timestamp=1712021624288&signature=52e4376834ba38f7fa90335d02697c51f7dfd71b6f6b3dfcc3960f73f34175a9
+2024-04-01 22:33:44.302[1712021624302] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54731//dapi/v1/order?symbol=BNBUSD_PERP&orderId=123&timestamp=1712021624302&signature=9e1884e1462d970eefeb1b2b82f3af65ece6b4608ee6f5669c6e542c0c43f792
+2024-04-01 22:33:44.310[1712021624310] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54733//dapi/v1/order?symbol=BNBUSDT&origClientOrderId=123&timestamp=1712021624310&signature=94226dca046ec390ce56b13608af57ec3a6192b261776778e1e0d2bd62b1a0bc
+2024-04-01 22:33:44.329[1712021624329] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54736//dapi/v1/commissionRate?symbol=BNBUSDT&timestamp=1712021624329&signature=1f2fa6e762fcafb17c33a0275b71d2fb64e20e1660b449d947f283643df08647
+2024-04-01 22:33:44.344[1712021624344] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54738//dapi/v1/forceOrders?symbol=BNBUSDT&timestamp=1712021624344&signature=aec4f43d4a42cfded1a05c1534d533597cbf5ca08f7eb44997cea47b70feb38e
+2024-04-01 22:33:44.355[1712021624355] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54740//dapi/v1/forceOrders?timestamp=1712021624355&signature=04d0535563e7dcd1d05af71714768e484513d1ec0e9e09e3ba98b4d0aaa65407
+2024-04-01 22:33:44.366[1712021624366] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54742//dapi/v1/aggTrades?symbol=BNBUSDT&fromId=1000
+2024-04-01 22:33:44.375[1712021624375] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54744//dapi/v1/aggTrades?symbol=BNBUSDT&limit=1000
+2024-04-01 22:33:44.385[1712021624385] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54746//dapi/v1/aggTrades?symbol=BNBUSDT
+2024-04-01 22:33:44.399[1712021624399] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54749//dapi/v1/aggTrades?symbol=BNBUSDT&startTime=1712021624397&endTime=1712021625397
+2024-04-01 22:33:44.410[1712021624410] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54751//futures/data/basis?pair=BTCUSD&contractType=PERPETUAL&period=1m
+2024-04-01 22:33:44.427[1712021624427] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54755//dapi/v1/ticker/bookTicker?symbol=BNBUSDT
+2024-04-01 22:33:44.436[1712021624436] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54757//dapi/v1/ticker/bookTicker
+2024-04-01 22:33:44.445[1712021624445] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54759//dapi/v1/continuousKlines?pair=BNBUSDT&contractType=PERPETUAL&interval=1m
+2024-04-01 22:33:44.451[1712021624451] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54761//dapi/v1/continuousKlines?pair=BNBUSDT&contractType=PERPETUAL&interval=1m&limit=1000&startTime=1712021624450&endTime=1712021625450
+2024-04-01 22:33:44.469[1712021624469] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54766//dapi/v1/depth?symbol=BNBUSDT
+2024-04-01 22:33:44.478[1712021624478] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54768//dapi/v1/depth?symbol=BNBUSDT&limit=10
+2024-04-01 22:33:44.487[1712021624487] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54770//dapi/v1/exchangeInfo
+2024-04-01 22:33:44.501[1712021624501] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54772//dapi/v1/fundingRate?symbol=BNBUSDT&limit=1000&startTime=1712021624500&endTime=1712021625500
+2024-04-01 22:33:44.510[1712021624510] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54774//dapi/v1/fundingRate
+2024-04-01 22:33:44.524[1712021624524] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54776//dapi/v1/historicalTrades?symbol=BNBUSDT&limit=1000&fromId=123
+2024-04-01 22:33:44.538[1712021624538] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54780//dapi/v1/historicalTrades?symbol=BNBUSDT
+2024-04-01 22:33:44.547[1712021624547] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54782//dapi/v1/indexPriceKlines?pair=BNBUSDT&interval=1m
+2024-04-01 22:33:44.554[1712021624554] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54784//dapi/v1/indexPriceKlines?pair=BNBUSDT&interval=1m&limit=1000&startTime=1712021624553&endTime=1712021625553
+2024-04-01 22:33:44.573[1712021624573] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54790//dapi/v1/klines?symbol=BNBUSDT&interval=1m&limit=1000&startTime=1712021624573&endTime=1712021625573
+2024-04-01 22:33:44.581[1712021624581] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54792//dapi/v1/klines?symbol=BNBUSDT&interval=1m
+2024-04-01 22:33:44.589[1712021624589] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54794//futures/data/globalLongShortAccountRatio?pair=BTCUSD&period=5m&limit=1000&startTime=1712021624588&endTime=1712021625588
+2024-04-01 22:33:44.604[1712021624604] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54798//futures/data/globalLongShortAccountRatio?pair=BTCUSD&period=5m
+2024-04-01 22:33:44.612[1712021624612] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54800//dapi/v1/premiumIndex?symbol=BNBUSDT
+2024-04-01 22:33:44.618[1712021624618] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54802//dapi/v1/premiumIndex
+2024-04-01 22:33:44.626[1712021624626] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54805//dapi/v1/markPriceKlines?symbol=bnbusd_perpetual&interval=1m&limit=1000&startTime=1712021624625&endTime=1712021625625
+2024-04-01 22:33:44.635[1712021624635] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54808//dapi/v1/markPriceKlines?symbol=bnbusd_perpetual&interval=1m
+2024-04-01 22:33:44.642[1712021624642] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54810//dapi/v1/openInterest?symbol=BNBUSDT
+2024-04-01 22:33:44.654[1712021624654] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54813//futures/data/openInterestHist?pair=bnbusd_perpetual&period=5m&limit=1000&startTime=1712021624653&endTime=1712021625653
+2024-04-01 22:33:44.659[1712021624659] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54815//futures/data/openInterestHist?pair=bnbusd_perpetual&period=5m
+2024-04-01 22:33:44.670[1712021624670] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54819//dapi/v1/ping
+2024-04-01 22:33:44.677[1712021624677] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54821//dapi/v1/ticker/24hr?pair=bnbusd_perpetual
+2024-04-01 22:33:44.681[1712021624681] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54823//dapi/v1/ticker/24hr
+2024-04-01 22:33:44.687[1712021624687] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54825//dapi/v1/ticker/price
+2024-04-01 22:33:44.691[1712021624691] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54827//dapi/v1/ticker/price?pair=bnbusd_perpetual
+2024-04-01 22:33:44.696[1712021624696] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54829//dapi/v1/time
+2024-04-01 22:33:44.703[1712021624703] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54833//futures/data/topLongShortAccountRatio?pair=btcusd_perpetual&period=5m
+2024-04-01 22:33:44.709[1712021624709] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54835//futures/data/topLongShortAccountRatio?pair=btcusd_perpetual&period=5m&limit=1000&startTime=1712021624708&endTime=1712021625708
+2024-04-01 22:33:44.720[1712021624720] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54839//futures/data/topLongShortPositionRatio?pair=bnbusd_perpetual&period=5m
+2024-04-01 22:33:44.726[1712021624726] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54841//futures/data/topLongShortPositionRatio?pair=bnbusd_perpetual&period=5m&limit=1000&startTime=1712021624725&endTime=1712021625725
+2024-04-01 22:33:44.730[1712021624730] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54843//dapi/v1/trades?symbol=BNBUSDT&limit=1000
+2024-04-01 22:33:44.737[1712021624737] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54846//dapi/v1/trades?symbol=BNBUSDT
+2024-04-01 22:33:44.746[1712021624746] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54849//dapi/v1/pmAccountInfo?asset=BTC&timestamp=1712021624745&signature=6077fb6d757451aaa1d70d1022a78e16134fdf7f83be5a972727facccbbcf3f5
+2024-04-01 22:33:44.750[1712021624750] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54851//dapi/v1/pmExchangeInfo?timestamp=1712021624750&signature=fa3793457bc2bcee2b1beccc32e5a2e11e0810e41ec449733397d19d4100acf9
+2024-04-01 22:33:44.754[1712021624754] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54853//dapi/v1/pmExchangeInfo?symbol=BNBUSDT&timestamp=1712021624754&signature=0f0181b83316e1cfadf48a99ec5a601cd2ad4821b607d18d84496a9c7cae82bd
+2024-04-01 22:33:44.761[1712021624761] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - DELETE http://kubernetes.docker.internal:54855//dapi/v1/listenKey
+2024-04-01 22:33:44.765[1712021624765] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:54857//dapi/v1/listenKey
+2024-04-01 22:33:44.773[1712021624773] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - PUT http://kubernetes.docker.internal:54859//dapi/v1/listenKey
+2024-04-01 22:33:44.847[1712021624847] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 1] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:33:44.864[1712021624864] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 2] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:33:44.865[1712021624865] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 3] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:33:44.866[1712021624866] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 4] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-04-01 22:33:44.867[1712021624867] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 5] Connecting to dstream.binance.com/ws/btcusdt@markPrice@1s
+2024-04-01 22:33:44.868[1712021624868] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 6] Connecting to dstream.binance.com/ws/btcusdt@markPrice
+2024-04-01 22:33:44.869[1712021624869] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 7] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:33:44.870[1712021624870] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 8] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:33:44.871[1712021624871] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 9] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:33:44.872[1712021624872] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 10] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-04-01 22:33:44.874[1712021624874] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 7] Closing connection to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:33:44.877[1712021624877] | INFO  | main       | c.b.c.f.c.impl.WebsocketClientImpl   - Closing Connection ID 7
+2024-04-01 22:33:44.880[1712021624880] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 11] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:33:44.881[1712021624881] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 12] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:33:44.882[1712021624882] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 13] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:33:44.883[1712021624883] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 14] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-04-01 22:33:44.885[1712021624885] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 15] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:33:44.886[1712021624886] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 16] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:33:44.887[1712021624887] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 17] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:33:44.888[1712021624888] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 18] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-04-01 22:33:44.889[1712021624889] | INFO  | main       | c.b.c.f.c.impl.WebsocketClientImpl   - Closing 4 connections(s)
+2024-04-01 22:33:44.889[1712021624889] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 16] Closing connection to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:33:44.890[1712021624890] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 17] Closing connection to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:33:44.890[1712021624890] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 18] Closing connection to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-04-01 22:33:44.890[1712021624890] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 15] Closing connection to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:33:44.891[1712021624891] | INFO  | main       | c.b.c.f.c.impl.WebsocketClientImpl   - All connections are closed!
+2024-04-01 22:33:44.892[1712021624892] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 19] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:33:44.900[1712021624900] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 19] Failure
+java.io.InterruptedIOException: executor rejected
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
+	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
+	at okhttp3.Dispatcher.enqueue$okhttp(Dispatcher.kt:125)
+	at okhttp3.internal.connection.RealCall.enqueue(RealCall.kt:164)
+	at okhttp3.internal.ws.RealWebSocket.connect(RealWebSocket.kt:165)
+	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
+	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
+	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:688)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:82)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:43)
+	at unit.TestCMWebsocketClientImpl.indexPriceStream(TestCMWebsocketClientImpl.java:17)
+	at unit.TestCMWebsocketClientImpl.<init>(TestCMWebsocketClientImpl.java:59)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:250)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:260)
+	at org.junit.runners.BlockJUnit4ClassRunner$2.runReflectiveCall(BlockJUnit4ClassRunner.java:309)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@1282e98 rejected from java.util.concurrent.ThreadPoolExecutor@4db0ba1c[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
+	... 54 common frames omitted
+2024-04-01 22:33:44.901[1712021624901] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 20] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:33:44.902[1712021624902] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 20] Failure
+java.io.InterruptedIOException: executor rejected
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
+	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
+	at okhttp3.Dispatcher.enqueue$okhttp(Dispatcher.kt:125)
+	at okhttp3.internal.connection.RealCall.enqueue(RealCall.kt:164)
+	at okhttp3.internal.ws.RealWebSocket.connect(RealWebSocket.kt:165)
+	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
+	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
+	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:688)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:82)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:43)
+	at unit.TestCMWebsocketClientImpl.indexPriceStream(TestCMWebsocketClientImpl.java:17)
+	at unit.TestCMWebsocketClientImpl.<init>(TestCMWebsocketClientImpl.java:60)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:250)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:260)
+	at org.junit.runners.BlockJUnit4ClassRunner$2.runReflectiveCall(BlockJUnit4ClassRunner.java:309)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@3030836d rejected from java.util.concurrent.ThreadPoolExecutor@4db0ba1c[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
+	... 54 common frames omitted
+2024-04-01 22:33:44.903[1712021624903] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 21] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:33:44.903[1712021624903] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 21] Failure
+java.io.InterruptedIOException: executor rejected
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
+	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
+	at okhttp3.Dispatcher.enqueue$okhttp(Dispatcher.kt:125)
+	at okhttp3.internal.connection.RealCall.enqueue(RealCall.kt:164)
+	at okhttp3.internal.ws.RealWebSocket.connect(RealWebSocket.kt:165)
+	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
+	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
+	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:688)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexKlineCandlestick(CMWebsocketClientImpl.java:155)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexKlineCandlestick(CMWebsocketClientImpl.java:138)
+	at unit.TestCMWebsocketClientImpl.indexKlineCandlestick(TestCMWebsocketClientImpl.java:37)
+	at unit.TestCMWebsocketClientImpl.<init>(TestCMWebsocketClientImpl.java:62)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:250)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:260)
+	at org.junit.runners.BlockJUnit4ClassRunner$2.runReflectiveCall(BlockJUnit4ClassRunner.java:309)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@4c24f3a2 rejected from java.util.concurrent.ThreadPoolExecutor@4db0ba1c[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
+	... 54 common frames omitted
+2024-04-01 22:33:44.904[1712021624904] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 22] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-04-01 22:33:44.905[1712021624905] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 22] Failure
+java.io.InterruptedIOException: executor rejected
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
+	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
+	at okhttp3.Dispatcher.enqueue$okhttp(Dispatcher.kt:125)
+	at okhttp3.internal.connection.RealCall.enqueue(RealCall.kt:164)
+	at okhttp3.internal.ws.RealWebSocket.connect(RealWebSocket.kt:165)
+	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
+	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
+	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:688)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.markKlineCandlestick(CMWebsocketClientImpl.java:191)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.markKlineCandlestick(CMWebsocketClientImpl.java:174)
+	at unit.TestCMWebsocketClientImpl.markKlineCandlestick(TestCMWebsocketClientImpl.java:42)
+	at unit.TestCMWebsocketClientImpl.<init>(TestCMWebsocketClientImpl.java:62)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:250)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:260)
+	at org.junit.runners.BlockJUnit4ClassRunner$2.runReflectiveCall(BlockJUnit4ClassRunner.java:309)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@4c176ff1 rejected from java.util.concurrent.ThreadPoolExecutor@4db0ba1c[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
+	... 54 common frames omitted
+2024-04-01 22:33:44.907[1712021624907] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 23] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:33:44.907[1712021624907] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 23] Failure
+java.io.InterruptedIOException: executor rejected
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
+	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
+	at okhttp3.Dispatcher.enqueue$okhttp(Dispatcher.kt:125)
+	at okhttp3.internal.connection.RealCall.enqueue(RealCall.kt:164)
+	at okhttp3.internal.ws.RealWebSocket.connect(RealWebSocket.kt:165)
+	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
+	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
+	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:688)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:82)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:43)
+	at unit.TestCMWebsocketClientImpl.indexPriceStream(TestCMWebsocketClientImpl.java:17)
+	at unit.TestCMWebsocketClientImpl.checkIndexPrice(TestCMWebsocketClientImpl.java:73)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@6aff97d6 rejected from java.util.concurrent.ThreadPoolExecutor@4db0ba1c[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
+	... 53 common frames omitted
+2024-04-01 22:33:45.708[1712021625708] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54948//fapi/v1/aggTrades?symbol=BNBUSDT&fromId=1000
+2024-04-01 22:33:45.725[1712021625725] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54950//fapi/v1/aggTrades?symbol=BNBUSDT&limit=1000
+2024-04-01 22:33:45.736[1712021625736] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54952//fapi/v1/aggTrades?symbol=BNBUSDT
+2024-04-01 22:33:45.751[1712021625751] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54955//fapi/v1/aggTrades?symbol=BNBUSDT&startTime=1712021625749&endTime=1712021626749
+2024-04-01 22:33:45.786[1712021625786] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54957//fapi/v1/ticker/bookTicker?symbol=BNBUSDT
+2024-04-01 22:33:45.795[1712021625795] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54959//fapi/v1/ticker/bookTicker
+2024-04-01 22:33:45.814[1712021625814] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54961//fapi/v1/continuousKlines?pair=BNBUSDT&contractType=PERPETUAL&interval=1m
+2024-04-01 22:33:45.827[1712021625827] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54963//fapi/v1/continuousKlines?pair=BNBUSDT&contractType=PERPETUAL&interval=1m&limit=1000&startTime=1712021625824&endTime=1712021626824
+2024-04-01 22:33:45.849[1712021625849] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54968//fapi/v1/depth?symbol=BNBUSDT
+2024-04-01 22:33:45.932[1712021625932] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54970//fapi/v1/depth?symbol=BNBUSDT&limit=10
+2024-04-01 22:33:45.983[1712021625983] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54972//fapi/v1/exchangeInfo
+2024-04-01 22:33:46.106[1712021626106] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54974//fapi/v1/fundingRate?symbol=BNBUSDT&limit=1000&startTime=1712021626085&endTime=1712021627085
+2024-04-01 22:33:46.214[1712021626214] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54976//fapi/v1/fundingRate
+2024-04-01 22:33:46.249[1712021626249] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54980//fapi/v1/lvtKlines?symbol=BTCDOWN&interval=1m&limit=1000&startTime=1712021626247&endTime=1712021627247
+2024-04-01 22:33:46.264[1712021626264] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54982//fapi/v1/lvtKlines?symbol=BTCDOWN&interval=1m
+2024-04-01 22:33:46.275[1712021626275] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54984//fapi/v1/historicalTrades?symbol=BNBUSDT&limit=1000&fromId=123
+2024-04-01 22:33:46.295[1712021626295] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54988//fapi/v1/historicalTrades?symbol=BNBUSDT
+2024-04-01 22:33:46.305[1712021626305] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54990//fapi/v1/indexInfo?symbol=DEFIUSDT
+2024-04-01 22:33:46.314[1712021626314] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54992//fapi/v1/indexInfo
+2024-04-01 22:33:46.322[1712021626322] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54994//fapi/v1/indexPriceKlines?pair=BNBUSDT&interval=1m
+2024-04-01 22:33:46.330[1712021626330] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:54996//fapi/v1/indexPriceKlines?pair=BNBUSDT&interval=1m&limit=1000&startTime=1712021626328&endTime=1712021627328
+2024-04-01 22:33:46.353[1712021626353] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55002//fapi/v1/klines?symbol=BNBUSDT&interval=1m&limit=1000&startTime=1712021626352&endTime=1712021627352
+2024-04-01 22:33:46.369[1712021626369] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55004//fapi/v1/klines?symbol=BNBUSDT&interval=1m
+2024-04-01 22:33:46.386[1712021626386] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55006//futures/data/globalLongShortAccountRatio?symbol=BNBUSDT&period=5m&limit=1000&startTime=1712021626384&endTime=1712021627384
+2024-04-01 22:33:46.412[1712021626412] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55010//futures/data/globalLongShortAccountRatio?symbol=BNBUSDT&period=5m
+2024-04-01 22:33:46.438[1712021626438] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55012//fapi/v1/premiumIndex?symbol=BNBUSDT
+2024-04-01 22:33:46.479[1712021626479] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55014//fapi/v1/premiumIndex
+2024-04-01 22:33:46.535[1712021626535] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55017//fapi/v1/markPriceKlines?symbol=BNBUSDT&interval=1m&limit=1000&startTime=1712021626529&endTime=1712021627529
+2024-04-01 22:33:46.565[1712021626565] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55020//fapi/v1/markPriceKlines?symbol=BNBUSDT&interval=1m
+2024-04-01 22:33:46.591[1712021626591] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55022//fapi/v1/assetIndex?symbol=ADAUSD
+2024-04-01 22:33:46.617[1712021626617] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55024//fapi/v1/assetIndex
+2024-04-01 22:33:46.632[1712021626632] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55026//fapi/v1/openInterest?symbol=BNBUSDT
+2024-04-01 22:33:46.678[1712021626678] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55029//futures/data/openInterestHist?symbol=BNBUSDT&period=5m&limit=1000&startTime=1712021626675&endTime=1712021627675
+2024-04-01 22:33:46.694[1712021626694] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55031//futures/data/openInterestHist?symbol=BNBUSDT&period=5m
+2024-04-01 22:33:46.728[1712021626728] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55035//fapi/v1/ping
+2024-04-01 22:33:46.759[1712021626759] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55037//futures/data/takerlongshortRatio?symbol=BNBUSDT&period=5m&limit=1000&startTime=1712021626757&endTime=1712021627757
+2024-04-01 22:33:46.787[1712021626787] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55041//futures/data/takerlongshortRatio?symbol=BNBUSDT&period=5m
+2024-04-01 22:33:46.846[1712021626846] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55043//fapi/v1/ticker/24hr?symbol=BNBUSDT
+2024-04-01 22:33:46.907[1712021626907] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55045//fapi/v1/ticker/24hr
+2024-04-01 22:33:46.968[1712021626968] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 11] Connected to Server
+2024-04-01 22:33:46.980[1712021626980] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 14] Connected to Server
+2024-04-01 22:33:46.982[1712021626982] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 13] Connected to Server
+2024-04-01 22:33:46.968[1712021626968] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 7] Connected to Server
+2024-04-01 22:33:46.968[1712021626968] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 12] Connected to Server
+2024-04-01 22:33:46.969[1712021626969] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 8] Connected to Server
+2024-04-01 22:33:46.986[1712021626986] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 17] Connected to Server
+2024-04-01 22:33:46.991[1712021626991] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 16] Connected to Server
+2024-04-01 22:33:46.992[1712021626992] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 3] Connected to Server
+2024-04-01 22:33:46.992[1712021626992] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 9] Connected to Server
+2024-04-01 22:33:46.993[1712021626993] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 5] Connected to Server
+2024-04-01 22:33:46.993[1712021626993] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 1] Connected to Server
+2024-04-01 22:33:46.977[1712021626977] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 10] Connected to Server
+2024-04-01 22:33:46.984[1712021626984] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 2] Connected to Server
+2024-04-01 22:33:46.985[1712021626985] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 6] Connected to Server
+2024-04-01 22:33:46.992[1712021626992] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 4] Connected to Server
+2024-04-01 22:33:47.013[1712021627013] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 15] Connected to Server
+2024-04-01 22:33:47.019[1712021627019] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55047//fapi/v1/ticker/price
+2024-04-01 22:33:47.058[1712021627058] | INFO  | OkHttp https://dstream.binance.com/... | c.b.c.f.c.utils.WebSocketConnection  - [Connection 18] Connected to Server
+2024-04-01 22:33:47.168[1712021627168] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55049//fapi/v1/ticker/price?symbol=BNBUSDT
+2024-04-01 22:33:47.214[1712021627214] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55051//fapi/v1/time
+2024-04-01 22:33:47.241[1712021627241] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55053//futures/data/topLongShortAccountRatio?symbol=BNBUSDT&period=5m
+2024-04-01 22:33:47.262[1712021627262] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55056//futures/data/topLongShortAccountRatio?symbol=BNBUSDT&period=5m&limit=1000&startTime=1712021627260&endTime=1712021628260
+2024-04-01 22:33:47.314[1712021627314] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55061//futures/data/topLongShortPositionRatio?symbol=BNBUSDT&period=5m
+2024-04-01 22:33:47.333[1712021627333] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55063//futures/data/topLongShortPositionRatio?symbol=BNBUSDT&period=5m&limit=1000&startTime=1712021627332&endTime=1712021628332
+2024-04-01 22:33:47.344[1712021627344] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55065//fapi/v1/trades?symbol=BNBUSDT&limit=1000
+2024-04-01 22:33:47.360[1712021627360] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55068//fapi/v1/trades?symbol=BNBUSDT
+2024-04-01 22:33:47.377[1712021627377] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55071//fapi/v1/pmAccountInfo?asset=BTC&timestamp=1712021627377&signature=ffa12c539bad1081804651fe2f150e46c0756106d61e552cf5bd35fc124c297b
+2024-04-01 22:33:47.389[1712021627389] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55073//fapi/v1/pmExchangeInfo?timestamp=1712021627389&signature=a46de93d28900987e9502db2701e4f4c3096074efd5901ee855ae934cdcc4bc2
+2024-04-01 22:33:47.398[1712021627398] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55075//fapi/v1/pmExchangeInfo?symbol=BNBUSDT&timestamp=1712021627397&signature=03374f015eadf371be7c18540a542d6b267239dec817a128f2ffa40c7f3913c9
+2024-04-01 22:34:22.112[1712021662112] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55090//dapi/v1/income?symbol=BNBUSDT&timestamp=1712021662038&signature=6f5c926045e9ca09f3a743d61f3d7c6212bf5d2531808c3cbc5ef07a7c24e0b4
+2024-04-01 22:34:22.447[1712021662447] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55092//dapi/v1/income?timestamp=1712021662447&signature=992c36e94a3095be8779fae79d9e29409f1e01e778402fe855b8a055dc33e6b0
+2024-04-01 22:34:22.454[1712021662454] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55094//dapi/v1/historicalTrades?symbol=BNBUSDT&limit=1000&fromId=123
+2024-04-01 22:34:22.462[1712021662462] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55098//dapi/v1/historicalTrades?symbol=BNBUSDT
+2024-04-01 22:34:22.468[1712021662468] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55100//fapi/v1/exchangeInfo
+2024-04-01 22:34:22.475[1712021662475] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55102//fapi/v1/ticker/24hr?symbol=BNBUSDT
+2024-04-01 22:34:22.483[1712021662483] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55104//fapi/v1/ticker/24hr
+2024-04-01 22:34:22.500[1712021662500] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - DELETE http://kubernetes.docker.internal:55107//fapi/v1/batchOrders?symbol=BNBUSDT&orderIdList=&timestamp=1712021662500&signature=fb8c096d15df477972d2299bbd5914dce44ea76e0ef12a51c2a5fad850a9680e
+2024-04-01 22:34:22.523[1712021662523] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55109//dapi/v1/allOrders?symbol=bnbusd_perpetual&timestamp=1712021662523&signature=0b3cd8ece80853a282934a929c79e560ff614691aa1370bbb47197a3ac27ac3a
+2024-04-01 22:34:22.533[1712021662533] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55112//fapi/v1/time
+2024-04-01 22:34:22.540[1712021662540] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55114//dapi/v1/openOrders?symbol=BNBUSDT&timestamp=1712021662539&signature=35ce7bccd5ac68f21c2b0aebf34e60e40e89492c9578ca218dbf725bf8589afc
+2024-04-01 22:34:22.546[1712021662546] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55116//dapi/v1/openOrders?timestamp=1712021662546&signature=e885e219b840816439248abeff0bee712f7d2cd82d9b7db891bf6d1edcd273b2
+2024-04-01 22:34:22.553[1712021662553] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55118//dapi/v1/leverageBracket?pair=BNBUSD&timestamp=1712021662553&signature=253edd7c9f18a3185d07dff7cf15f97d3271664a8ee62661fe8cd78e20caed3d
+2024-04-01 22:34:22.559[1712021662559] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55120//dapi/v1/leverageBracket?timestamp=1712021662559&signature=07f1a6450fa227fdc167e047aa21e9d7d476036b25a3d9b93c52f96da94fdcd8
+2024-04-01 22:34:22.566[1712021662566] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55122//fapi/v1/multiAssetsMargin?timestamp=1712021662566&signature=5c24ada360e38bd52e652dc2a27f473034a9800feb701aa85d31fc129f933140
+2024-04-01 22:34:22.574[1712021662574] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55124//dapi/v1/pmExchangeInfo?timestamp=1712021662574&signature=d5e53a840472d16e9a33d64182f9d783cd5ef999b8300b4f3e5ca438d35621bd
+2024-04-01 22:34:22.585[1712021662585] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55126//dapi/v1/pmExchangeInfo?symbol=BNBUSDT&timestamp=1712021662585&signature=eb7b1f8045a4881509968029e1520f27afa1ae68dd21932097e21cf311f57207
+2024-04-01 22:34:22.592[1712021662592] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55128//dapi/v1/premiumIndex?symbol=BNBUSDT
+2024-04-01 22:34:22.599[1712021662599] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55130//dapi/v1/premiumIndex
+2024-04-01 22:34:22.606[1712021662606] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55132//fapi/v1/apiTradingStatus?timestamp=1712021662605&signature=a5282ad0d82cc3bc666d33416dc7bedf99a9a5cbecfee24689a17e9562057e55
+2024-04-01 22:34:22.613[1712021662613] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55134//fapi/v1/apiTradingStatus?symbol=BNBUSDT&timestamp=1712021662613&signature=af3876476f2234ce5a3cd7bbc10ed211e77d81d4b5927183de62ee896ad4fd1e
+2024-04-01 22:34:22.620[1712021662620] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55136//dapi/v1/exchangeInfo
+2024-04-01 22:34:22.631[1712021662631] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55140//fapi/v1/openOrder?symbol=BNBUSDT&orderId=123&timestamp=1712021662631&signature=6ac867d89edf34d03d4c57772d28847381bef02971f1ae08b77581aec232c6de
+2024-04-01 22:34:22.637[1712021662637] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55142//fapi/v1/openOrder?symbol=BNBUSDT&origClientOrderId=123&timestamp=1712021662637&signature=bcc792e81c457c75fe46ee45da1bf5469bc3462ac686a96ace1529fa35269671
+2024-04-01 22:34:22.654[1712021662654] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55146//dapi/v1/order?symbol=BNBUSD_PERP&orderId=123&timestamp=1712021662653&signature=5d95d00c7ab881d6fc414e8ae3766d51a5a22781c1cfb7483235897c85b083c9
+2024-04-01 22:34:22.661[1712021662661] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55148//dapi/v1/order?symbol=BNBUSDT&origClientOrderId=123&timestamp=1712021662660&signature=cf8453ded1e53d026510bdfa4bbf050f433eb7db319c66f43d56dbd8ae1cd499
+2024-04-01 22:34:22.668[1712021662668] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55150//dapi/v1/ping
+2024-04-01 22:34:22.675[1712021662675] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55152//fapi/v1/premiumIndex?symbol=BNBUSDT
+2024-04-01 22:34:22.682[1712021662682] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55154//fapi/v1/premiumIndex
+2024-04-01 22:34:22.689[1712021662689] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:55156//dapi/v1/listenKey
+2024-04-01 22:34:22.699[1712021662699] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:55159//fapi/v1/countdownCancelAll?symbol=BNBUSDT&countdownTime=10000&timestamp=1712021662699&signature=e0db470f67c3defacfd9beb4710872ad0113c7ab2af77a2d19d5a5ca1835ea5b
+2024-04-01 22:34:22.705[1712021662705] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55161//fapi/v1/ticker/bookTicker?symbol=BNBUSDT
+2024-04-01 22:34:22.711[1712021662711] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55163//fapi/v1/ticker/bookTicker
+2024-04-01 22:34:22.718[1712021662718] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:55166//fapi/v1/positionSide/dual?dualSidePosition=true&timestamp=1712021662718&signature=5e51b66e64edea71a47d1aceb9e5e4a617c208cd4324383fef9f0a209096b571
+2024-04-01 22:34:22.727[1712021662727] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - DELETE http://kubernetes.docker.internal:55169//dapi/v1/batchOrders?symbol=BNBUSDT&orderIdList=&timestamp=1712021662727&signature=774f5517a8a114165241005e83bb5a929cdbc45edb408e941782f474bb216069
+2024-04-01 22:34:22.739[1712021662739] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:55172//dapi/v1/order?symbol=BNBUSDT&side=BUY&type=MARKET&quantity=0.01&timestamp=1712021662736&signature=9a1f555e0229da6c2664ea04f5c067e689066dc034281ac7c6db02300eda8714
+2024-04-01 22:34:22.747[1712021662747] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55174//futures/data/globalLongShortAccountRatio?pair=BTCUSD&period=5m&limit=1000&startTime=1712021662745&endTime=1712021663745
+2024-04-01 22:34:22.756[1712021662756] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55178//futures/data/globalLongShortAccountRatio?pair=BTCUSD&period=5m
+2024-04-01 22:34:22.763[1712021662763] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55180//fapi/v1/ticker/price
+2024-04-01 22:34:22.768[1712021662768] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55182//fapi/v1/ticker/price?symbol=BNBUSDT
+2024-04-01 22:34:22.778[1712021662778] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:55185//dapi/v1/countdownCancelAll?symbol=BNBUSDT&countdownTime=10000&timestamp=1712021662777&signature=353f90dd425a0e4062107827ea501de145e7ebc254225e6b742d45041e48f585
+2024-04-01 22:34:22.784[1712021662784] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55187//fapi/v1/historicalTrades?symbol=BNBUSDT&limit=1000&fromId=123
+2024-04-01 22:34:22.796[1712021662796] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55191//fapi/v1/historicalTrades?symbol=BNBUSDT
+2024-04-01 22:34:22.803[1712021662803] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55193//fapi/v1/trades?symbol=BNBUSDT&limit=1000
+2024-04-01 22:34:22.812[1712021662812] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55196//fapi/v1/trades?symbol=BNBUSDT
+2024-04-01 22:34:22.826[1712021662826] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55200//fapi/v1/order?symbol=BNBUSDT&orderId=123&timestamp=1712021662826&signature=23a90d070c7c867914ddf7a5636b0dbdf0e50525fa48e4f8bc4b31788692326f
+2024-04-01 22:34:22.833[1712021662833] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55202//fapi/v1/order?symbol=BNBUSDT&origClientOrderId=123&timestamp=1712021662832&signature=e42628dc22af597c3a069a97c2645f6bcc95c1a6c229128c24605523f7183e83
+2024-04-01 22:34:22.839[1712021662839] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55204//fapi/v1/indexInfo?symbol=DEFIUSDT
+2024-04-01 22:34:22.846[1712021662846] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55206//fapi/v1/indexInfo
+2024-04-01 22:34:22.853[1712021662853] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55208//fapi/v1/pmExchangeInfo?timestamp=1712021662852&signature=5e52e53684539d9d5ad4934863076d1d2987cb4fd4e925d52c0ce9643480afb7
+2024-04-01 22:34:22.858[1712021662858] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55210//fapi/v1/pmExchangeInfo?symbol=BNBUSDT&timestamp=1712021662858&signature=e48346767651ad358d69c5a9c35c807c2c3556bc79532e53f83ed45b5605b895
+2024-04-01 22:34:22.865[1712021662865] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55212//futures/data/openInterestHist?symbol=BNBUSDT&period=5m&limit=1000&startTime=1712021662864&endTime=1712021663864
+2024-04-01 22:34:22.881[1712021662881] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55214//futures/data/openInterestHist?symbol=BNBUSDT&period=5m
+2024-04-01 22:34:22.893[1712021662893] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55218//fapi/v1/positionMargin/history?symbol=BNBUSDT&timestamp=1712021662893&signature=1954d296eaf6e7d2e2e43e1bee4a05cde9d5d91217d62205bff12a64525dc95d
+2024-04-01 22:34:22.907[1712021662907] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55222//fapi/v1/pmAccountInfo?asset=BTC&timestamp=1712021662907&signature=32e87d7c89ffc59af2010dfafca5dc8673fa5f65614613361af4132965709541
+2024-04-01 22:34:22.916[1712021662916] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55224//fapi/v1/openOrders?symbol=BNBUSDT&timestamp=1712021662916&signature=6be1c609f725a10de8c168190acdb906e25b5de99ee1d9517c8fd9dc6bdf0e89
+2024-04-01 22:34:22.923[1712021662923] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55226//fapi/v1/openOrders?timestamp=1712021662923&signature=5c24b604c737df628b9cbf5f16010a39270089086b2afe56dbb5b9ae37d16aaf
+2024-04-01 22:34:22.931[1712021662931] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55228//dapi/v1/ticker/24hr?pair=bnbusd_perpetual
+2024-04-01 22:34:22.937[1712021662937] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55230//dapi/v1/ticker/24hr
+2024-04-01 22:34:22.944[1712021662944] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - PUT http://kubernetes.docker.internal:55232//fapi/v1/listenKey
+2024-04-01 22:34:22.960[1712021662960] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:55235//fapi/v1/multiAssetsMargin?dualSidePosition=true&timestamp=1712021662960&signature=22df6957c506414eebdadd1fbb39d61c0151653fad00c934bfe88750b48361d1
+2024-04-01 22:34:22.972[1712021662972] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:55238//dapi/v1/positionSide/dual?dualSidePosition=true&timestamp=1712021662972&signature=a1f9da67808f3d79da9e8a95ae6b68b8fbf27fb30acead60e3869f5bf0c841c4
+2024-04-01 22:34:22.986[1712021662986] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55242//dapi/v1/openOrder?symbol=BNBUSDT&orderId=123&timestamp=1712021662984&signature=fb96720385c676c13bae7ea45da34595a137679cc863ada7ecc5a1c373037be9
+2024-04-01 22:34:22.992[1712021662992] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55244//dapi/v1/openOrder?symbol=BNBUSDT&origClientOrderId=123&timestamp=1712021662992&signature=e4c592b402979a5c0b50d4b945f505ab9029332b381b5137ceb5ed41ea2dba99
+2024-04-01 22:34:23.007[1712021663007] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55246//dapi/v1/balance?timestamp=1712021663007&signature=307dcf037c097eb30f2dd273de0ac63bc096d881520b17804ec2071cf8e3c585
+2024-04-01 22:34:23.016[1712021663016] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55248//fapi/v1/income/asyn/id?downloadId=545923594199212032&timestamp=1712021663016&signature=0cf0e732e682a781bd7d97d93413c36f55c732c814b0e7ccbf73a350c2c1bfce
+2024-04-01 22:34:23.028[1712021663028] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - DELETE http://kubernetes.docker.internal:55252//dapi/v1/allOpenOrders?symbol=BNBUSDT&timestamp=1712021663028&signature=3470b4a00fc97794bba82ff7d3be21b6317edc70bfb4470cdb4b61b7a81dab7a
+2024-04-01 22:34:23.037[1712021663037] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:55255//dapi/v1/positionMargin?symbol=BNBUSDT&amount=100.0&type=1&timestamp=1712021663037&signature=c1aee07310f4c08a506cee519df4d9661ef7361660c1285c1cdf0d3d8ef12b56
+2024-04-01 22:34:23.046[1712021663046] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55258//fapi/v1/depth?symbol=BNBUSDT
+2024-04-01 22:34:23.053[1712021663053] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55260//fapi/v1/depth?symbol=BNBUSDT&limit=10
+2024-04-01 22:34:23.060[1712021663060] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55262//dapi/v1/ticker/bookTicker?symbol=BNBUSDT
+2024-04-01 22:34:23.068[1712021663068] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55264//dapi/v1/ticker/bookTicker
+2024-04-01 22:34:23.077[1712021663077] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55267//fapi/v1/markPriceKlines?symbol=BNBUSDT&interval=1m&limit=1000&startTime=1712021663075&endTime=1712021664075
+2024-04-01 22:34:23.085[1712021663085] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55270//fapi/v1/markPriceKlines?symbol=BNBUSDT&interval=1m
+2024-04-01 22:34:23.130[1712021663130] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55282//fapi/v1/klines?symbol=BNBUSDT&interval=1m&limit=1000&startTime=1712021663128&endTime=1712021664128
+2024-04-01 22:34:23.135[1712021663135] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55284//fapi/v1/klines?symbol=BNBUSDT&interval=1m
+2024-04-01 22:34:23.153[1712021663153] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55286//fapi/v1/openInterest?symbol=BNBUSDT
+2024-04-01 22:34:23.162[1712021663162] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55289//dapi/v1/indexPriceKlines?pair=BNBUSDT&interval=1m
+2024-04-01 22:34:23.167[1712021663167] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55291//dapi/v1/indexPriceKlines?pair=BNBUSDT&interval=1m&limit=1000&startTime=1712021663166&endTime=1712021664166
+2024-04-01 22:34:23.178[1712021663178] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55295//futures/data/openInterestHist?pair=bnbusd_perpetual&period=5m&limit=1000&startTime=1712021663175&endTime=1712021664175
+2024-04-01 22:34:23.182[1712021663182] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55297//futures/data/openInterestHist?pair=bnbusd_perpetual&period=5m
+2024-04-01 22:34:23.193[1712021663193] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:55301//dapi/v1/leverage?symbol=BNBUSDT&leverage=20&timestamp=1712021663193&signature=089f0c8c4135047fe402c19eb813e1d6daea7bbbf39275b6726f77ac2f6e3db9
+2024-04-01 22:34:23.203[1712021663203] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55304//futures/data/basis?pair=BTCUSD&contractType=PERPETUAL&period=1m
+2024-04-01 22:34:23.216[1712021663216] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55309//fapi/v1/commissionRate?symbol=BNBUSDT&timestamp=1712021663216&signature=f0ff8e729e7a0aa334cca995e79dae5fe2fe4b186d1e13881c4b462df5941fc1
+2024-04-01 22:34:23.221[1712021663221] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55311//dapi/v1/openInterest?symbol=BNBUSDT
+2024-04-01 22:34:23.231[1712021663231] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - DELETE http://kubernetes.docker.internal:55314//fapi/v1/order?symbol=BNBUSDT&orderId=&timestamp=1712021663231&signature=e6f8c76c0a266e839a83cb2e921296137f26debf901f45dec549f4e06bc33a0f
+2024-04-01 22:34:23.240[1712021663240] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - DELETE http://kubernetes.docker.internal:55317//fapi/v1/order?symbol=BNBUSDT&orderId=123&origClientOrderId=456&timestamp=1712021663240&signature=9cbfef45e7205060c27726c2b53d3c3ad34752ced8b0b26c4138a63aeb42c0a8
+2024-04-01 22:34:23.246[1712021663246] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55319//fapi/v1/fundingRate?symbol=BNBUSDT&limit=1000&startTime=1712021663245&endTime=1712021664245
+2024-04-01 22:34:23.251[1712021663251] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55321//fapi/v1/fundingRate
+2024-04-01 22:34:23.256[1712021663256] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 1] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:34:23.263[1712021663263] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 2] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:34:23.263[1712021663263] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 3] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:34:23.264[1712021663264] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 4] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-04-01 22:34:23.265[1712021663265] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 5] Connecting to dstream.binance.com/ws/btcusdt@markPrice@1s
+2024-04-01 22:34:23.265[1712021663265] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 6] Connecting to dstream.binance.com/ws/btcusdt@markPrice
+2024-04-01 22:34:23.266[1712021663266] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 7] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:34:23.267[1712021663267] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 8] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:34:23.268[1712021663268] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 9] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:34:23.269[1712021663269] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 10] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-04-01 22:34:23.270[1712021663270] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 7] Closing connection to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:34:23.274[1712021663274] | INFO  | main       | c.b.c.f.c.impl.WebsocketClientImpl   - Closing Connection ID 7
+2024-04-01 22:34:23.275[1712021663275] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 11] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:34:23.276[1712021663276] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 12] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:34:23.278[1712021663278] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 13] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:34:23.279[1712021663279] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 14] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-04-01 22:34:23.281[1712021663281] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 15] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:34:23.282[1712021663282] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 16] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:34:23.283[1712021663283] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 17] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:34:23.284[1712021663284] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 18] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-04-01 22:34:23.286[1712021663286] | INFO  | main       | c.b.c.f.c.impl.WebsocketClientImpl   - Closing 4 connections(s)
+2024-04-01 22:34:23.286[1712021663286] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 16] Closing connection to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:34:23.286[1712021663286] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 17] Closing connection to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:34:23.287[1712021663287] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 18] Closing connection to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-04-01 22:34:23.287[1712021663287] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 15] Closing connection to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:34:23.287[1712021663287] | INFO  | main       | c.b.c.f.c.impl.WebsocketClientImpl   - All connections are closed!
+2024-04-01 22:34:23.288[1712021663288] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 19] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:34:23.292[1712021663292] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 19] Failure
+java.io.InterruptedIOException: executor rejected
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
+	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
+	at okhttp3.Dispatcher.enqueue$okhttp(Dispatcher.kt:125)
+	at okhttp3.internal.connection.RealCall.enqueue(RealCall.kt:164)
+	at okhttp3.internal.ws.RealWebSocket.connect(RealWebSocket.kt:165)
+	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
+	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
+	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:688)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:82)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:43)
+	at unit.TestCMWebsocketClientImpl.indexPriceStream(TestCMWebsocketClientImpl.java:17)
+	at unit.TestCMWebsocketClientImpl.<init>(TestCMWebsocketClientImpl.java:59)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:250)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:260)
+	at org.junit.runners.BlockJUnit4ClassRunner$2.runReflectiveCall(BlockJUnit4ClassRunner.java:309)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@593e824f rejected from java.util.concurrent.ThreadPoolExecutor@72ccd81a[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
+	... 53 common frames omitted
+2024-04-01 22:34:23.294[1712021663294] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 20] Connecting to dstream.binance.com/ws/btcusdt@indexPrice
+2024-04-01 22:34:23.295[1712021663295] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 20] Failure
+java.io.InterruptedIOException: executor rejected
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
+	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
+	at okhttp3.Dispatcher.enqueue$okhttp(Dispatcher.kt:125)
+	at okhttp3.internal.connection.RealCall.enqueue(RealCall.kt:164)
+	at okhttp3.internal.ws.RealWebSocket.connect(RealWebSocket.kt:165)
+	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
+	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
+	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:688)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:82)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:43)
+	at unit.TestCMWebsocketClientImpl.indexPriceStream(TestCMWebsocketClientImpl.java:17)
+	at unit.TestCMWebsocketClientImpl.<init>(TestCMWebsocketClientImpl.java:60)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:250)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:260)
+	at org.junit.runners.BlockJUnit4ClassRunner$2.runReflectiveCall(BlockJUnit4ClassRunner.java:309)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@2cab9998 rejected from java.util.concurrent.ThreadPoolExecutor@72ccd81a[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
+	... 53 common frames omitted
+2024-04-01 22:34:23.295[1712021663295] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 21] Connecting to dstream.binance.com/ws/btcusdt@indexPriceKline_1
+2024-04-01 22:34:23.297[1712021663297] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 21] Failure
+java.io.InterruptedIOException: executor rejected
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
+	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
+	at okhttp3.Dispatcher.enqueue$okhttp(Dispatcher.kt:125)
+	at okhttp3.internal.connection.RealCall.enqueue(RealCall.kt:164)
+	at okhttp3.internal.ws.RealWebSocket.connect(RealWebSocket.kt:165)
+	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
+	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
+	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:688)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexKlineCandlestick(CMWebsocketClientImpl.java:155)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexKlineCandlestick(CMWebsocketClientImpl.java:138)
+	at unit.TestCMWebsocketClientImpl.indexKlineCandlestick(TestCMWebsocketClientImpl.java:37)
+	at unit.TestCMWebsocketClientImpl.<init>(TestCMWebsocketClientImpl.java:62)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:250)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:260)
+	at org.junit.runners.BlockJUnit4ClassRunner$2.runReflectiveCall(BlockJUnit4ClassRunner.java:309)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@3a1d593e rejected from java.util.concurrent.ThreadPoolExecutor@72ccd81a[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
+	... 53 common frames omitted
+2024-04-01 22:34:23.298[1712021663298] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 22] Connecting to dstream.binance.com/ws/btcusdt@markPriceKline_1
+2024-04-01 22:34:23.300[1712021663300] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 22] Failure
+java.io.InterruptedIOException: executor rejected
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
+	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
+	at okhttp3.Dispatcher.enqueue$okhttp(Dispatcher.kt:125)
+	at okhttp3.internal.connection.RealCall.enqueue(RealCall.kt:164)
+	at okhttp3.internal.ws.RealWebSocket.connect(RealWebSocket.kt:165)
+	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
+	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
+	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:688)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.markKlineCandlestick(CMWebsocketClientImpl.java:191)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.markKlineCandlestick(CMWebsocketClientImpl.java:174)
+	at unit.TestCMWebsocketClientImpl.markKlineCandlestick(TestCMWebsocketClientImpl.java:42)
+	at unit.TestCMWebsocketClientImpl.<init>(TestCMWebsocketClientImpl.java:62)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:250)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:260)
+	at org.junit.runners.BlockJUnit4ClassRunner$2.runReflectiveCall(BlockJUnit4ClassRunner.java:309)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@7859e786 rejected from java.util.concurrent.ThreadPoolExecutor@72ccd81a[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
+	... 53 common frames omitted
+2024-04-01 22:34:23.301[1712021663301] | INFO  | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 23] Connecting to dstream.binance.com/ws/btcusdt@indexPrice@1s
+2024-04-01 22:34:23.302[1712021663302] | ERROR | main       | c.b.c.f.c.utils.WebSocketConnection  - [Connection 23] Failure
+java.io.InterruptedIOException: executor rejected
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:501)
+	at okhttp3.Dispatcher.promoteAndExecute(Dispatcher.kt:184)
+	at okhttp3.Dispatcher.enqueue$okhttp(Dispatcher.kt:125)
+	at okhttp3.internal.connection.RealCall.enqueue(RealCall.kt:164)
+	at okhttp3.internal.ws.RealWebSocket.connect(RealWebSocket.kt:165)
+	at okhttp3.OkHttpClient.newWebSocket(OkHttpClient.kt:281)
+	at com.binance.connector.futures.client.utils.WebSocketConnection.connect(WebSocketConnection.java:52)
+	at com.binance.connector.futures.client.impl.WebsocketClientImpl.createConnection(WebsocketClientImpl.java:688)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:82)
+	at com.binance.connector.futures.client.impl.CMWebsocketClientImpl.indexPriceStream(CMWebsocketClientImpl.java:43)
+	at unit.TestCMWebsocketClientImpl.indexPriceStream(TestCMWebsocketClientImpl.java:17)
+	at unit.TestCMWebsocketClientImpl.checkIndexPrice(TestCMWebsocketClientImpl.java:73)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: java.util.concurrent.RejectedExecutionException: Task okhttp3.internal.connection.RealCall$AsyncCall@664a9613 rejected from java.util.concurrent.ThreadPoolExecutor@72ccd81a[Shutting down, pool size = 18, active threads = 18, queued tasks = 0, completed tasks = 0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at okhttp3.internal.connection.RealCall$AsyncCall.executeOn(RealCall.kt:498)
+	... 52 common frames omitted
+2024-04-01 22:34:23.307[1712021663307] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55342//dapi/v1/orderAmendment?orderId=123456&symbol=BNBUSD_PERP&side=BUY&timestamp=1712021663306&signature=457221adb9a3468cfff837a0556c958e40eb560f18e6cbce59a55e8f19aa4855
+2024-04-01 22:34:23.313[1712021663313] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - DELETE http://kubernetes.docker.internal:55344//dapi/v1/order?symbol=BNBUSD_PERP&orderId=&timestamp=1712021663313&signature=faccf8427a86b15f0751a445e3c94ed58d763fe58fbdeed36ac1ce9ca36c52c9
+2024-04-01 22:34:23.321[1712021663321] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - DELETE http://kubernetes.docker.internal:55347//dapi/v1/order?symbol=BNBUSD_PERP&orderId=123&origClientOrderId=456&timestamp=1712021663320&signature=8fb9fa1b62973470bed9e82d52345021af4711473bbdae3841ee054d78ec9cbf
+2024-04-01 22:34:23.327[1712021663327] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55349//dapi/v1/positionSide/dual?timestamp=1712021663327&signature=2e94873dcd40815857fd4bfab8dd0352ee5120dc11b098ec38980e8ec6118f3a
+2024-04-01 22:34:23.334[1712021663334] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:55351//fapi/v1/leverage?symbol=BNBUSDT&leverage=20&timestamp=1712021663334&signature=eb967a70b9d34e2b6ae2d10fe6069a427e6ec9eae997b568232eed6bbd725b12
+2024-04-01 22:34:23.349[1712021663349] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55354//fapi/v1/aggTrades?symbol=BNBUSDT&fromId=1000
+2024-04-01 22:34:23.356[1712021663356] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55356//fapi/v1/aggTrades?symbol=BNBUSDT&limit=1000
+2024-04-01 22:34:23.364[1712021663364] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55358//fapi/v1/aggTrades?symbol=BNBUSDT
+2024-04-01 22:34:23.371[1712021663371] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55361//fapi/v1/aggTrades?symbol=BNBUSDT&startTime=1712021663370&endTime=1712021664370
+2024-04-01 22:34:23.382[1712021663382] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55363//fapi/v1/leverageBracket?timestamp=1712021663381&signature=c459c020a917336cd1b5c8281e3d25ee1788ba245c30f02cc532f8cf943269fa
+2024-04-01 22:34:23.389[1712021663389] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55365//fapi/v1/leverageBracket?symbol=BNBUSDT&timestamp=1712021663388&signature=7a44b79db2168fa9c01eb1f145af92e2e0a71684005a59557199a199812a8fc1
+2024-04-01 22:34:23.397[1712021663397] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55367//dapi/v1/ticker/price
+2024-04-01 22:34:23.430[1712021663430] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55369//dapi/v1/ticker/price?pair=bnbusd_perpetual
+2024-04-01 22:34:23.469[1712021663469] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55373//fapi/v1/lvtKlines?symbol=BTCDOWN&interval=1m&limit=1000&startTime=1712021663468&endTime=1712021664468
+2024-04-01 22:34:23.510[1712021663510] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55375//fapi/v1/lvtKlines?symbol=BTCDOWN&interval=1m
+2024-04-01 22:34:23.529[1712021663529] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55377//fapi/v2/positionRisk?timestamp=1712021663529&signature=c11c95914c41f510adcffaa31be829a8a5de3752c169457ae93fb1ebc30a1363
+2024-04-01 22:34:23.536[1712021663536] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55379//fapi/v2/positionRisk?symbol=BNBUSDT&timestamp=1712021663536&signature=f67371c524cfa72d35a67a721cf9064931d28efeca7c32b61706209388f5b11e
+2024-04-01 22:34:23.543[1712021663543] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55381//fapi/v1/continuousKlines?pair=BNBUSDT&contractType=PERPETUAL&interval=1m
+2024-04-01 22:34:23.548[1712021663548] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55383//fapi/v1/continuousKlines?pair=BNBUSDT&contractType=PERPETUAL&interval=1m&limit=1000&startTime=1712021663547&endTime=1712021664547
+2024-04-01 22:34:23.559[1712021663559] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55387//futures/data/topLongShortAccountRatio?symbol=BNBUSDT&period=5m
+2024-04-01 22:34:23.569[1712021663569] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55390//futures/data/topLongShortAccountRatio?symbol=BNBUSDT&period=5m&limit=1000&startTime=1712021663568&endTime=1712021664568
+2024-04-01 22:34:23.582[1712021663582] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55393//fapi/v1/userTrades?symbol=BNBUSDT&timestamp=1712021663582&signature=0fd14c712ad13e89efb9eaac9c0440ba437e88acf61a509ffaf578117ec5d46e
+2024-04-01 22:34:23.594[1712021663594] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55397//dapi/v1/depth?symbol=BNBUSDT
+2024-04-01 22:34:23.598[1712021663598] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55399//dapi/v1/depth?symbol=BNBUSDT&limit=10
+2024-04-01 22:34:23.603[1712021663603] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55401//fapi/v2/balance?timestamp=1712021663603&signature=6f32d220ddc6afc573733b7752600655645221e5863f1f6023bc1bbe09760545
+2024-04-01 22:34:23.610[1712021663610] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:55404//fapi/v1/positionMargin?symbol=BNBUSDT&amount=100.0&type=1&timestamp=1712021663609&signature=ea95d51ff04a57d7b222f79f21930f18dbe80cd2e7b5d50f03acb260934becbe
+2024-04-01 22:34:23.617[1712021663617] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55407//dapi/v1/pmAccountInfo?asset=BTC&timestamp=1712021663617&signature=6d140b3b52e57f169eb7bade3238f7d55509ccab1d3a182622528a776e6619fd
+2024-04-01 22:34:23.625[1712021663625] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55411//futures/data/topLongShortPositionRatio?pair=bnbusd_perpetual&period=5m
+2024-04-01 22:34:23.629[1712021663629] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55413//futures/data/topLongShortPositionRatio?pair=bnbusd_perpetual&period=5m&limit=1000&startTime=1712021663628&endTime=1712021664628
+2024-04-01 22:34:23.634[1712021663634] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55415//dapi/v1/positionRisk?timestamp=1712021663634&signature=57aa0bf490baea0a56a06f658038587542f814aae77aaa9d97ebe23a3916b4f9
+2024-04-01 22:34:23.638[1712021663638] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55417//dapi/v1/positionRisk?pair=bnbusd_perpetual&timestamp=1712021663638&signature=2aba0d63283c69c49560281ca6782f74ce575a5f48121ae85fe90a7ed50c5dc2
+2024-04-01 22:34:23.648[1712021663648] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55421//futures/data/topLongShortPositionRatio?symbol=BNBUSDT&period=5m
+2024-04-01 22:34:23.652[1712021663652] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55423//futures/data/topLongShortPositionRatio?symbol=BNBUSDT&period=5m&limit=1000&startTime=1712021663651&endTime=1712021664651
+2024-04-01 22:34:23.657[1712021663657] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55425//fapi/v1/income?symbol=BNBUSDT&timestamp=1712021663657&signature=faf4d75371fe0b341c654c213e109e86195413720166b860b353b313ebde85a9
+2024-04-01 22:34:23.661[1712021663661] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55427//fapi/v1/income?timestamp=1712021663661&signature=9fac361bc7eb60fa7ad19d7aac890867df987243a5f0577b002374d5fef4d3b8
+2024-04-01 22:34:23.667[1712021663667] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55429//dapi/v1/trades?symbol=BNBUSDT&limit=1000
+2024-04-01 22:34:23.672[1712021663672] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55432//dapi/v1/trades?symbol=BNBUSDT
+2024-04-01 22:34:23.678[1712021663678] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55434//dapi/v1/positionMargin/history?symbol=BNBUSDT&timestamp=1712021663678&signature=261c6fa0059f8f6427895a61026e4743a39026f76d2c3949253149740a22c76c
+2024-04-01 22:34:23.686[1712021663686] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55437//fapi/v1/indexPriceKlines?pair=BNBUSDT&interval=1m
+2024-04-01 22:34:23.691[1712021663691] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55439//fapi/v1/indexPriceKlines?pair=BNBUSDT&interval=1m&limit=1000&startTime=1712021663689&endTime=1712021664689
+2024-04-01 22:34:23.700[1712021663700] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55443//dapi/v1/fundingRate?symbol=BNBUSDT&limit=1000&startTime=1712021663700&endTime=1712021664700
+2024-04-01 22:34:23.704[1712021663704] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55445//dapi/v1/fundingRate
+2024-04-01 22:34:23.721[1712021663721] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55447//fapi/v1/positionSide/dual?timestamp=1712021663717&signature=ad80bd835712ec5cbca2b9fbce328f47061798d5fea71b8d01c333b96f2e0fc3
+2024-04-01 22:34:23.732[1712021663732] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55449//fapi/v1/ping
+2024-04-01 22:34:23.741[1712021663741] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55451//dapi/v1/aggTrades?symbol=BNBUSDT&fromId=1000
+2024-04-01 22:34:23.770[1712021663770] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55453//dapi/v1/aggTrades?symbol=BNBUSDT&limit=1000
+2024-04-01 22:34:23.776[1712021663776] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55455//dapi/v1/aggTrades?symbol=BNBUSDT
+2024-04-01 22:34:23.789[1712021663789] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55458//dapi/v1/aggTrades?symbol=BNBUSDT&startTime=1712021663787&endTime=1712021664787
+2024-04-01 22:34:23.869[1712021663869] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55461//dapi/v1/markPriceKlines?symbol=bnbusd_perpetual&interval=1m&limit=1000&startTime=1712021663868&endTime=1712021664868
+2024-04-01 22:34:23.880[1712021663880] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55464//dapi/v1/markPriceKlines?symbol=bnbusd_perpetual&interval=1m
+2024-04-01 22:34:23.885[1712021663885] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55466//dapi/v1/continuousKlines?pair=BNBUSDT&contractType=PERPETUAL&interval=1m
+2024-04-01 22:34:23.892[1712021663892] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55468//dapi/v1/continuousKlines?pair=BNBUSDT&contractType=PERPETUAL&interval=1m&limit=1000&startTime=1712021663890&endTime=1712021664890
+2024-04-01 22:34:23.905[1712021663905] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55472//dapi/v1/userTrades?symbol=bnbusd_perpetual&timestamp=1712021663904&signature=73196e7d8a7bcfbdf1951956b2ab6abce9ae6583ee2f3801635eb3f05c1b222b
+2024-04-01 22:34:23.916[1712021663916] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55475//fapi/v1/income/asyn?startTime=1712021663914&endTime=1712021664914&timestamp=1712021663916&signature=5c5552ef6e07e1f706aeb3189cf9efd64b43590f47df49f70915bdd50111c203
+2024-04-01 22:34:23.925[1712021663925] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55477//fapi/v1/income/asyn?timestamp=1712021663925&signature=5ccffa154881a720b654f3932bc489574cd645b282fb92e8cbc8536dffc8568a
+2024-04-01 22:34:23.933[1712021663933] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55479//fapi/v1/assetIndex?symbol=ADAUSD
+2024-04-01 22:34:23.939[1712021663939] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55481//fapi/v1/assetIndex
+2024-04-01 22:34:23.948[1712021663948] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - DELETE http://kubernetes.docker.internal:55483//dapi/v1/listenKey
+2024-04-01 22:34:23.955[1712021663955] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55485//fapi/v1/allOrders?symbol=BNBUSDT&timestamp=1712021663955&signature=44ef1783769997d888aef3fe80ecf2e4e3745c734746b1c8147217bf98b6edf9
+2024-04-01 22:34:23.969[1712021663969] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55488//fapi/v2/account?timestamp=1712021663969&signature=e83733cb8d9d2e589bb685572afa9a9870d12d675957d1ed8da386550b4f0e21
+2024-04-01 22:34:23.979[1712021663979] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:55491//fapi/v1/order?symbol=BNBUSDT&side=BUY&type=MARKET&quantity=0.01&timestamp=1712021663978&signature=6822394390e2074161419d5a9a5243c4b2135da05cfdfe4796fadce91c9f4364
+2024-04-01 22:34:23.987[1712021663987] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:55493//fapi/v1/listenKey
+2024-04-01 22:34:23.993[1712021663993] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55495//dapi/v1/adlQuantile?timestamp=1712021663992&signature=a6f994f5f1325745a6fa920112d187f0d0d53a3b632572ec3285f0e0c1b5f022
+2024-04-01 22:34:24.001[1712021664001] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55497//dapi/v1/adlQuantile?symbol=BNBUSDT&timestamp=1712021664001&signature=e8a0134fba8d185dd16750d54c0b10fe8c1dac5840e561f397880457bccac364
+2024-04-01 22:34:24.007[1712021664007] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - PUT http://kubernetes.docker.internal:55499//dapi/v1/listenKey
+2024-04-01 22:34:24.017[1712021664017] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - DELETE http://kubernetes.docker.internal:55502//fapi/v1/allOpenOrders?symbol=BNBUSDT&timestamp=1712021664017&signature=bbace2b1ff62395f23731d67ebe44f102f53b991e9261f25dc5bdeedbccb0fb6
+2024-04-01 22:34:24.029[1712021664029] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55506//futures/data/topLongShortAccountRatio?pair=btcusd_perpetual&period=5m
+2024-04-01 22:34:24.035[1712021664035] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55508//futures/data/topLongShortAccountRatio?pair=btcusd_perpetual&period=5m&limit=1000&startTime=1712021664034&endTime=1712021665034
+2024-04-01 22:34:24.044[1712021664044] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55510//fapi/v1/adlQuantile?timestamp=1712021664043&signature=0e380d0b84746376d5b56d3ad5d8bf81bc00d927cd783c0d125651d7b78ee772
+2024-04-01 22:34:24.050[1712021664050] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55512//fapi/v1/adlQuantile?symbol=BNBUSDT&timestamp=1712021664050&signature=e30cdc2ed0b3fb87a0aca29820f83aa7582a9e1963852ec4a30e2632b05f5967
+2024-04-01 22:34:24.056[1712021664056] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55514//fapi/v1/forceOrders?symbol=BNBUSDT&timestamp=1712021664056&signature=8f18dd056089b560f66adb1ecea68b5257553eae7c5c25793367511ad0fb0d2a
+2024-04-01 22:34:24.064[1712021664064] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55516//fapi/v1/forceOrders?timestamp=1712021664064&signature=b4d7bad441233fb22922a20817982482d1bc94f2fb84fb48f0d0880266feba56
+2024-04-01 22:34:24.072[1712021664072] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55518//futures/data/globalLongShortAccountRatio?symbol=BNBUSDT&period=5m&limit=1000&startTime=1712021664071&endTime=1712021665071
+2024-04-01 22:34:24.083[1712021664083] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55522//futures/data/globalLongShortAccountRatio?symbol=BNBUSDT&period=5m
+2024-04-01 22:34:24.089[1712021664089] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - PUT http://kubernetes.docker.internal:55524//dapi/v1/order?orderId=123456&symbol=BNBUSD_PERP&side=BUY&timestamp=1712021664088&signature=ce3a0ca64dddb3b2f019095c0fb5d7323a2acb6b31a1d6c4356eb27d59df09a5
+2024-04-01 22:34:24.098[1712021664098] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55527//dapi/v1/leverageBracket?timestamp=1712021664098&signature=374a2d35a30ac7f08b5afb345d61c76e6842b1e1a4b7a8f964d6a62d61c95ec4
+2024-04-01 22:34:24.103[1712021664103] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55529//dapi/v1/leverageBracket?symbol=BNBUSDT&timestamp=1712021664103&signature=72ed241a93e8d8803e92abe054ff85bd691945441cc7ac194a17836977fa8a02
+2024-04-01 22:34:24.110[1712021664110] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55531//futures/data/takerlongshortRatio?symbol=BNBUSDT&period=5m&limit=1000&startTime=1712021664108&endTime=1712021665108
+2024-04-01 22:34:24.119[1712021664119] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55535//futures/data/takerlongshortRatio?symbol=BNBUSDT&period=5m
+2024-04-01 22:34:24.129[1712021664129] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - POST http://kubernetes.docker.internal:55538//fapi/v1/marginType?symbol=BNBUSDT&marginType=CROSSED&timestamp=1712021664129&signature=cc4f728612ec02f122fbda7346ef01fe5464f214176fb802d9da28cded9ad199
+2024-04-01 22:34:24.140[1712021664140] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55542//dapi/v1/klines?symbol=BNBUSDT&interval=1m&limit=1000&startTime=1712021664139&endTime=1712021665139
+2024-04-01 22:34:24.147[1712021664147] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55544//dapi/v1/klines?symbol=BNBUSDT&interval=1m
+2024-04-01 22:34:24.155[1712021664155] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55547//dapi/v1/commissionRate?symbol=BNBUSDT&timestamp=1712021664155&signature=e622e993ab900476ca64c5a25d8354e98c5a2aaba1fa3dbce7cdadd0ee596a62
+2024-04-01 22:34:24.162[1712021664162] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55549//fapi/v1/leverageBracket?symbol=BNBUSDT&timestamp=1712021664162&signature=00922199adba4df6c59f5749d7973a90e9a4ef44d453a4f419027552240d386e
+2024-04-01 22:34:24.167[1712021664167] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55551//fapi/v1/leverageBracket?timestamp=1712021664167&signature=f4aae3a4e86054b54bb357d3b4621f4206b8cf260e61b883707caa882f75db15
+2024-04-01 22:34:24.173[1712021664173] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55553//dapi/v2/leverageBracket?timestamp=1712021664173&signature=b648a147802c9c9b66aeccff1da64a1ad444d308568b6e4adb7ecb5b5069d7a7
+2024-04-01 22:34:24.179[1712021664179] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55555//dapi/v2/leverageBracket?symbol=BNBUSD_PERP&timestamp=1712021664179&signature=ed459ca26456efd09cf5cea9bb7e5becefd86fc69a4dd8094016b198747a6c92
+2024-04-01 22:34:24.185[1712021664185] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55557//dapi/v1/forceOrders?symbol=BNBUSDT&timestamp=1712021664185&signature=a3b48f022793f76e100553142a7de7080020ae6466d5169d8ad14998dec6dea7
+2024-04-01 22:34:24.190[1712021664190] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55559//dapi/v1/forceOrders?timestamp=1712021664190&signature=37e756aa451e242d40bf01cc9c7378e5f3f18ff245a27abb4be45a5e7bf5c377
+2024-04-01 22:34:24.196[1712021664196] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55561//dapi/v1/time
+2024-04-01 22:34:24.205[1712021664205] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - DELETE http://kubernetes.docker.internal:55564//fapi/v1/listenKey
+2024-04-01 22:34:24.213[1712021664213] | INFO  | main       | c.b.c.f.client.utils.RequestHandler  - GET http://kubernetes.docker.internal:55566//dapi/v1/account?timestamp=1712021664213&signature=80fdec86c0817ecf1b6987c8eeb51b9b49d7b71b5dc497b36cdf1a1f3ea54682

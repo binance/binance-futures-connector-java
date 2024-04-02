@@ -1,4 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: unit.um_futures.account.TestUMQuantitativeRulesIndicators
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in unit.um_futures.account.TestUMQuantitativeRulesIndicators
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.010 s <<< FAILURE! -- in unit.um_futures.account.TestUMQuantitativeRulesIndicators
+unit.um_futures.account.TestUMQuantitativeRulesIndicators.testQuantitativeRulesIndicatorsNoSymbol -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMQuantitativeRulesIndicators.testQuantitativeRulesIndicatorsNoSymbol(TestUMQuantitativeRulesIndicators.java:33)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+
+unit.um_futures.account.TestUMQuantitativeRulesIndicators.testQuantitativeRulesIndicators -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMQuantitativeRulesIndicators.testQuantitativeRulesIndicators(TestUMQuantitativeRulesIndicators.java:47)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+

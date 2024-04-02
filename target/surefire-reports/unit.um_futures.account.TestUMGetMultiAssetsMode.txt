@@ -1,4 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: unit.um_futures.account.TestUMGetMultiAssetsMode
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in unit.um_futures.account.TestUMGetMultiAssetsMode
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.009 s <<< FAILURE! -- in unit.um_futures.account.TestUMGetMultiAssetsMode
+unit.um_futures.account.TestUMGetMultiAssetsMode.testGetMultiAssetsMode -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMGetMultiAssetsMode.testGetMultiAssetsMode(TestUMGetMultiAssetsMode.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+

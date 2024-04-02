@@ -1,4 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: unit.um_futures.userdata.TestUMCreateListenKey
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in unit.um_futures.userdata.TestUMCreateListenKey
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.004 s <<< FAILURE! -- in unit.um_futures.userdata.TestUMCreateListenKey
+unit.um_futures.userdata.TestUMCreateListenKey.testCreateListenKey -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMUserData com.binance.connector.futures.client.impl.UMFuturesClientImpl.userData()'
+	at unit.um_futures.userdata.TestUMCreateListenKey.testCreateListenKey(TestUMCreateListenKey.java:30)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+

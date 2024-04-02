@@ -1,4 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: unit.um_futures.account.TestUMAccountInformation
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.145 s -- in unit.um_futures.account.TestUMAccountInformation
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.147 s <<< FAILURE! -- in unit.um_futures.account.TestUMAccountInformation
+unit.um_futures.account.TestUMAccountInformation.testAccountInformation -- Time elapsed: 0.134 s <<< ERROR!
+java.lang.NoSuchMethodError: 'com.binance.connector.futures.client.impl.um_futures.UMAccount com.binance.connector.futures.client.impl.UMFuturesClientImpl.account()'
+	at unit.um_futures.account.TestUMAccountInformation.testAccountInformation(TestUMAccountInformation.java:32)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+
