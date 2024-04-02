@@ -2,7 +2,6 @@ E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\cl
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\impl\cm_futures\CMMarket.java
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\impl\futures\Market.java
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\impl\cm_futures\CMPortfolioMargin.java
-E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\impl\um_futures\UMUserData.java
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\utils\RequestBuilder.java
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\impl\WebsocketClientImpl.java
 E:\binance-futures-connector-java\src\main\java\com\binance\connector\futures\client\utils\WebSocketCallback.java

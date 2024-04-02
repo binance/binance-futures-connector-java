@@ -8,7 +8,6 @@ com\binance\connector\futures\client\exceptions\BinanceConnectorException.class
 com\binance\connector\futures\client\impl\futures\PortfolioMargin.class
 com\binance\connector\futures\client\exceptions\BinanceClientException.class
 com\binance\connector\futures\client\impl\futures\UserData.class
-com\binance\connector\futures\client\impl\um_futures\UMUserData.class
 com\binance\connector\futures\client\impl\WebsocketClientImpl.class
 com\binance\connector\futures\client\impl\MarkPriceSymbolParams.class
 com\binance\connector\futures\client\impl\um_futures\UMPortfolioMargin.class
