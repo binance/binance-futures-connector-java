@@ -4,6 +4,7 @@ import com.binance.connector.futures.client.enums.HttpMethod;
 import com.binance.connector.futures.client.utils.ParameterChecker;
 import com.binance.connector.futures.client.utils.ProxyAuth;
 import com.binance.connector.futures.client.utils.RequestHandler;
+import com.binance.connector.futures.client.utils.signaturegenerator.SignatureGenerator;
 import java.util.LinkedHashMap;
 
 /**
@@ -47,8 +48,8 @@ public abstract class Market {
         this.productUrl = productUrl;
     }
 
-    public void setRequestHandler(String apiKey, String secretKey, ProxyAuth proxy) {
-        new RequestHandler(apiKey, secretKey, proxy);
+    public void setRequestHandler(String apiKey, SignatureGenerator signatureGenerator, ProxyAuth proxy) {
+        this.requestHandler = new RequestHandler(apiKey, signatureGenerator, proxy);
     }
 
     public void setShowLimitUsage(boolean showLimitUsage) {

@@ -4,6 +4,7 @@ import com.binance.connector.futures.client.enums.HttpMethod;
 import com.binance.connector.futures.client.utils.ParameterChecker;
 import com.binance.connector.futures.client.utils.ProxyAuth;
 import com.binance.connector.futures.client.utils.RequestHandler;
+import com.binance.connector.futures.client.utils.signaturegenerator.SignatureGenerator;
 import java.util.LinkedHashMap;
 
 /**
@@ -15,9 +16,9 @@ public abstract class Account {
     private RequestHandler requestHandler;
     private boolean showLimitUsage;
 
-    public Account(String productUrl, String apiKey, String secretKey, boolean showLimitUsage, ProxyAuth proxy) {
+    public Account(String productUrl, String apiKey, SignatureGenerator signatureGenerator, boolean showLimitUsage, ProxyAuth proxy) {
         this.productUrl = productUrl;
-        this.requestHandler = new RequestHandler(apiKey, secretKey, proxy);
+        this.requestHandler = new RequestHandler(apiKey, signatureGenerator, proxy);
         this.showLimitUsage = showLimitUsage;
     }
 
@@ -37,8 +38,8 @@ public abstract class Account {
         this.productUrl = productUrl;
     }
 
-    public void setRequestHandler(String apiKey, String secretKey, ProxyAuth proxy) {
-        this.requestHandler = new RequestHandler(apiKey, secretKey, proxy);
+    public void setRequestHandler(String apiKey, SignatureGenerator signatureGenerator, ProxyAuth proxy) {
+        this.requestHandler = new RequestHandler(apiKey, signatureGenerator, proxy);
     }
 
     public void setShowLimitUsage(boolean showLimitUsage) {
