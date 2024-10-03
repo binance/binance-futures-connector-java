@@ -103,10 +103,10 @@ public abstract class Market {
      * GET /v1/ping
      * <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#test-connectivity">
-     *     https://binance-docs.github.io/apidocs/futures/en/#test-connectivity</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#test-connectivity">
-     * https://binance-docs.github.io/apidocs/delivery/en/#test-connectivity</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Test-Connectivity">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Test-Connectivity</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Test-Connectivity">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Test-Connectivity</a>
      */
     public String ping() {
         return requestHandler.sendPublicRequest(productUrl, PING, null, HttpMethod.GET, showLimitUsage);
@@ -119,10 +119,10 @@ public abstract class Market {
      * GET /api/v1/time
      * <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#check-server-time">
-     *     https://binance-docs.github.io/apidocs/futures/en/#check-server-time</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#check-server-time">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#check-server-time</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Check-Server-Time">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Check-Server-Time</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Check-Server-time">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Check-Server-time</a>
      */
     public String time() {
         return requestHandler.sendPublicRequest(productUrl, TIME, null, HttpMethod.GET, showLimitUsage);
@@ -135,10 +135,10 @@ public abstract class Market {
      * GET /v1/exchangeinfo
      * <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#exchange-information">
-     *     https://binance-docs.github.io/apidocs/futures/en/#exchange-information</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#exchange-information">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#exchange-information</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Exchange-Information">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Exchange-Information</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Exchange-Information">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Exchange-Information</a>
      */
     public String exchangeInfo() {
         return requestHandler.sendPublicRequest(productUrl, EXCHANGE_INFO, null, HttpMethod.GET, showLimitUsage);
@@ -156,10 +156,10 @@ public abstract class Market {
      * limit -- optional/integer -- limit the results
      *            Default 100; max 5000. Valid limits:[5, 10, 20, 50, 100, 500, 1000, 5000] <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#order-book">
-     *     https://binance-docs.github.io/apidocs/futures/en/#order-book</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#order-book">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#order-book</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Order-Book">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Order-Book</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Order-Book">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Order-Book</a>
      */
     public String depth(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -179,10 +179,10 @@ public abstract class Market {
      * symbol -- mandatory/string <br>
      * limit -- optional/integer -- limit the results Default 500; max 1000 <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#recent-trades-list">
-     *     https://binance-docs.github.io/apidocs/futures/en/#recent-trades-list</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#recent-trades-list">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#recent-trades-list</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Recent-Trades-List">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Recent-Trades-List</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Recent-Trades-List">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Recent-Trades-List</a>
      */
     public String trades(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -203,10 +203,10 @@ public abstract class Market {
      * limit -- optional/integer -- limit the result Default 500; max 1000 <br>
      * fromId -- optional/long -- trade id to fetch from. Default gets most recent trades <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#old-trades-lookup-market_data">
-     *     https://binance-docs.github.io/apidocs/futures/en/#old-trades-lookup-market_data</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#old-trades-lookup-market_data">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#old-trades-lookup-market_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Old-Trades-Lookup">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Old-Trades-Lookup</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Old-Trades-Lookup">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Old-Trades-Lookup</a>
      *
      */
     public String historicalTrades(LinkedHashMap<String, Object> parameters) {
@@ -231,10 +231,10 @@ public abstract class Market {
      * endTime -- optional/long -- Timestamp in ms to get aggregate trades until INCLUSIVE <br>
      * limit -- optional/integer -- limit the results Default 500; max 1000 <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#compressed-aggregate-trades-list">
-     *     https://binance-docs.github.io/apidocs/futures/en/#compressed-aggregate-trades-list</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#compressed-aggregate-trades-list">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#compressed-aggregate-trades-list</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Compressed-Aggregate-Trades-List">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Compressed-Aggregate-Trades-List</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Compressed-Aggregate-Trades-List">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Compressed-Aggregate-Trades-List</a>
      */
     public String aggTrades(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -258,10 +258,10 @@ public abstract class Market {
      * endTime -- optional/long <br>
      * limit -- optional/integer -- limit the results Default 500; max 1000 <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#kline-candlestick-data">
-     *     https://binance-docs.github.io/apidocs/futures/en/#kline-candlestick-data</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#kline-candlestick-data">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#kline-candlestick-data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Kline-Candlestick-Data">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Kline-Candlestick-Data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Kline-Candlestick-Data">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Kline-Candlestick-Data</a>
      */
     public String klines(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -287,10 +287,10 @@ public abstract class Market {
      * endTime -- optional/long <br>
      * limit -- optional/integer -- limit the results Default 500; max 1000 <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#continuous-contract-kline-candlestick-data">
-     *     https://binance-docs.github.io/apidocs/futures/en/#continuous-contract-kline-candlestick-data</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#continuous-contract-kline-candlestick-data">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#continuous-contract-kline-candlestick-data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Continuous-Contract-Kline-Candlestick-Data">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Continuous-Contract-Kline-Candlestick-Data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Continuous-Contract-Kline-Candlestick-Data">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Continuous-Contract-Kline-Candlestick-Data</a>
      */
     public String continuousKlines(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "pair", String.class);
@@ -316,10 +316,10 @@ public abstract class Market {
      * endTime -- optional/long <br>
      * limit -- optional/integer -- limit the results Default 500; max 1000 <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#index-price-kline-candlestick-data">
-     *     https://binance-docs.github.io/apidocs/futures/en/#index-price-kline-candlestick-data</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#index-price-kline-candlestick-data">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#index-price-kline-candlestick-data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Index-Price-Kline-Candlestick-Data">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Index-Price-Kline-Candlestick-Data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Index-Price-Kline-Candlestick-Data">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Index-Price-Kline-Candlestick-Data</a>
      */
     public String indexPriceKlines(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "pair", String.class);
@@ -344,10 +344,10 @@ public abstract class Market {
      * endTime -- optional/long <br>
      * limit -- optional/integer -- limit the results Default 500; max 1000 <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#mark-price-kline-candlestick-data">
-     *     https://binance-docs.github.io/apidocs/futures/en/#mark-price-kline-candlestick-data</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#mark-price-kline-candlestick-data">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#mark-price-kline-candlestick-data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Mark-Price-Kline-Candlestick-Data">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Mark-Price-Kline-Candlestick-Data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Mark-Price-Kline-Candlestick-Data">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Mark-Price-Kline-Candlestick-Data</a>
      */
     public String markPriceKlines(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -370,10 +370,10 @@ public abstract class Market {
      * endTime -- optional/long -- Timestamp in ms to get funding rate until INCLUSIVE. <br>
      * limit -- optional/int -- Default 100; max 1000 <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#get-funding-rate-history">
-     *     https://binance-docs.github.io/apidocs/futures/en/#get-funding-rate-history</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#get-funding-rate-history-of-perpetual-futures">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#get-funding-rate-history-of-perpetual-futures</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Get-Funding-Rate-History">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Get-Funding-Rate-History</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Get-Funding-Rate-History-of-Perpetual-Futures">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Get-Funding-Rate-History-of-Perpetual-Futures</a>
      */
     public String fundingRate(LinkedHashMap<String, Object> parameters) {
         return requestHandler.sendPublicRequest(productUrl, FUNDING_RATE, parameters, HttpMethod.GET, showLimitUsage);
@@ -385,17 +385,17 @@ public abstract class Market {
      * <br><br>
      * GET /v1/openInterest
      * <br>
-     * https://binance-docs.github.io/apidocs/futures/en/#open-interest
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Open-Interest
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
      * <br><br>
      * symbol -- mandatory/string -- the trading pair <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#open-interest">
-     *     https://binance-docs.github.io/apidocs/futures/en/#open-interest</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#open-interest">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#open-interest</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Open-Interest">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Open-Interest</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Open-Interest">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Open-Interest</a>
      */
     public String openInterest(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);

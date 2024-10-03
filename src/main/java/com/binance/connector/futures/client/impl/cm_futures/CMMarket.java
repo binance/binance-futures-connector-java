@@ -9,7 +9,7 @@ import com.binance.connector.futures.client.utils.ProxyAuth;
 /**
  * <h2>Coin-Margined Market Endpoints</h2>
  * All endpoints under the
- * <a href="https://binance-docs.github.io/apidocs/delivery/en/#market-data-endpoints">Market Data Endpoint</a>
+ * <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/general-info">Market Data Endpoint</a>
  * section of the API documentation will be implemented in this class.
  * <br>
  * Response will be returned in <i>String format</i>.
@@ -31,8 +31,8 @@ public class CMMarket extends Market {
      * symbol -- optional/string -- the trading symbol <br>
      * pair -- optional/string -- the trading pair <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#index-price-and-mark-price">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#index-price-and-mark-price</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Index-Price-and-Mark-Price">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Index-Price-and-Mark-Price</a>
      */
     public String markPrice(LinkedHashMap<String, Object> parameters) {
         return super.markPrice(parameters);
@@ -49,8 +49,8 @@ public class CMMarket extends Market {
      * <br><br>
      * pair -- optional/string -- the trading pair <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#24hr-ticker-price-change-statistics">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#24hr-ticker-price-change-statistics</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/24hr-Ticker-Price-Change-Statistics">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/24hr-Ticker-Price-Change-Statistics</a>
      */
     public String ticker24H(LinkedHashMap<String, Object> parameters) {
         return super.ticker24H(parameters);
@@ -61,15 +61,15 @@ public class CMMarket extends Market {
      * <br><br>
      * GET /v1/ticker/price
      * <br>
-     * https://binance-docs.github.io/apidocs/futures/en/#symbol-price-ticker
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Symbol-Price-Ticker
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
      * <br><br>
      * pair -- optional/string -- the trading pair <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#symbol-price-ticker">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#symbol-price-ticker</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Symbol-Price-Ticker">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Symbol-Price-Ticker</a>
      */
     public String tickerSymbol(LinkedHashMap<String, Object> parameters) {
         return super.tickerSymbol(parameters);
@@ -80,15 +80,15 @@ public class CMMarket extends Market {
      * <br><br>
      * GET /v1/ticker/bookTicker
      * <br>
-     * https://binance-docs.github.io/apidocs/futures/en/#symbol-order-book-ticker
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Symbol-Order-Book-Ticker
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
      * <br><br>
      * pair -- optional/string -- the trading pair (Only applicable in COIN-M Futures) <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#symbol-order-book-ticker">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#symbol-order-book-ticker</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Symbol-Order-Book-Ticker">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Symbol-Order-Book-Ticker</a>
      */
     public String bookTicker(LinkedHashMap<String, Object> parameters) {
         return super.bookTicker(parameters);
@@ -99,7 +99,7 @@ public class CMMarket extends Market {
      * <br><br>
      * GET /futures/data/openInterestHist
      * <br>
-     * https://binance-docs.github.io/apidocs/futures/en/#open-interest-statistics
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Open-Interest
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
@@ -110,8 +110,8 @@ public class CMMarket extends Market {
      * startTime -- optional/long -- Start Time <br>
      * endTime -- optional/long -- End Time <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#open-interest-statistics">
-     *     https://binance-docs.github.io/apidocs/futures/en/#open-interest-statistics</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Open-Interest">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Open-Interest</a>
      */
     public String openInterestStatistics(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "pair", String.class);
@@ -124,7 +124,7 @@ public class CMMarket extends Market {
      * <br><br>
      * GET /futures/data/topLongShortPositionRatio
      * <br>
-     * https://binance-docs.github.io/apidocs/delivery/en/#top-trader-long-short-ratio-positions
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Top-Trader-Long-Short-Ratio
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
@@ -135,8 +135,8 @@ public class CMMarket extends Market {
      * startTime -- optional/long -- Start Time <br>
      * endTime -- optional/long -- End Time <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#top-trader-long-short-ratio-positions">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#top-trader-long-short-ratio-positions</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Top-Trader-Long-Short-Ratio">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Top-Trader-Long-Short-Ratio</a>
      */
     public String topTraderLongShortPos(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "pair", String.class);
@@ -149,7 +149,7 @@ public class CMMarket extends Market {
      * <br><br>
      * GET /futures/data/topLongShortAccountRatio
      * <br>
-     * https://binance-docs.github.io/apidocs/delivery/en/#top-trader-long-short-ratio-accounts
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Top-Long-Short-Account-Ratio
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
@@ -160,8 +160,8 @@ public class CMMarket extends Market {
      * startTime -- optional/long -- Start Time <br>
      * endTime -- optional/long -- End Time <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#top-trader-long-short-ratio-accounts">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#top-trader-long-short-ratio-accounts</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Top-Long-Short-Account-Ratio">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Top-Long-Short-Account-Ratio</a>
      */
     public String topTraderLongShortAccs(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "pair", String.class);
@@ -174,7 +174,7 @@ public class CMMarket extends Market {
      * <br><br>
      * GET /futures/data/globalLongShortAccountRatio
      * <br>
-     * https://binance-docs.github.io/apidocs/delivery/en/#long-short-ratio
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Long-Short-Ratio
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
@@ -185,8 +185,8 @@ public class CMMarket extends Market {
      * startTime -- optional/long -- Start Time <br>
      * endTime -- optional/long -- End Time <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#long-short-ratio">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#long-short-ratio</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Long-Short-Ratio">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Long-Short-Ratio</a>
      */
     public String longShortRatio(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "pair", String.class);
@@ -200,7 +200,7 @@ public class CMMarket extends Market {
      * <br><br>
      * GET /futures/data/basis
      * <br>
-     * https://binance-docs.github.io/apidocs/delivery/en/#basis
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Basis
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
@@ -212,8 +212,8 @@ public class CMMarket extends Market {
      * startTime -- optional/long
      * endTime -- optional/long
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#basis">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#basis</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Basis">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/Basis</a>
      */
     public String basis(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "pair", String.class);

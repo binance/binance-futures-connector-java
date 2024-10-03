@@ -1,3 +1,10 @@
+## 3.0.5 - 2024-10-03
+
+### Removed
+- UM_Futures Porfolio Endpoints:
+  - `GET fapi/v1/pmExchangeInfo`
+  - `GET fapi/v1/pmAccountInfo`
+
 ## 3.0.4 - 2024-01-10
 
 ### Fixed

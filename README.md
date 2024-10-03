@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Code Style](https://img.shields.io/badge/code%20style-checkstyle-yellow)](https://checkstyle.org/checks.html)
 
-This is a lightweight library that works as a connector to the [Binance Futures API](https://binance-docs.github.io/apidocs/futures/en/)
+This is a lightweight library that works as a connector to the [Binance Futures API](https://developers.binance.com/docs/derivatives/Introduction)
 
 - Supported APIs:
   - `/fapi/*`
@@ -33,8 +33,8 @@ you should reconfigure the API_KEY and SECRET_KEY when using the library.
 ### RESTful APIs
 
 The endpoints are categorized according to the following API documentations:
-- [Binance USDⓈ-M Futures](https://binance-docs.github.io/apidocs/futures/en/#change-log)
-- [Binance COIN-M Futures](https://binance-docs.github.io/apidocs/delivery/en/#change-log)
+- [Binance USDⓈ-M Futures](https://developers.binance.com/docs/derivatives/usds-margined-futures/general-info)
+- [Binance COIN-M Futures](https://developers.binance.com/docs/derivatives/coin-margined-futures/general-info)
 
 Each object corresponds to its category which will be used to call its respective endpoints.
 

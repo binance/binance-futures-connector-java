@@ -9,8 +9,8 @@ import okhttp3.Request;
 /**
  * <h2>USDⓈ-M  Websocket Streams</h2>
  * All stream endpoints under the
- * <a href="https://binance-docs.github.io/apidocs/futures/en/#websocket-market-streams"> Websocket Market Streams</a> and
- * <a href="https://binance-docs.github.io/apidocs/futures/en/#user-data-streams"> User Data Streams</a>
+ * <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Connect"> Websocket Market Streams</a> and
+ * <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Connect"> User Data Streams</a>
  * section of the API documentation will be implemented in this class.
  * <br>
  * Response will be returned as callback.
@@ -35,8 +35,8 @@ public class UMWebsocketClientImpl extends WebsocketClientImpl {
      * @param speed speed in seconds, can be 1 or 3
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#mark-price-stream-for-all-market">
-     * https://binance-docs.github.io/apidocs/futures/en/#mark-price-stream-for-all-market</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Mark-Price-Stream">
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Mark-Price-Stream</a>
      */
     public int allMarkPriceStream(int speed, WebSocketCallback onMessageCallback) {
         return allMarkPriceStream(speed, getNoopCallback(), onMessageCallback, getNoopCallback(), getNoopCallback());
@@ -73,8 +73,8 @@ public class UMWebsocketClientImpl extends WebsocketClientImpl {
      * @param symbol trading symbol
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#composite-index-symbol-information-streams">
-     * https://binance-docs.github.io/apidocs/futures/en/#composite-index-symbol-information-streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Composite-Index-Symbol-Information-Streams">
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Composite-Index-Symbol-Information-Streams</a>
      */
     public int compositeIndexSymbolInfo(String symbol, WebSocketCallback onMessageCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
