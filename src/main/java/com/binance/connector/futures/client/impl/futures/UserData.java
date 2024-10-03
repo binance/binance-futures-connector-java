@@ -51,8 +51,8 @@ public abstract class UserData {
      * POST /v1/listenKey
      * <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#start-user-data-stream-user_stream">
-     *     https://binance-docs.github.io/apidocs/futures/en/#start-user-data-stream-user_stream</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Start-User-Data-Stream">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Start-User-Data-Stream</a>
      */
     public String createListenKey() {
         return requestHandler.sendWithApiKeyRequest(productUrl, LISTEN_KEY, null, HttpMethod.POST, showLimitUsage);
@@ -65,8 +65,8 @@ public abstract class UserData {
      * PUT /v1/listenKey
      * <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#keepalive-user-data-stream-user_stream">
-     *     https://binance-docs.github.io/apidocs/futures/en/#keepalive-user-data-stream-user_stream</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Keepalive-User-Data-Stream">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Keepalive-User-Data-Stream</a>
      */
     public String extendListenKey() {
         return requestHandler.sendWithApiKeyRequest(productUrl, LISTEN_KEY, null, HttpMethod.PUT, showLimitUsage);
@@ -78,8 +78,8 @@ public abstract class UserData {
      * DELETE /v1/listenKey
      * <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#close-user-data-stream-user_stream">
-     *     https://binance-docs.github.io/apidocs/futures/en/#close-user-data-stream-user_stream</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Close-User-Data-Stream">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Close-User-Data-Stream</a>
      */
     public String closeListenKey() {
         return requestHandler.sendWithApiKeyRequest(productUrl, LISTEN_KEY, null, HttpMethod.DELETE, showLimitUsage);

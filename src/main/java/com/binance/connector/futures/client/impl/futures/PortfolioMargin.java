@@ -62,8 +62,8 @@ public abstract class PortfolioMargin {
      * asset -- mandatory/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#portfolio-margin-account-information-user_data">
-     *     https://binance-docs.github.io/apidocs/futures/en/#portfolio-margin-account-information-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/portfolio-margin-endpoints/Classic-Portfolio-Margin-Account-Information#api-description">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/portfolio-margin-endpoints/Classic-Portfolio-Margin-Account-Information#api-description</a>
      */
     public String portfolioMarginAccountInfo(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "asset", String.class);

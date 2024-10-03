@@ -18,10 +18,10 @@ import org.slf4j.LoggerFactory;
 /**
  * <h2>Futures Websocket Streams</h2>
  * All stream endpoints under the
- * <a href="https://binance-docs.github.io/apidocs/futures/en/#websocket-market-streams"> USDⓈ-M Websocket Market Streams</a> and
- * <a href="https://binance-docs.github.io/apidocs/delivery/en/#websocket-market-streams"> COIN-M Websocket Market Streams</a> and
- * <a href="https://binance-docs.github.io/apidocs/futures/en/#user-data-streams"> USDⓈ-M User Data Streams</a> and
- * <a href="https://binance-docs.github.io/apidocs/delivery/en/#user-data-streams"> COIN-M User Data Streams</a>
+ * <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Connect"> USDⓈ-M Websocket Market Streams</a> and
+ * <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Connect"> COIN-M Websocket Market Streams</a> and
+ * <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Connect"> USDⓈ-M User Data Streams</a> and
+ * <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/user-data-streams/Connect"> COIN-M User Data Streams</a>
  * section of the API documentation will be implemented in this class.
  * <br>
  * Response will be returned as callback.
@@ -56,8 +56,8 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param symbol trading symbol
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#aggregate-trade-streams">
-     * https://binance-docs.github.io/apidocs/futures/en/#aggregate-trade-streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Aggregate-Trade-Streams">
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Aggregate-Trade-Streams</a>
      */
     @Override
     public int aggTradeStream(String symbol, WebSocketCallback onMessageCallback) {
@@ -93,10 +93,10 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param speed speed in seconds, can be 1 or 3
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#mark-price-stream">
-     * https://binance-docs.github.io/apidocs/futures/en/#mark-price-stream</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#mark-price-stream">
-     * https://binance-docs.github.io/apidocs/delivery/en/#mark-price-stream</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Mark-Price-Stream">
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Mark-Price-Stream</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Mark-Price-Stream">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Mark-Price-Stream</a>
      */
     @Override
     public int markPriceStream(String symbol, int speed, WebSocketCallback onMessageCallback) {
@@ -138,10 +138,10 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param interval kline interval - 1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d 3d 1w 1M
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#kline-candlestick-streams">
-     * https://binance-docs.github.io/apidocs/futures/en/#kline-candlestick-streams</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#kline-candlestick-streams">
-     * https://binance-docs.github.io/apidocs/delivery/en/#kline-candlestick-streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Kline-Candlestick-Streams">
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Kline-Candlestick-Streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Kline-Candlestick-Streams">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Kline-Candlestick-Streams</a>
      */
     @Override
     public int klineStream(String symbol, String interval, WebSocketCallback onMessageCallback) {
@@ -179,8 +179,8 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param interval kline interval - 1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d 3d 1w 1M
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#continuous-contract-kline-candlestick-streams">
-     * https://binance-docs.github.io/apidocs/delivery/en/#continuous-contract-kline-candlestick-streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Continuous-Contract-Kline-Candlestick-Streams">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Continuous-Contract-Kline-Candlestick-Streams</a>
      */
     @Override
     public int continuousKlineStream(String pair, String contractType, String interval, WebSocketCallback onMessageCallback) {
@@ -221,10 +221,10 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param symbol trading symbol
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#individual-symbol-mini-ticker-stream">
-     * https://binance-docs.github.io/apidocs/futures/en/#individual-symbol-mini-ticker-stream</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-mini-ticker-stream">
-     * https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-mini-ticker-stream</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Individual-Symbol-Mini-Ticker-Stream">
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Individual-Symbol-Mini-Ticker-Stream</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Individual-Symbol-Mini-Ticker-Stream">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Individual-Symbol-Mini-Ticker-Stream</a>
      */
     @Override
     public int miniTickerStream(String symbol, WebSocketCallback onMessageCallback) {
@@ -260,10 +260,10 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      *
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#all-market-mini-tickers-stream">
-     * https://binance-docs.github.io/apidocs/futures/en/#all-market-mini-tickers-stream</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#all-market-mini-tickers-stream">
-     * https://binance-docs.github.io/apidocs/delivery/en/#all-market-mini-tickers-stream</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/All-Market-Mini-Tickers-Stream">
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/All-Market-Mini-Tickers-Stream</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/All-Market-Mini-Tickers-Stream">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/All-Market-Mini-Tickers-Stream</a>
      */
     @Override
     public int allMiniTickerStream(WebSocketCallback onMessageCallback) {
@@ -296,10 +296,10 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param symbol trading symbol
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#individual-symbol-ticker-streams">
-     * https://binance-docs.github.io/apidocs/futures/en/#individual-symbol-ticker-streams</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-ticker-streams">
-     * https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-ticker-streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Individual-Symbol-Ticker-Streams">
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Individual-Symbol-Ticker-Streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Individual-Symbol-Ticker-Streams">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Individual-Symbol-Ticker-Streams</a>
      */
     @Override
     public int symbolTicker(String symbol, WebSocketCallback onMessageCallback) {
@@ -335,10 +335,10 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      *
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#all-market-tickers-streams">
-     * https://binance-docs.github.io/apidocs/futures/en/#all-market-tickers-streams</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#all-market-tickers-streams">
-     * https://binance-docs.github.io/apidocs/delivery/en/#all-market-tickers-streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/All-Market-Tickers-Streams">
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/All-Market-Tickers-Streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/All-Market-Tickers-Streams">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/All-Market-Tickers-Streams</a>
      */
     @Override
     public int allTickerStream(WebSocketCallback onMessageCallback) {
@@ -370,10 +370,10 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param symbol trading symbol
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#individual-symbol-book-ticker-streams">
-     * https://binance-docs.github.io/apidocs/futures/en/#individual-symbol-book-ticker-streams</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-book-ticker-streams">
-     * https://binance-docs.github.io/apidocs/delivery/en/#individual-symbol-book-ticker-streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Individual-Symbol-Book-Ticker-Streams">
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Individual-Symbol-Book-Ticker-Streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Individual-Symbol-Book-Ticker-Streams">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Individual-Symbol-Book-Ticker-Streams</a>
      */
     @Override
     public int bookTicker(String symbol, WebSocketCallback onMessageCallback) {
@@ -407,10 +407,10 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      *
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#all-book-tickers-stream">
-     * https://binance-docs.github.io/apidocs/futures/en/#all-book-tickers-stream</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#all-book-tickers-stream">
-     * https://binance-docs.github.io/apidocs/delivery/en/#all-book-tickers-stream</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/All-Book-Tickers-Stream">
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/All-Book-Tickers-Stream</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/All-Book-Tickers-Stream">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/All-Book-Tickers-Stream</a>
      */
     @Override
     public int allBookTickerStream(WebSocketCallback onMessageCallback) {
@@ -444,10 +444,10 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param symbol trading symbol
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#liquidation-order-streams">
-     * https://binance-docs.github.io/apidocs/futures/en/#liquidation-order-streams</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#liquidation-order-streams">
-     * https://binance-docs.github.io/apidocs/delivery/en/#liquidation-order-streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Liquidation-Order-Streams">
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Liquidation-Order-Streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Liquidation-Order-Streams">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Liquidation-Order-Streams</a>
      */
     @Override
     public int forceOrderStream(String symbol, WebSocketCallback onMessageCallback) {
@@ -483,10 +483,10 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      *
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#all-book-tickers-stream">
-     * https://binance-docs.github.io/apidocs/futures/en/#all-book-tickers-stream</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#all-market-liquidation-order-streams">
-     * https://binance-docs.github.io/apidocs/delivery/en/#all-market-liquidation-order-streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/All-Market-Liquidation-Order-Streams">
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/All-Market-Liquidation-Order-Streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/All-Market-Liquidation-Order-Streams">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/All-Market-Liquidation-Order-Streams</a>
      */
     @Override
     public int allForceOrderStream(WebSocketCallback onMessageCallback) {
@@ -520,10 +520,10 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param speed  update speed  in ms, can be 250, 500 or 100
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#partial-book-depth-streams">
-     * https://binance-docs.github.io/apidocs/futures/en/#partial-book-depth-streams</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#partial-book-depth-streams">
-     * https://binance-docs.github.io/apidocs/delivery/en/#partial-book-depth-streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Partial-Book-Depth-Streams">
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Partial-Book-Depth-Streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Partial-Book-Depth-Streams">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Partial-Book-Depth-Streams</a>
      */
     @Override
     public int partialDepthStream(String symbol, int levels, int speed, WebSocketCallback onMessageCallback) {
@@ -569,10 +569,10 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param speed  update speed in ms, can be 250, 500 or 100
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#diff-book-depth-streams">
-     * https://binance-docs.github.io/apidocs/futures/en/#diff-book-depth-streams</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#diff-book-depth-streams">
-     * https://binance-docs.github.io/apidocs/delivery/en/#diff-book-depth-streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Diff-Book-Depth-Streams">
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Diff-Book-Depth-Streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Diff-Book-Depth-Streams">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Diff-Book-Depth-Streams</a>
      */
     @Override
     public int diffDepthStream(String symbol, int speed, WebSocketCallback onMessageCallback) {
@@ -612,10 +612,10 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param listenKey listen key
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#user-data-streams">
-     * https://binance-docs.github.io/apidocs/futures/en/#user-data-streams</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#user-data-streams">
-     * https://binance-docs.github.io/apidocs/delivery/en/#user-data-streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Connect">
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/user-data-streams/Connect</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/user-data-streams/Connect">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/user-data-streams/Connect</a>
      */
     @Override
     public int listenUserStream(String listenKey, WebSocketCallback onMessageCallback) {
@@ -644,10 +644,10 @@ public abstract class WebsocketClientImpl implements WebsocketClient {
      * @param streams A list of stream names to be combined <br>
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#websocket-market-streams">
-     * https://binance-docs.github.io/apidocs/futures/en/#websocket-market-streams</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#websocket-market-streams">
-     * https://binance-docs.github.io/apidocs/delivery/en/#websocket-market-streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Connect">
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Connect</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Connect">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Connect</a>
      */
     @Override
     public int combineStreams(ArrayList<String> streams, WebSocketCallback onMessageCallback) {

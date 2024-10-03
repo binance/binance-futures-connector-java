@@ -78,10 +78,10 @@ public abstract class Account {
      * dualSidePosition -- mandatory/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#change-position-mode-trade">
-     *     https://binance-docs.github.io/apidocs/futures/en/#change-position-mode-trade</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#change-position-mode-trade">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#change-position-mode-trade</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Change-Position-Mode">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Change-Position-Mode</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Change-Position-Mode">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Change-Position-Mode</a>
      */
     public String changePositionModeTrade(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "dualSidePosition", String.class);
@@ -99,10 +99,10 @@ public abstract class Account {
      * <br><br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#get-current-position-mode-user_data">
-     *     https://binance-docs.github.io/apidocs/futures/en/#get-current-position-mode-user_data</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#get-current-position-mode-user_data">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#get-current-position-mode-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Current-Position-Mode">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Current-Position-Mode</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/account/Get-Current-Position-Mode">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/account/Get-Current-Position-Mode</a>
      */
     public String getCurrentPositionMode(LinkedHashMap<String, Object> parameters) {
         return requestHandler.sendSignedRequest(productUrl, POSITION_SIDE_DUAL, parameters, HttpMethod.GET, showLimitUsage);
@@ -136,10 +136,10 @@ public abstract class Account {
      * newOrderRespType -- optional/enum <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#new-order-trade">
-     *    https://binance-docs.github.io/apidocs/futures/en/#new-order-trade</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#new-order-trade">
-     *    https://binance-docs.github.io/apidocs/delivery/en/#new-order-trade</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/New-Order">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/New-Order</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/New-Order">
+     *    https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/New-Order</a>
      */
     public String newOrder(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -161,10 +161,10 @@ public abstract class Account {
      * batchOrders -- mandatory/list <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#place-multiple-orders-trade">
-     *     https://binance-docs.github.io/apidocs/futures/en/#place-multiple-orders-trade</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#modify-multiple-orders-trade">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#modify-multiple-orders-trade</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Place-Multiple-Orders">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Place-Multiple-Orders</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Modify-Multiple-Orders">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Modify-Multiple-Orders</a>
      */
     public String placeMultipleOrders(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkRequiredParameter(parameters, "batchOrders");
@@ -185,10 +185,10 @@ public abstract class Account {
      * origClientOrderId -- optional/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#query-order-user_data">
-     *     https://binance-docs.github.io/apidocs/futures/en/#query-order-user_data</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#query-order-user_data">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#query-order-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Query-Order">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Query-Order</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Query-Order">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Query-Order</a>
      */
     public String queryOrder(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -210,10 +210,10 @@ public abstract class Account {
      * origClientOrderId -- optional/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#cancel-order-trade">
-     *     https://binance-docs.github.io/apidocs/futures/en/#cancel-order-trade</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#cancel-order-trade">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#cancel-order-trade</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Cancel-Order">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Cancel-Order</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Cancel-Order">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Cancel-Order</a>
      */
     public String cancelOrder(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -234,10 +234,10 @@ public abstract class Account {
      * symbol -- mandatory/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#cancel-all-open-orders-trade">
-     *     https://binance-docs.github.io/apidocs/futures/en/#cancel-all-open-orders-trade</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#cancel-all-open-orders-trade">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#cancel-all-open-orders-trade</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Cancel-All-Open-Orders">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Cancel-All-Open-Orders</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Cancel-All-Open-Orders">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Cancel-All-Open-Orders</a>
      */
     public String cancelAllOpenOrders(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -258,10 +258,10 @@ public abstract class Account {
      * origClientOrderIdList -- optional/list <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#cancel-multiple-orders-trade">
-     *     hhttps://binance-docs.github.io/apidocs/futures/en/#cancel-multiple-orders-trade</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#cancel-multiple-orders-trade">
-     *     hhttps://binance-docs.github.io/apidocs/delivery/en/#cancel-multiple-orders-trade</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Cancel-Multiple-Orders">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Cancel-Multiple-Orders</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Cancel-Multiple-Orders">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Cancel-Multiple-Orders</a>
      */
     public String cancelMultipleOrders(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -282,10 +282,10 @@ public abstract class Account {
      * countdownTime -- mandatory/long <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#auto-cancel-all-open-orders-trade">
-     *     https://binance-docs.github.io/apidocs/futures/en/#auto-cancel-all-open-orders-trade</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#auto-cancel-all-open-orders-trade">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#auto-cancel-all-open-orders-trade</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Auto-Cancel-All-Open-Orders">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Auto-Cancel-All-Open-Orders</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Auto-Cancel-All-Open-Orders">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Auto-Cancel-All-Open-Orders</a>
      */
     public String autoCancelOpen(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -308,10 +308,10 @@ public abstract class Account {
      * origClientOrderId - optional/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#query-current-open-order-user_data">
-     *    https://binance-docs.github.io/apidocs/futures/en/#query-current-open-order-user_data</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#query-current-open-order-user_data">
-     *    https://binance-docs.github.io/apidocs/delivery/en/#query-current-open-order-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Query-Current-Open-Order">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Query-Current-Open-Order</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Query-Current-Open-Order">
+     *    https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Query-Current-Open-Order</a>
      */
     public String queryCurrentOpenOrder(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -333,10 +333,10 @@ public abstract class Account {
      * leverage -- mandatory/integer <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#change-initial-leverage-trade">
-     *     https://binance-docs.github.io/apidocs/futures/en/#change-initial-leverage-trade</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#change-initial-leverage-trade">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#change-initial-leverage-trade</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Change-Initial-Leverage">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Change-Initial-Leverage</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Change-Initial-Leverage">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Change-Initial-Leverage</a>
      */
     public String changeInitialLeverage(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -358,10 +358,10 @@ public abstract class Account {
      * marginType -- mandatory/enum <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#change-margin-type-trade">
-     *     https://binance-docs.github.io/apidocs/futures/en/#change-margin-type-trade</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#change-margin-type-trade">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#change-margin-type-trade</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Change-Margin-Type">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Change-Margin-Type</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Change-Margin-Type">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Change-Margin-Type</a>
      */
     public String changeMarginType(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -385,10 +385,10 @@ public abstract class Account {
      * type -- mandatory/integer <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#modify-isolated-position-margin-trade">
-     *     https://binance-docs.github.io/apidocs/futures/en/#modify-isolated-position-margin-trade</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#modify-isolated-position-margin-trade">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#modify-isolated-position-margin-trade</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Modify-Isolated-Position-Margin">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Modify-Isolated-Position-Margin</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Modify-Isolated-Position-Margin">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Modify-Isolated-Position-Margin</a>
      */
     public String modifyIsolatedPositionMargin(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -414,10 +414,10 @@ public abstract class Account {
      * limit -- optional/integer <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#get-position-margin-change-history-trade">
-     *    https://binance-docs.github.io/apidocs/futures/en/#get-position-margin-change-history-trade</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#get-position-margin-change-history-trade">
-     *    https://binance-docs.github.io/apidocs/delivery/en/#get-position-margin-change-history-trade</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Get-Position-Margin-Change-History">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Get-Position-Margin-Change-History</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Get-Position-Margin-Change-History">
+     *    https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Get-Position-Margin-Change-History</a>
      */
     public String getPositionMarginChangeHistory(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -441,10 +441,10 @@ public abstract class Account {
      * limit -- optional/integer <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#get-income-history-user_data">
-     *    https://binance-docs.github.io/apidocs/futures/en/#get-income-history-user_data</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#get-income-history-user_data">
-     *    https://binance-docs.github.io/apidocs/delivery/en/#get-income-history-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Income-History">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Income-History</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/account/Get-Income-History">
+     *    https://developers.binance.com/docs/derivatives/coin-margined-futures/account/Get-Income-History</a>
      */
     public String getIncomeHistory(LinkedHashMap<String, Object> parameters) {
         return requestHandler.sendSignedRequest(productUrl, INCOME, parameters, HttpMethod.GET, showLimitUsage);
@@ -463,10 +463,10 @@ public abstract class Account {
      * symbol -- optional/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#position-adl-quantile-estimation-user_data">
-     *    https://binance-docs.github.io/apidocs/futures/en/#position-adl-quantile-estimation-user_data</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#position-adl-quantile-estimation-user_data">
-     *    https://binance-docs.github.io/apidocs/delivery/en/#position-adl-quantile-estimation-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Position-ADL-Quantile-Estimation">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Position-ADL-Quantile-Estimation</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Position-ADL-Quantile-Estimation">
+     *    https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Position-ADL-Quantile-Estimation</a>
      */
     public String getAdlQuantile(LinkedHashMap<String, Object> parameters) {
         return requestHandler.sendSignedRequest(productUrl, ADL_QUANTILE, parameters, HttpMethod.GET, showLimitUsage);
@@ -489,10 +489,10 @@ public abstract class Account {
      * limit -- optional/integer <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#user-39-s-force-orders-user_data">
-     *    https://binance-docs.github.io/apidocs/futures/en/#user-39-s-force-orders-user_data</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#user-39-s-force-orders-user_data">
-     *    https://binance-docs.github.io/apidocs/delivery/en/#user-39-s-force-orders-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Users-Force-Orders">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Users-Force-Orders</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Users-Force-Orders">
+     *    https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Users-Force-Orders</a>
      */
     public String getForceOrders(LinkedHashMap<String, Object> parameters) {
         return requestHandler.sendSignedRequest(productUrl, FORCE_ORDERS, parameters, HttpMethod.GET, showLimitUsage);
@@ -511,10 +511,10 @@ public abstract class Account {
      * symbol -- mandatory/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#user-commission-rate-user_data">
-     *    https://binance-docs.github.io/apidocs/futures/en/#user-commission-rate-user_data</a>
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#user-commission-rate-user_data">
-     *    https://binance-docs.github.io/apidocs/delivery/en/#user-commission-rate-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/User-Commission-Rate">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/User-Commission-Rate</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/account/User-Commission-Rate">
+     *    https://developers.binance.com/docs/derivatives/coin-margined-futures/account/User-Commission-Rate</a>
      */
     public String getCommissionRate(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);

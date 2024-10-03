@@ -6,7 +6,7 @@
 
     <groupId>io.github.binance</groupId>
     <artifactId>binance-futures-connector-java</artifactId>
-    <version>3.0.4</version>
+    <version>3.0.5</version>
     <packaging>jar</packaging>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>lightweight connector to Futures API</description>

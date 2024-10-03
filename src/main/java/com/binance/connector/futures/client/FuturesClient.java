@@ -9,5 +9,8 @@ public interface FuturesClient {
     Market market();
     Account account();
     UserData userData();
-    PortfolioMargin portfolioMargin();
+    // Default implementation to make the method optional
+    default PortfolioMargin portfolioMargin() {
+        throw new UnsupportedOperationException("Portfolio Margin is not supported by this implementation.");
+    }
 }

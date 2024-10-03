@@ -7,7 +7,7 @@ import com.binance.connector.futures.client.utils.ProxyAuth;
 /**
  * <h2>Coin-Margined Portfolio Margin Endpoints</h2>
  * All endpoints under the
- * <a href="https://binance-docs.github.io/apidocs/delivery/en/#portfolio-margin-endpoints">PortfolioMargin Endpoint</a>
+ * <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/portfolio-margin-endpoints/General-Info">PortfolioMargin Endpoint</a>
  * section of the API documentation will be implemented in this class.
  * <br>
  * Response will be returned in <i>String format</i>.
@@ -28,8 +28,8 @@ public class CMPortfolioMargin extends PortfolioMargin {
      * symbol -- optional/string <br>
      * pair -- optional/string <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#portfolio-margin-exchange-information">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#portfolio-margin-exchange-information</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/portfolio-margin-endpoints/Classic-Portfolio-Margin-Account-Information">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/portfolio-margin-endpoints/Classic-Portfolio-Margin-Account-Information</a>
      */
     public String portfolioMarginExchangeInfo(LinkedHashMap<String, Object> parameters) {
         return super.portfolioMarginExchangeInfo(parameters);

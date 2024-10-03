@@ -9,7 +9,7 @@ import com.binance.connector.futures.client.utils.ProxyAuth;
 /**
  * <h2>USDⓈ-Margined Market Endpoints</h2>
  * All endpoints under the
- * <a href="https://binance-docs.github.io/apidocs/futures/en/#market-data-endpoints">Market Data Endpoint</a>
+ * <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/general-info">Market Data Endpoint</a>
  * section of the API documentation will be implemented in this class.
  * <br>
  * Response will be returned in <i>String format</i>.
@@ -30,8 +30,8 @@ public class UMMarket extends Market {
      * <br><br>
      * symbol -- optional/string -- the trading symbol <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#mark-price">
-     *     https://binance-docs.github.io/apidocs/futures/en/#mark-price</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Mark-Price">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Mark-Price</a>
      */
     public String markPrice(LinkedHashMap<String, Object> parameters) {
         return super.markPrice(parameters);
@@ -48,8 +48,8 @@ public class UMMarket extends Market {
      * <br><br>
      * symbol -- optional/string -- the trading symbol <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#24hr-ticker-price-change-statistics">
-     *     https://binance-docs.github.io/apidocs/futures/en/#24hr-ticker-price-change-statistics</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/24hr-Ticker-Price-Change-Statistics">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/24hr-Ticker-Price-Change-Statistics</a>
      */
     public String ticker24H(LinkedHashMap<String, Object> parameters) {
         return super.ticker24H(parameters);
@@ -60,15 +60,15 @@ public class UMMarket extends Market {
      * <br><br>
      * GET /v1/ticker/price
      * <br>
-     * https://binance-docs.github.io/apidocs/futures/en/#symbol-price-ticker
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Symbol-Price-Ticker
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
      * <br><br>
      * symbol -- optional/string -- the trading symbol <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#symbol-price-ticker">
-     *     https://binance-docs.github.io/apidocs/futures/en/#symbol-price-ticker</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Symbol-Price-Ticker">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Symbol-Price-Ticker</a>
      */
     public String tickerSymbol(LinkedHashMap<String, Object> parameters) {
         return super.tickerSymbol(parameters);
@@ -79,15 +79,15 @@ public class UMMarket extends Market {
      * <br><br>
      * GET /v1/ticker/bookTicker
      * <br>
-     * https://binance-docs.github.io/apidocs/futures/en/#symbol-order-book-ticker
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Symbol-Order-Book-Ticker
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
      * <br><br>
      * symbol -- optional/string -- the trading symbol <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#symbol-order-book-ticker">
-     *     https://binance-docs.github.io/apidocs/futures/en/#symbol-order-book-ticker</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Symbol-Order-Book-Ticker">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Symbol-Order-Book-Ticker</a>
      */
     public String bookTicker(LinkedHashMap<String, Object> parameters) {
         return super.bookTicker(parameters);
@@ -98,7 +98,7 @@ public class UMMarket extends Market {
      * <br><br>
      * GET /futures/data/openInterestHist
      * <br>
-     * https://binance-docs.github.io/apidocs/futures/en/#open-interest-statistics
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Open-Interest-Statistics
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
@@ -109,8 +109,8 @@ public class UMMarket extends Market {
      * startTime -- optional/long -- Start Time <br>
      * endTime -- optional/long -- End Time <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#open-interest-statistics">
-     *     https://binance-docs.github.io/apidocs/futures/en/#open-interest-statistics</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Open-Interest-Statistics">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Open-Interest-Statistics</a>
      */
     public String openInterestStatistics(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -123,7 +123,7 @@ public class UMMarket extends Market {
      * <br><br>
      * GET /futures/data/topLongShortPositionRatio
      * <br>
-     * https://binance-docs.github.io/apidocs/futures/en/#top-trader-long-short-ratio-positions
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Top-Trader-Long-Short-Ratio
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
@@ -134,8 +134,8 @@ public class UMMarket extends Market {
      * startTime -- optional/long -- Start Time <br>
      * endTime -- optional/long -- End Time <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#top-trader-long-short-ratio-positions">
-     *     https://binance-docs.github.io/apidocs/futures/en/#top-trader-long-short-ratio-positions</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Top-Trader-Long-Short-Ratio">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Top-Trader-Long-Short-Ratio</a>
      */
     public String topTraderLongShortPos(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -148,7 +148,7 @@ public class UMMarket extends Market {
      * <br><br>
      * GET /futures/data/topLongShortAccountRatio
      * <br>
-     * https://binance-docs.github.io/apidocs/delivery/en/#top-trader-long-short-ratio-accounts
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Top-Long-Short-Account-Ratio
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
@@ -159,8 +159,8 @@ public class UMMarket extends Market {
      * startTime -- optional/long -- Start Time <br>
      * endTime -- optional/long -- End Time <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#top-trader-long-short-ratio-accounts">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#top-trader-long-short-ratio-accounts</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Top-Long-Short-Account-Ratio">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Top-Long-Short-Account-Ratio</a>
      */
     public String topTraderLongShortAccs(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -173,7 +173,7 @@ public class UMMarket extends Market {
      * <br><br>
      * GET /futures/data/globalLongShortAccountRatio
      * <br>
-     * https://binance-docs.github.io/apidocs/futures/en/#long-short-ratio
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Long-Short-Ratio
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
@@ -184,8 +184,8 @@ public class UMMarket extends Market {
      * startTime -- optional/long -- Start Time <br>
      * endTime -- optional/long -- End Time <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#long-short-ratio">
-     *     https://binance-docs.github.io/apidocs/futures/en/#long-short-ratio</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Long-Short-Ratio">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Long-Short-Ratio</a>
      */
     public String longShortRatio(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -199,7 +199,7 @@ public class UMMarket extends Market {
      * <br><br>
      * GET /futures/data/takerlongshortRatio
      * <br>
-     * https://binance-docs.github.io/apidocs/futures/en/#taker-buy-sell-volume
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Taker-BuySell-Volume
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
@@ -210,8 +210,8 @@ public class UMMarket extends Market {
      * startTime -- optional/long -- Start Time <br>
      * endTime -- optional/long -- End Time <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#taker-buy-sell-volume">
-     *     https://binance-docs.github.io/apidocs/futures/en/#taker-buy-sell-volume</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Taker-BuySell-Volume">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Taker-BuySell-Volume</a>
      */
     public String takerBuySellVol(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -225,7 +225,7 @@ public class UMMarket extends Market {
      * <br><br>
      * GET /v1/lvtKlines
      * <br>
-     * https://binance-docs.github.io/apidocs/futures/en/#historical-blvt-nav-kline-candlestick
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Historical-BLVT-NAV-Kline-Candlestick
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
@@ -236,8 +236,8 @@ public class UMMarket extends Market {
      * endTime -- optional/long -- End Time <br>
      * limit -- optional/long -- default 500, max 1000 <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#historical-blvt-nav-kline-candlestick">
-     *     https://binance-docs.github.io/apidocs/futures/en/#historical-blvt-nav-kline-candlestick</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Historical-BLVT-NAV-Kline-Candlestick">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Historical-BLVT-NAV-Kline-Candlestick</a>
      */
     public String historicalBlvt(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -249,15 +249,15 @@ public class UMMarket extends Market {
     /**
      * GET /v1/indexInfo
      * <br>
-     * https://binance-docs.github.io/apidocs/futures/en/#composite-index-symbol-information
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Composite-Index-Symbol-Information
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
      * <br><br>
      * symbol -- optional/string -- the trading pair <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#composite-index-symbol-information">
-     *     https://binance-docs.github.io/apidocs/futures/en/#composite-index-symbol-information</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Composite-Index-Symbol-Information">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Composite-Index-Symbol-Information</a>
      */
     public String indexInfo(LinkedHashMap<String, Object> parameters) {
         return getRequestHandler().sendPublicRequest(getProductUrl(), INDEX_INFO, parameters, HttpMethod.GET, getShowLimitUsage());
@@ -269,15 +269,15 @@ public class UMMarket extends Market {
      * <br><br>
      * GET /v1/assetIndex
      * <br>
-     * https://binance-docs.github.io/apidocs/futures/en/#multi-assets-mode-asset-index
+     * https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Multi-Assets-Mode-Asset-Index
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
      * <br><br>
      * symbol -- optional/string -- the trading pair <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#multi-assets-mode-asset-index">
-     *     https://binance-docs.github.io/apidocs/futures/en/#multi-assets-mode-asset-index</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Multi-Assets-Mode-Asset-Index">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Multi-Assets-Mode-Asset-Index</a>
      */
     public String assetIndex(LinkedHashMap<String, Object> parameters) {
         return getRequestHandler().sendPublicRequest(getProductUrl(), ASSET_INDEX, parameters, HttpMethod.GET, getShowLimitUsage());

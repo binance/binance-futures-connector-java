@@ -9,8 +9,8 @@ import okhttp3.Request;
 /**
  * <h2>COIN-M Websocket Streams</h2>
  * All stream endpoints under the
- * <a href="https://binance-docs.github.io/apidocs/delivery/en/#websocket-market-streams"> Websocket Market Streams</a> and
- * <a href="https://binance-docs.github.io/apidocs/delivery/en/#user-data-streams"> User Data Streams</a>
+ * <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Connect"> Websocket Market Streams</a> and
+ * <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/user-data-streams/Connect"> User Data Streams</a>
  * section of the API documentation will be implemented in this class.
  * <br>
  * Response will be returned as callback.
@@ -35,8 +35,8 @@ public class CMWebsocketClientImpl extends WebsocketClientImpl {
      * @param speed speed in seconds, can be 1 or 3
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#index-price-stream">
-     * https://binance-docs.github.io/apidocs/delivery/en/#index-price-streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Index-Price-Stream">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Index-Price-Stream</a>
      */
     public int indexPriceStream(String pair, int speed, WebSocketCallback onMessageCallback) {
         ParameterChecker.checkParameterType(pair, String.class, "pair");
@@ -77,8 +77,8 @@ public class CMWebsocketClientImpl extends WebsocketClientImpl {
      * @param speed speed in seconds, can be 1 or 3
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#mark-price-of-all-symbols-of-a-pair">
-     * https://binance-docs.github.io/apidocs/delivery/en/#mark-price-of-all-symbols-of-a-pair</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Mark-Price-of-All-Symbols-of-a-Pair">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Mark-Price-of-All-Symbols-of-a-Pair</a>
      */
     public int markPriceSymbolsPairStream(String pair, int speed, WebSocketCallback onMessageCallback) {
         ParameterChecker.checkParameterType(pair, String.class, "pair");
@@ -119,8 +119,8 @@ public class CMWebsocketClientImpl extends WebsocketClientImpl {
      * @param interval kline interval - 1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d 3d 1w 1M
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#index-kline-candlestick-streams">
-     * https://binance-docs.github.io/apidocs/delivery/en/#index-kline-candlestick-streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Index-Kline-Candlestick-Streams">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Index-Kline-Candlestick-Streams</a>
      */
     public int indexKlineCandlestick(String pair, String interval, WebSocketCallback onMessageCallback) {
         ParameterChecker.checkParameterType(pair, String.class, "pair");
@@ -155,8 +155,8 @@ public class CMWebsocketClientImpl extends WebsocketClientImpl {
      * @param interval kline interval - 1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d 3d 1w 1M
      * @param onMessageCallback onMessageCallback
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#mark-price-kline-candlestick-streams">
-     * https://binance-docs.github.io/apidocs/delivery/en/#mark-price-kline-candlestick-streams</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Mark-Price-Kline-Candlestick-Streams">
+     * https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Mark-Price-Kline-Candlestick-Streams</a>
      */
     public int markKlineCandlestick(String symbol, String interval, WebSocketCallback onMessageCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");

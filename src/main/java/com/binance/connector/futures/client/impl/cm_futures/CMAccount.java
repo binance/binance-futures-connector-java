@@ -9,7 +9,7 @@ import com.binance.connector.futures.client.utils.ProxyAuth;
 /**
  * <h2>Coin-Margined Trade Endpoints</h2>
  * All endpoints under the
- * <a href="https://binance-docs.github.io/apidocs/delivery/en/#account-trades-endpoints">Futures Account/Trade Endpoint</a>
+ * <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/account/New-Future-Account-Transfer">Futures Account/Trade Endpoint</a>
  * section of the API documentation will be implemented in this class.
  * <br>
  * Response will be returned in <i>String format</i>.
@@ -37,8 +37,8 @@ public class CMAccount extends Account {
      * price -- optional/decimal <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#modify-order-trade">
-     *    https://binance-docs.github.io/apidocs/delivery/en/#modify-order-trade</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Modify-Order">
+     *    https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Modify-Order</a>
      */
     public String modifyOrder(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -64,8 +64,8 @@ public class CMAccount extends Account {
      * limit -- optional/integer <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#get-order-modify-history-user_data">
-     *     https://binance-docs.github.io/apidocs/delivery/en/#get-order-modify-history-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Get-Order-Modify-History">
+     *     https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Get-Order-Modify-History</a>
      */
     public String orderModifyHistory(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -86,8 +86,8 @@ public class CMAccount extends Account {
      * pair -- optional/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#current-all-open-orders-user_data">
-     *    https://binance-docs.github.io/apidocs/delivery/en/#current-all-open-orders-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Current-All-Open-Orders">
+     *    https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Current-All-Open-Orders</a>
      */
     public String currentAllOpenOrders(LinkedHashMap<String, Object> parameters) {
         return super.currentAllOpenOrders(parameters);
@@ -110,8 +110,8 @@ public class CMAccount extends Account {
      * limit -- optional/integer <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#all-orders-user_data">
-     *    https://binance-docs.github.io/apidocs/delivery/en/#all-orders-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/All-Orders">
+     *    https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/All-Orders</a>
      */
     public String allOrders(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkOrParameters(parameters, "symbol", "pair");
@@ -130,8 +130,8 @@ public class CMAccount extends Account {
      * <br><br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#futures-account-balance-user_data">
-     *    https://binance-docs.github.io/apidocs/delivery/en/#futures-account-balance-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/account/Futures-Account-Balance">
+     *    https://developers.binance.com/docs/derivatives/coin-margined-futures/account/Futures-Account-Balance</a>
      */
     public String futuresAccountBalance(LinkedHashMap<String, Object> parameters) {
         return getRequestHandler().sendSignedRequest(getProductUrl(), BALANCE, parameters, HttpMethod.GET, getShowLimitUsage());
@@ -141,7 +141,7 @@ public class CMAccount extends Account {
     /**
      * Get current account information. User in single-asset/ multi-assets mode will see different value, see comments in response section for detail.
      * <br><br>
-     * GET /v2/account
+     * GET /v1/account
      * <br>
      * @param
      * parameters LinkedHashedMap of String,Object pair
@@ -149,8 +149,8 @@ public class CMAccount extends Account {
      * <br><br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#account-information-user_data">
-     *    https://binance-docs.github.io/apidocs/delivery/en/#account-information-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/account/Account-Information">
+     *    https://developers.binance.com/docs/derivatives/coin-margined-futures/account/Account-Information</a>
      */
     public String accountInformation(LinkedHashMap<String, Object> parameters) {
         return getRequestHandler().sendSignedRequest(getProductUrl(), ACCOUNT_INFORMATION, parameters, HttpMethod.GET, getShowLimitUsage());
@@ -170,8 +170,8 @@ public class CMAccount extends Account {
      * pair -- optional/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#position-information-user_data">
-     *    https://binance-docs.github.io/apidocs/delivery/en/#position-information-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Position-Information">
+     *    https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Position-Information</a>
      */
     public String positionInformation(LinkedHashMap<String, Object> parameters) {
         return getRequestHandler().sendSignedRequest(getProductUrl(), POSITION_RISK_V1, parameters, HttpMethod.GET, getShowLimitUsage());
@@ -194,8 +194,8 @@ public class CMAccount extends Account {
      * limit -- optional/integer <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#account-trade-list-user_data">
-     *    https://binance-docs.github.io/apidocs/delivery/en/#account-trade-list-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Account-Trade-List">
+     *    https://developers.binance.com/docs/derivatives/coin-margined-futures/trade/Account-Trade-List</a>
      */
     public String accountTradeList(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkOrParameters(parameters, "symbol", "pair");
@@ -214,8 +214,8 @@ public class CMAccount extends Account {
      * pair -- optional/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#notional-bracket-for-symbol-user_data">
-     *    https://binance-docs.github.io/apidocs/delivery/en/#notional-bracket-for-symbol-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/account/Notional-Bracket-for-Symbol">
+     *    https://developers.binance.com/docs/derivatives/coin-margined-futures/account/Notional-Bracket-for-Symbol</a>
      */
     public String getLeverageBracket(LinkedHashMap<String, Object> parameters) {
         return super.getLeverageBracket(parameters);
@@ -234,8 +234,8 @@ public class CMAccount extends Account {
      * symbol -- optional/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/delivery/en/#notional-bracket-for-pair-user_data">
-     *    https://binance-docs.github.io/apidocs/delivery/en/#notional-bracket-for-pair-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/coin-margined-futures/account/Notional-Bracket-for-Pair">
+     *    https://developers.binance.com/docs/derivatives/coin-margined-futures/account/Notional-Bracket-for-Pair</a>
      */
     public String getLeverageBracketForPair(LinkedHashMap<String, Object> parameters) {
         return getRequestHandler().sendSignedRequest(getProductUrl(), LEVERAGE_BRACKET_PAIR, parameters, HttpMethod.GET, getShowLimitUsage());

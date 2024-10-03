@@ -9,7 +9,7 @@ import com.binance.connector.futures.client.utils.ProxyAuth;
 /**
  * <h2>USDⓈ-Margined Trade Endpoints</h2>
  * All endpoints under the
- * <a href="https://binance-docs.github.io/apidocs/futures/en/#account-trades-endpoints">Futures Account/Trade Endpoint</a>
+ * <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/New-Future-Account-Transfer">Futures Account/Trade Endpoint</a>
  * section of the API documentation will be implemented in this class.
  * <br>
  * Response will be returned in <i>String format</i>.
@@ -32,8 +32,8 @@ public class UMAccount extends Account {
      * multiAssetsMargin -- mandatory/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#change-multi-assets-mode-trade">
-     *     https://binance-docs.github.io/apidocs/futures/en/#change-multi-assets-mode-trade</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Change-Multi-Assets-Mode">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Change-Multi-Assets-Mode</a>
      */
     public String changeMultiAssetsMode(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "dualSidePosition", String.class);
@@ -51,8 +51,8 @@ public class UMAccount extends Account {
      * <br><br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#get-current-multi-assets-mode-user_data">
-     *     https://binance-docs.github.io/apidocs/futures/en/#get-current-multi-assets-mode-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Current-Multi-Assets-Mode">
+     *     https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Current-Multi-Assets-Mode</a>
      */
     public String getCurrentMultiAssetMode(LinkedHashMap<String, Object> parameters) {
         return getRequestHandler().sendSignedRequest(getProductUrl(), MULTI_ASSETS_MARGIN, parameters, HttpMethod.GET, getShowLimitUsage());
@@ -71,8 +71,8 @@ public class UMAccount extends Account {
      * symbol -- optional/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#current-all-open-orders-user_data">
-     *    https://binance-docs.github.io/apidocs/futures/en/#current-all-open-orders-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Current-All-Open-Orders">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Current-All-Open-Orders</a>
      */
     public String currentAllOpenOrders(LinkedHashMap<String, Object> parameters) {
         return super.currentAllOpenOrders(parameters);
@@ -94,8 +94,8 @@ public class UMAccount extends Account {
      * limit -- optional/integer <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#all-orders-user_data">
-     *    https://binance-docs.github.io/apidocs/futures/en/#all-orders-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/All-Orders">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/All-Orders</a>
      */
     public String allOrders(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -114,8 +114,8 @@ public class UMAccount extends Account {
      * <br><br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#futures-account-balance-v2-user_data">
-     *    https://binance-docs.github.io/apidocs/futures/en/#futures-account-balance-v2-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Futures-Account-Balance-V2">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Futures-Account-Balance-V2</a>
      */
     public String futuresAccountBalance(LinkedHashMap<String, Object> parameters) {
         return getRequestHandler().sendSignedRequest(getProductUrl(), BALANCE, parameters, HttpMethod.GET, getShowLimitUsage());
@@ -133,8 +133,8 @@ public class UMAccount extends Account {
      * <br><br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#account-information-v2-user_data">
-     *    https://binance-docs.github.io/apidocs/futures/en/#account-information-v2-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Account-Information-V2">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Account-Information-V2</a>
      */
     public String accountInformation(LinkedHashMap<String, Object> parameters) {
         return getRequestHandler().sendSignedRequest(getProductUrl(), ACCOUNT_INFORMATION, parameters, HttpMethod.GET, getShowLimitUsage());
@@ -153,8 +153,8 @@ public class UMAccount extends Account {
      * symbol -- optional/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#position-information-v2-user_data">
-     *    https://binance-docs.github.io/apidocs/futures/en/#position-information-v2-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Position-Information-V2">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Position-Information-V2</a>
      */
     public String positionInformation(LinkedHashMap<String, Object> parameters) {
         return getRequestHandler().sendSignedRequest(getProductUrl(), POSITION_RISK, parameters, HttpMethod.GET, getShowLimitUsage());
@@ -176,8 +176,8 @@ public class UMAccount extends Account {
      * limit -- optional/integer <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#account-trade-list-user_data">
-     *    https://binance-docs.github.io/apidocs/futures/en/#account-trade-list-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Account-Trade-List">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Account-Trade-List</a>
      */
     public String accountTradeList(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
@@ -196,8 +196,8 @@ public class UMAccount extends Account {
      * symbol -- optional/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#notional-and-leverage-brackets-user_data">
-     *    https://binance-docs.github.io/apidocs/futures/en/#notional-and-leverage-brackets-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Notional-and-Leverage-Brackets">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Notional-and-Leverage-Brackets</a>
      */
     public String getLeverageBracket(LinkedHashMap<String, Object> parameters) {
         return super.getLeverageBracket(parameters);
@@ -217,8 +217,8 @@ public class UMAccount extends Account {
      * symbol -- optional/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#futures-trading-quantitative-rules-indicators-user_data">
-     *    https://binance-docs.github.io/apidocs/futures/en/#futures-trading-quantitative-rules-indicators-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Futures-Trading-Quantitative-Rules-Indicators">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Futures-Trading-Quantitative-Rules-Indicators</a>
      */
     public String getTradingRulesIndicators(LinkedHashMap<String, Object> parameters) {
         return getRequestHandler().sendSignedRequest(getProductUrl(), API_TRADING_STATUS, parameters, HttpMethod.GET, getShowLimitUsage());
@@ -238,8 +238,8 @@ public class UMAccount extends Account {
      * endTime -- optional/long <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#get-download-id-for-futures-transaction-history-user_data">
-     *    https://binance-docs.github.io/apidocs/futures/en/#get-download-id-for-futures-transaction-history-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Download-Id-For-Futures-Transaction-History">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Download-Id-For-Futures-Transaction-History</a>
      */
     public String futuresDownloadId(LinkedHashMap<String, Object> parameters) {
         return getRequestHandler().sendSignedRequest(getProductUrl(), INCOME_ASYN, parameters, HttpMethod.GET, getShowLimitUsage());
@@ -258,8 +258,8 @@ public class UMAccount extends Account {
      * downloadId -- mandatory/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/futures/en/#get-futures-transaction-history-download-link-by-id-user_data">
-     *    https://binance-docs.github.io/apidocs/futures/en/#get-futures-transaction-history-download-link-by-id-user_data</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Futures-Transaction-History-Download-Link-by-Id">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Get-Futures-Transaction-History-Download-Link-by-Id</a>
      */
     public String futuresDownloadLink(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "downloadId", String.class);
