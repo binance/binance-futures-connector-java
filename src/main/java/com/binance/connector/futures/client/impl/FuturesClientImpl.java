@@ -2,10 +2,12 @@ package com.binance.connector.futures.client.impl;
 
 import com.binance.connector.futures.client.FuturesClient;
 import com.binance.connector.futures.client.utils.ProxyAuth;
+import com.binance.connector.futures.client.utils.signaturegenerator.HmacSignatureGenerator;
+import com.binance.connector.futures.client.utils.signaturegenerator.SignatureGenerator;
 
 public abstract class FuturesClientImpl implements FuturesClient {
     private final String apiKey;
-    private final String secretKey;
+    private final SignatureGenerator signatureGenerator;
     private final String baseUrl;
     private final String productUrl;
     private boolean showLimitUsage;
@@ -16,7 +18,7 @@ public abstract class FuturesClientImpl implements FuturesClient {
     }
 
     public FuturesClientImpl(String baseUrl, String product, boolean showLimitUsage) {
-        this(null, null, baseUrl, product, showLimitUsage);
+        this(null, (String) null, baseUrl, product, showLimitUsage);
     }
 
     public FuturesClientImpl(String apiKey, String secretKey, String baseUrl, String product) {
@@ -25,7 +27,19 @@ public abstract class FuturesClientImpl implements FuturesClient {
 
     public FuturesClientImpl(String apiKey, String secretKey, String baseUrl, String product, boolean showLimitUsage) {
         this.apiKey = apiKey;
-        this.secretKey = secretKey;
+        if (secretKey != null) {
+            this.signatureGenerator = new HmacSignatureGenerator(secretKey.trim());
+        } else {
+            this.signatureGenerator = null;
+        }
+        this.baseUrl = baseUrl;
+        this.productUrl = baseUrl + product;
+        this.showLimitUsage = showLimitUsage;
+    }
+
+    public FuturesClientImpl(String apiKey, SignatureGenerator signatureGenerator, String baseUrl, String product, boolean showLimitUsage) {
+        this.apiKey = apiKey;
+        this.signatureGenerator = signatureGenerator;
         this.baseUrl = baseUrl;
         this.productUrl = baseUrl + product;
         this.showLimitUsage = showLimitUsage;
@@ -35,8 +49,8 @@ public abstract class FuturesClientImpl implements FuturesClient {
         return this.apiKey;
     }
 
-    public String getSecretKey() {
-        return this.secretKey;
+    public SignatureGenerator getSignatureGenerator() {
+        return this.signatureGenerator;
     }
 
     public String getBaseUrl() {

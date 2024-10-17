@@ -3,6 +3,7 @@ package com.binance.connector.futures.client.impl.cm_futures;
 import java.util.LinkedHashMap;
 import com.binance.connector.futures.client.impl.futures.PortfolioMargin;
 import com.binance.connector.futures.client.utils.ProxyAuth;
+import com.binance.connector.futures.client.utils.signaturegenerator.SignatureGenerator;
 
 /**
  * <h2>Coin-Margined Portfolio Margin Endpoints</h2>
@@ -13,8 +14,8 @@ import com.binance.connector.futures.client.utils.ProxyAuth;
  * Response will be returned in <i>String format</i>.
  */
 public class CMPortfolioMargin extends PortfolioMargin {
-    public CMPortfolioMargin(String productUrl, String apiKey, String secretKey, boolean showLimitUsage, ProxyAuth proxy) {
-        super(productUrl, apiKey, secretKey, showLimitUsage, proxy);
+    public CMPortfolioMargin(String productUrl, String apiKey, SignatureGenerator signatureGenerator, boolean showLimitUsage, ProxyAuth proxy) {
+        super(productUrl, apiKey, signatureGenerator, showLimitUsage, proxy);
     }
 
     /**

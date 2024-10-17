@@ -3,36 +3,39 @@ package com.binance.connector.futures.client.utils;
 import com.binance.connector.futures.client.enums.HttpMethod;
 import com.binance.connector.futures.client.enums.RequestType;
 import com.binance.connector.futures.client.exceptions.BinanceConnectorException;
-import java.util.LinkedHashMap;
+import com.binance.connector.futures.client.utils.signaturegenerator.Ed25519SignatureGenerator;
+import com.binance.connector.futures.client.utils.signaturegenerator.HmacSignatureGenerator;
+import com.binance.connector.futures.client.utils.signaturegenerator.RsaSignatureGenerator;
+import com.binance.connector.futures.client.utils.signaturegenerator.SignatureGenerator;
 import okhttp3.Request;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.LinkedHashMap;
 
 public class RequestHandler {
     private final String apiKey;
-    private final String secretKey;
+    private final SignatureGenerator signatureGenerator;
     private static final Logger logger = LoggerFactory.getLogger(RequestHandler.class);
     private final ProxyAuth proxy;
 
     public RequestHandler(String apiKey, ProxyAuth proxy) {
-        this.apiKey = apiKey;
-        this.secretKey = null;
-        this.proxy = proxy;
+        this(apiKey, null, proxy);
     }
 
-    public RequestHandler(String apiKey, String secretKey, ProxyAuth proxy) {
+    public RequestHandler(String apiKey, SignatureGenerator signatureGenerator, ProxyAuth proxy) {
         this.apiKey = apiKey;
-        this.secretKey = secretKey;
+        this.signatureGenerator = signatureGenerator;
         this.proxy = proxy;
     }
 
     /**
      * Build request based on request type and send the requests to server.
-     * @param baseUrl base url
-     * @param urlPath url path
-     * @param signature the signature
-     * @param parameters parameters
-     * @param httpMethod https method
+     *
+     * @param baseUrl     base url
+     * @param urlPath     url path
+     * @param signature   the signature
+     * @param parameters  parameters
+     * @param httpMethod  https method
      * @param requestType request type
      * @return String - response from server
      */
@@ -71,12 +74,15 @@ public class RequestHandler {
 
     public String sendSignedRequest(String baseUrl, String urlPath, LinkedHashMap<String, Object> parameters,
                                     HttpMethod httpMethod, boolean showLimitUsage) {
-        if (null == secretKey || secretKey.isEmpty() || null == apiKey || apiKey.isEmpty()) {
+        if (signatureGenerator.getClass() == HmacSignatureGenerator.class && (null == apiKey || apiKey.isEmpty())) {
             throw new BinanceConnectorException("[RequestHandler] Secret key/API key cannot be null or empty!");
+        }
+        if ((signatureGenerator.getClass() == RsaSignatureGenerator.class || signatureGenerator.getClass() == Ed25519SignatureGenerator.class) && (null == apiKey || apiKey.isEmpty())) {
+            throw new BinanceConnectorException("[RequestHandler] Private key/API key cannot be null or empty!");
         }
         parameters.put("timestamp", UrlBuilder.buildTimestamp());
         String queryString = UrlBuilder.joinQueryParameters(parameters);
-        String signature = SignatureGenerator.getSignature(queryString, secretKey);
+        String signature = signatureGenerator.getSignature(queryString);
         return sendApiRequest(baseUrl, urlPath, signature, parameters, httpMethod, RequestType.SIGNED, showLimitUsage);
     }
 }
