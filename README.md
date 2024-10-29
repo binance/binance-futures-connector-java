@@ -43,7 +43,7 @@ Each object corresponds to its category which will be used to call its respectiv
 | --------------- | ---------------- |
 | Account/Trades  | account          |
 | Market Data     | market           |
-| User Data       | userData         |
+| User Data       | 794980807        |
 | Portfolio Margin| portfolioMargin  |
 
 <br>
@@ -64,6 +64,9 @@ String result = client.market().exchangeInfo();
 LinkedHashMap<String,Object> parameters = new LinkedHashMap<String,Object>();
 
 UMFuturesClientImpl client = new UMFuturesClientImpl(PrivateConfig.API_KEY, PrivateConfig.SECRET_KEY);
+
+
+parameters.put![Internet_20241024_204814_6](https://github.com/user-attachments/assets/abcb55e2-881d-40bf-b3e6-2d1f9a48ba17)
 
 parameters.put("symbol","BTCUSDT");
 parameters.put("side", "SELL");
@@ -143,7 +146,9 @@ Proxy proxyConn = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 
     public Request authenticate(Route route, Response response) throws IOException {
         if (response.request().header("Proxy-Authorization") != null) {
             return null; // Give up, we've already failed to authenticate.
-          }
+          }![Internet_20241024_204814_6](https://github.com/user-attachments/assets/09ff4072-4784-4bdb-badc-db175f9cd650)
+![Internet_20241024_204814_2](https://github.com/user-attachments/assets/ccf39161-991f-411f-b3fc-e993823589e0)
+
       
         String credential = Credentials.basic("username", "password");
         return response.request().newBuilder().header("Proxy-Authorization", credential).build();
