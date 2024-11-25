@@ -160,6 +160,26 @@ public class UMAccount extends Account {
         return getRequestHandler().sendSignedRequest(getProductUrl(), POSITION_RISK, parameters, HttpMethod.GET, getShowLimitUsage());
     }
 
+    private final String POSITION_RISK_V3 = "/v3/positionRisk";
+    /**
+     * Get current position information.
+     * <br><br>
+     * GET /v3/positionRisk
+     * <br>
+     * @param
+     * parameters LinkedHashedMap of String,Object pair
+     *            where String is the name of the parameter and Object is the value of the parameter
+     * <br><br>
+     * symbol -- optional/string <br>
+     * recvWindow -- optional/long <br>
+     * @return String
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Position-Information-V2">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Position-Information-V2</a>
+     */
+    public String positionInformationV3(LinkedHashMap<String, Object> parameters) {
+        return getRequestHandler().sendSignedRequest(getProductUrl(), POSITION_RISK_V3, parameters, HttpMethod.GET, getShowLimitUsage());
+    }
+
     /**
      * Get trades for a specific account and symbol.
      * <br><br>
