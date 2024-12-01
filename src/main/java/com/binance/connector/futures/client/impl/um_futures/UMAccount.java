@@ -173,8 +173,8 @@ public class UMAccount extends Account {
      * symbol -- optional/string <br>
      * recvWindow -- optional/long <br>
      * @return String
-     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Position-Information-V2">
-     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Position-Information-V2</a>
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Position-Information-V3">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Position-Information-V3</a>
      */
     public String positionInformationV3(LinkedHashMap<String, Object> parameters) {
         return getRequestHandler().sendSignedRequest(getProductUrl(), POSITION_RISK_V3, parameters, HttpMethod.GET, getShowLimitUsage());
