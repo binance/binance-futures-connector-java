@@ -140,6 +140,25 @@ public class UMAccount extends Account {
         return getRequestHandler().sendSignedRequest(getProductUrl(), ACCOUNT_INFORMATION, parameters, HttpMethod.GET, getShowLimitUsage());
     }
 
+    private final String ACCOUNT_INFORMATION_V3 = "/v3/account";
+    /**
+     * Get current account information. User in single-asset/ multi-assets mode will see different value, see comments in response section for detail.
+     * <br><br>
+     * GET /v3/account
+     * <br>
+     * @param
+     * parameters LinkedHashedMap of String,Object pair
+     *            where String is the name of the parameter and Object is the value of the parameter
+     * <br><br>
+     * recvWindow -- optional/long <br>
+     * @return String
+     * @see <a href="https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Account-Information-V3">
+     *    https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Account-Information-V3</a>
+     */
+    public String accountInformationV3(LinkedHashMap<String, Object> parameters) {
+        return getRequestHandler().sendSignedRequest(getProductUrl(), ACCOUNT_INFORMATION_V3, parameters, HttpMethod.GET, getShowLimitUsage());
+    }
+
     private final String POSITION_RISK = "/v2/positionRisk";
     /**
      * Get current position information.
