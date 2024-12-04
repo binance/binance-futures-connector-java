@@ -8,9 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 import unit.MockData;
 import unit.MockWebServerDispatcher;
-
 import java.util.LinkedHashMap;
-
 import static org.junit.Assert.assertEquals;
 
 public class TestUMAccountInformationV3 {

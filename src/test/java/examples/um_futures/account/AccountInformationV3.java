@@ -6,7 +6,6 @@ import com.binance.connector.futures.client.impl.UMFuturesClientImpl;
 import examples.PrivateConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.util.LinkedHashMap;
 
 public final class AccountInformationV3 {
