@@ -1,6 +1,8 @@
-# Binance Futures Public API connector Java
+# Binance Futures Public API connector Java - DEPRECATED
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Code Style](https://img.shields.io/badge/code%20style-checkstyle-yellow)](https://checkstyle.org/checks.html)
+
+**This repository is deprecated. Please use the new modular connector repository: [binance-connector-java](https://github.com/binance/binance-connector-java)**
 
 This is a lightweight library that works as a connector to the [Binance Futures API](https://developers.binance.com/docs/derivatives/Introduction)
 
