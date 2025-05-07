@@ -5,6 +5,7 @@ import com.binance.connector.futures.client.impl.cm_futures.CMMarket;
 import com.binance.connector.futures.client.impl.cm_futures.CMAccount;
 import com.binance.connector.futures.client.impl.cm_futures.CMUserData;
 import com.binance.connector.futures.client.impl.cm_futures.CMPortfolioMargin;
+import com.binance.connector.futures.client.utils.signaturegenerator.SignatureGenerator;
 
 public class CMFuturesClientImpl extends FuturesClientImpl {
     private static String defaultBaseUrl = DefaultUrls.COINM_PROD_URL;
@@ -34,6 +35,10 @@ public class CMFuturesClientImpl extends FuturesClientImpl {
         super(apiKey, secretKey, baseUrl, cmProduct);
     }
 
+    public CMFuturesClientImpl(String apiKey, SignatureGenerator signatureGenerator, String baseUrl, boolean showLimitUsage) {
+        super(apiKey, signatureGenerator, baseUrl, cmProduct, showLimitUsage);
+    }
+
     @Override
     public CMMarket market() {
         return new CMMarket(getProductUrl(), getBaseUrl(), getApiKey(), getShowLimitUsage(), getProxy());
@@ -41,7 +46,7 @@ public class CMFuturesClientImpl extends FuturesClientImpl {
 
     @Override
     public CMAccount account() {
-        return new CMAccount(getProductUrl(), getApiKey(), getSecretKey(), getShowLimitUsage(), getProxy());
+        return new CMAccount(getProductUrl(), getApiKey(), getSignatureGenerator(), getShowLimitUsage(), getProxy());
     }
 
     @Override
@@ -51,6 +56,6 @@ public class CMFuturesClientImpl extends FuturesClientImpl {
 
     @Override
     public CMPortfolioMargin portfolioMargin() {
-        return new CMPortfolioMargin(getProductUrl(), getApiKey(), getSecretKey(), getShowLimitUsage(), getProxy());
+        return new CMPortfolioMargin(getProductUrl(), getApiKey(), getSignatureGenerator(), getShowLimitUsage(), getProxy());
     }
 }
